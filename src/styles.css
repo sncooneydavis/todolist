@@ -1,0 +1,59 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+:root {
+	--xxx: #XXX;
+	--xxx: #XXX;
+	--xxx: #XXX;
+	--xxx: #XXX;
+	--xxx: #XXX;
+}
+html {
+	font-family:
+		"Expletus Sans",
+		system-ui,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+	line-height: calc(1em + 0.5rem);
+	font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+	max-inline-size: 64ch;
+	-webkit-text-size-adjust: 100%; 
+	-webkit-font-smoothing: antialiased;
+	-moz-tab-size: 4; 
+	tab-size: 4;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+}
+h1, h2, h3, h4, h5 { 
+	font-size: inherit; 
+	font-weight: inherit; 
+} 
+ul, ol {
+	list-style: none;
+	padding-inline: 0;
+}
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+p {
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+.hidden {
+	display: none;
+}
+/* ============================================*/
