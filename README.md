@@ -1,6 +1,6 @@
 Dev Environment:
 - Webpack
-- ESLint
+- ESLint (AirBnB Style Guide)
 - Prettier
 
 Project:
