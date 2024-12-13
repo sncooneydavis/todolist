@@ -1,0 +1,696 @@
+
+
+
+<template id="open-start-template">
+    <!-- on click, append edit-session template below button -->
+    <button id="open-session-button" class="dropdown-button single-line" type="button">
+        <!-- on click or if object has session-date, remove .inactive -->
+        <img class="icon inactive" src="./images/prospective-left/todo-components/date.svg" />
+        <!-- on click (and object has no session-date), remove .inactive -->
+        <!-- if task object has session-date, add .hidden -->
+        <span class="inactive description">
+            schedule start date
+        </span>
+        <!-- if task object has session-date, remove .hidden -->
+        <div class="hidden description single-line">
+            <span class="description">
+                work on
+            </span>
+            <!-- if task object has session-date, populate -->
+            <input id="session-date-description" class="description" type="text" value="" readonly />
+            <!-- if task object has session-time, ~hidden and populate -->
+            <input id="session-time-description" class="description hidden" type="text" value="" readonly />
+        </div> 
+        <!-- if task object session log not empty, remove .hidden -->
+        <!-- populate with number of sessions completed -->
+        <div class="hidden description single-line">
+            <input id="session-total-description" class="hidden" type="text" value="" readonly />
+        </div>
+        <span class="description">
+            work sessions ended
+        </span>
+    </button>
+</template>
+
+<template id="edit-session-template">
+    <!-- when any dropdown-button clicked, toggle .hidden -->
+    <div id="edit-session-dropdown">
+        <!-- sync #session-date-description and .date-picker -->
+        <!-- SCRIPT: get tomorrow's year/month/day -->
+            <!-- make default value of #session-date-description and .date-picker -->
+        <!-- as day is selected, show day in CALENDAR VIEW -->
+        <div class="date-picker">
+            <!-- POPULATE #date-picker template -->
+            
+            <!-- remove .hidden when object has session-date -->
+            <!-- on click -->
+                <!-- add .hidden to #edit-due-dropdown and #remove-session-button (and #remove-session-time-button if applicable)-->
+                <!-- delete session-date (and session-time if applicable) from object -->
+            <button id="remove-session-button" class="remove-button hidden" type="button">
+                <img class="icon inactive" src="./images/prospective-left/x.svg" />
+                clear start date
+            </button>
+        </div>
+        <!-- when object has session-date but no session-time, remove .hidden from #add-session-time-button -->
+        <!-- on click or if object has session-time, add .hidden -->
+            <!-- set default object session-time to 12pm-1pm -->
+            <!-- remove .hidden from .time-picker -->
+        <button id="add-session-time-button" class="text-button hidden" type="button">
+            <img class="icon inactive" src="./images/prospective-left/add.svg" />
+            schedule session time
+        </button>
+        <!-- remove .hidden when #add-session-time-button clicked -->
+        <!-- remove 'disabled' when object has session-time -->
+            <!-- on click -->
+                <!-- add .hidden to .time.dropdown and #remove-session-time-button -->
+                <!-- add 'disabled' to #remove-session-time-button -->
+                <!-- delete session-time from session-log object -->
+        <button id="remove-session-time-button" class="remove-button hidden" type="button" disabled>
+            <img class="icon inactive" src="./images/prospective-left/x.svg" />
+            clear scheduled session 
+        </button>
+        <!-- sync #session-time-description and .time-picker -->
+        <!-- default .time-picker:range = 7am-12am (TODO LATER: can be changed in settings) -->
+        <div class="time dropdown hidden">
+            <div class="time-picker">
+                <!-- APPEND HOURS_LABEL FROM DAY_TEMPLATES -->
+                <!-- css grid: 60 rows per hour -->            
+                <!-- for each event with scheduled time, APPEND EVENT_BOX FROM DAY_TEMPLATES NEXT TO HOUR (.immobile)-->
+                <!-- for each scheduled task time, APPEND TASK_BOX FROM DAY_TEMPLATES NEXT TO HOUR (.immobile)-->
+                <!-- append task-box to default object session-time (12pm-1pm)-->
+            </div>
+        </div>
+        <!-- when session time passes -->
+            <!-- add current scheduled-session to session-log object -->
+        <!-- if task not complete -->
+            <!-- remove task-box from calendar -->
+            <!-- append session-box to calendar -->
+            <!-- update #edit-schedule-dropdown to reflect date only -->  
+            <!-- append new task-line to calendar -->
+        <!-- at the end of the day session is scheduled for, if task is not complete -->
+            <!-- change #edit-schedule-dropdown to next day  -->
+            <!-- move task-line to next day -->
+        <!-- remove .hidden if sessions-log object not empty -->
+        <div class="schedule-log container hidden">
+            <h3 class="log-title">
+                Session Log
+            </h3>
+            <!-- append #session-record here for each session in session-log object-->
+            <template id="session-record">
+                <!-- add task ID to beginning of input ID -->
+                <!-- add session number to end of input ID -->                 
+                <div class="record single-line">
+                    <input id="-session-date-" name="session-start" type="date" placeholder="date" />
+                    <input id="-session-time-start-" name="session-time-start" type="time" placeholder="0:00" />
+                    <span>
+                        -
+                    </span>
+                    <input id="-session-time-end-" name="session-time-end" type="time" placeholder="0:00" />
+                    <button id="clear-session-record-button-" type="button">
+                        <img class="clear icon" src="./images/prospective-left/x.svg" />
+                    </button>
+                </div>
+                <!-- APPEND YOU_SURE TEMPLATE ON CLEAR BUTTON CLICK -->
+            </template>
+        </div>
+    </div>
+</template>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+<template id="open-timer-template">
+    <!-- on click, append edit-timer-log template below button if timer-log for task not empty -->
+    <button id="timer-button" class="dropdown-button single-line" type="button">
+        <!-- on click or if timer=yes, remove .inactive -->
+        <img class="icon inactive" src="./images/prospective-left/todo-components/time-stopwatch.svg" />
+        <!-- remove .inactive if task-timer=yes -->
+        <!-- remove .hidden if timer-log for task not empty -->
+        <div class="description inactive single-line">
+            <!-- GET TIME_TRACKED from the task's time-log for value -->
+            <input id="timer-log-total" name="time-tracked" type="text" placeholder="0h 0m" readonly />
+            worked
+        </div>
+        <!-- remove .hidden if task-timer=no and timer-log is empty -->
+        <span class="description inactive hidden">
+            add timer
+        </span>
+    </button>
+</template>
+
+<template id="edit-timer-template">
+    <!-- when any dropdown-button clicked, toggle .hidden -->
+    <div class="timer dropdown">
+        <h3>
+            Worktime Log
+        </h3>
+        <!-- for each record in the task's time-log, append a time-record template -->
+        <template id="time-record">
+            <div class="time-record">
+                <!-- add task ID to beginning of input ID -->
+                <!-- add record number to end of input ID -->
+                <div class="single-line">
+                    <input id="-record-date-" name="record-date" type="date" placeholder="date" />
+                    <input id="-record-time-start-" name="record-time-start" type="time" placeholder="0:00" />
+                    <span>
+                        -
+                    </span>
+                    <input id="-record-time-end-" name="record-time-end" type="time" placeholder="0:00" />
+                    <button id="clear-record-button-" type="button">
+                        <img class="clear icon" src="./images/prospective-left/x.svg" />
+                    </button>
+                </div>
+                <!-- APPEND YOU_SURE TEMPLATE ON CLEAR BUTTON CLICK -->
+                <!-- .z-top: hover above other content, outside of document flow -->  
+            </div>
+        </template>
+    </div>
+    <!-- add .hidden if timer=no -->
+    <!-- task-timer=yes is default -->
+    <button id="remove-timer-button" class="remove-button" type="button">
+        remove task timer
+    </button>
+    <!-- remove .hidden if timer=no -->
+    <button id="add-timer-button" class="text-button hidden" type="button">
+        add task timer
+    </button>
+</template>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+<template id="open-event-date-template">
+    <!-- on click, append edit-event-date template below button -->
+    <button id="open-event-date-button" class="dropdown-button single-line" type="button">
+        <!-- on click or if object has event-date, remove .inactive -->
+        <img class="icon inactive" src="./images/prospective-left/todo-components/date.svg" />
+        <!-- on click (and object has no event-date), remove .inactive -->
+        <!-- if item object has event-date, add .hidden -->
+        <span class="inactive description">
+            schedule event
+        </span>
+        <!-- if event object has date, remove .hidden and populate #event-date-description -->
+        <div class="hidden inactive description">
+            <input id="event-date-description" class="description" type="text" value="" readonly />
+            <!-- when event object has time, remove .hidden and populate -->
+            <input id="event-time-description" class="description hidden" type="text" value="" readonly />
+            <!-- remove .hidden if event object has prep time -->
+            <div class="single-line hidden">
+                <span>
+                    prep time:
+                </span>
+                <input id="prep-time" name="prep-time" type="text" value="" readonly />
+            </div>
+            
+        </div> 
+    </button>
+</template>
+
+<template id="edit-event-date-template">
+    <!-- when any dropdown-button clicked, toggle .hidden -->
+    <div id="edit-event-date-dropdown">
+        <!-- sync #event-date-description and #edit-event-dropdown.date-picker -->
+        <!-- SCRIPT: get tomorrow's year/month/day -->
+            <!-- make default value of #event-date-description and .date-picker -->
+        <!-- as day is selected, show day in CALENDAR VIEW -->
+        <div class="date-picker">
+            <!-- POPULATE #date-picker template -->
+
+            <!-- remove .hidden when object has event-date -->
+            <!-- on click -->
+                <!-- add .hidden to #edit-event-dropdown and #remove-event-date-button (and #remove-event-time-button if applicable)-->
+                <!-- delete event-date (and event-time if applicable) from object -->
+            <button id="remove-event-date-button" class="remove-button" type="button">
+                <img class="icon inactive" src="./images/prospective-left/x.svg" />
+                clear event date
+            </button>
+        </div>
+        <!-- when object has event-date but no event-time, remove .hidden from #add-event-time-button -->
+        <!-- on click or if object has event-time, add .hidden -->
+            <!-- set default object event-time to first hour available -->
+            <!-- remove .hidden from .time-picker -->
+        <button id="set-event-time-button" class="button single-line" type="button">
+            set event time
+        </button> 
+        <!-- remove .hidden when #set-event-time-button clicked -->
+        <!-- remove 'disabled' when object has event time-->
+            <!-- on click -->
+                <!-- add .hidden to .time.dropdown and #remove-event-time-button -->
+                <!-- add 'disabled' to #remove-event-time-button -->
+                <!-- delete event-time from event object -->
+        <button id="remove-event-time-button" class="remove-button hidden" type="button" disabled>
+            <img class="icon inactive" src="./images/prospective-left/x.svg" />
+            clear event time 
+        </button>  
+        <!-- sync #event-time-description and .time-picker -->
+        <!-- default .time-picker:range = 7am-12am (TODO LATER: can be changed in settings) -->
+        <div class="time dropdown hidden">
+            <div class="time-picker">
+                <!-- APPEND HOURS_LABEL FROM DAY_TEMPLATES -->
+                <!-- css grid: 60 rows per hour -->            
+                <!-- for each event with scheduled time, APPEND EVENT_BOX FROM DAY_TEMPLATES NEXT TO HOUR (.immobile)-->
+                <!-- for each scheduled task time, APPEND TASK_BOX FROM DAY_TEMPLATES NEXT TO HOUR (.immobile)-->
+                <!-- append event-box to default object event-time (next available hour on the event-object date)-->
+            </div>
+        </div>       
+    </div>
+</template>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+<template id="open-recurring-template">
+    <button id="open-recurring-button" class="dropdown-button single-line" type="button">
+        <!-- on click or if object has recurrence, remove .inactive -->
+        <img class="icon inactive" src="./images/prospective-left/todo-components/recurring.svg" />
+        <!-- on click (and object has no recurrence), remove .inactive -->
+        <!-- if item object has recurrence, add .hidden -->
+        <span class="inactive description">
+            set recurrence
+        </span>
+        <!-- if todo object has recurrence, remove .hidden and populate -->
+        <div class="hidden single-line description">
+            <!-- remove hidden if task has recurrence -->
+            <span class="hidden">
+                repeats
+            </span>
+            <!-- SCRIPT: populate with combined and formatted values of recurring-dropdown inputs -->
+            <input id="recurring-description" type="text" value="" readonly />
+        </div>
+    </button>
+</template>
+
+<template id="edit-recurring-template">
+     <!-- when any dropdown-button clicked, toggle .hidden -->
+    <div class="recurring dropdown">
+        <!-- remove .inactive on click -->
+        <!-- when active, make corresponding dropdown ~hidden and other buttons .inactive -->
+        <div class="recurring options">
+            <button id="repeat-none-button" class="repeat-category" type="button">
+                none
+            </button>
+            <button id="repeat-daily-button" class="repeat-category inactive" type="button">
+                daily
+            </button>
+            <button id="repeat-weekly-button" class="repeat-category inactive" type="button">
+                weekly
+            </button>
+            <button id="repeat-monthly-button" class="repeat-category inactive" type="button">
+                monthly
+            </button>
+            <button id="repeat-yearly-button" class="repeat-category inactive" type="button">
+                yearly
+            </button>
+            <button id="repeat-specific-button" class="repeat-category inactive" type="button">
+                specific dates
+            </button>
+        </div>
+        <!-- when recurring-option:daily, remove .hidden -->
+        <div class="recurring daily dropdown hidden">
+            <!-- style-bubbles -->
+            <label for="every-day">
+                <input id="every-day" name="daily-options" value="every-day" type="radio" />
+                everyday
+            </label>
+            <label for="every-work-day">
+                <input id="every-work-day" name="daily-options" value="every-work-day" type="radio" />
+                every workday
+            </label>
+            <div class="single-line">
+                <label for="every-x-day">
+                    <input id="every-x-day" name="daily-options" value="every-x-day" type="radio" />
+                    every
+                </label>
+                <label for="x-day">
+                    <input id="x-day" name="x-day" value="2" min="2" placeholder="x" type="number" />
+                    days
+                </label>  
+            </div>
+            <!-- reveal if every-x-day selected and todo-type:task -->
+            <div class="single-line dropdown hidden">
+                <span>following </span>
+                <select id="recurring-following-options" name="recurring-following">
+                    <option value="task-scheduled-date" selected>the task schedule </option>
+                    <option value="task-completion">task completion </option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- when recurring-options:weekly button clicked, remove .hidden -->
+        <div class="recurring weekly dropdown hidden">
+            <label for="on-day-named">
+                <input id="no-day-named" name="weekly-options" value="each-day-named" type="radio" />
+                on
+            </label>  
+            <div class="single-line">
+                <label for="every-x-day-named">
+                    <input id="every-x-day-named" name="weekly-options" value="every-x-day-named" type="radio" />
+                    every
+                </label>
+                <label for="x-day-named">
+                    <input id="x-day-named" class="hidden" name="x-day-named" value="2" min="2" type="number" />
+                </label>
+            </div>
+            <!-- APPEND TEMPLATE-DAY-NAMES -->
+            <template id="template-day-names">
+                <div class="select-day-names">
+                    <!-- add 'checked' attribute for the day-name of the item date (deadline if available) -->
+                    <!-- can select multiple -->
+                    <label for="monday">
+                        <input id="monday" name="day-name-options" value="monday" type="checkbox" />
+                        Mon
+                    </label>
+                    <label for="tuesday">
+                        <input id="tuesday" name="day-name-options" value="tuesday" type="checkbox" />
+                        Tue
+                    </label>
+                    <label for="wednesday">
+                        <input id="wednesday" name="day-name-options" value="wednesday" type="checkbox" />
+                        Wed
+                    </label>
+                    <label for="thursday">
+                        <input id="thursday" name="day-name-options" value="thursday" type="checkbox" />
+                        Thu
+                    </label>
+                    <label for="friday">
+                        <input id="friday" name="day-name-options" value="friday" type="checkbox" />
+                        Fr
+                    </label>
+                    <label for="saturday">
+                        <input id="saturday" name="day-name-options" value="saturday" type="checkbox" />
+                        Sat
+                    </label>
+                    <label for="sunday">
+                        <input id="sunday" name="day-name-options" value="sunday" type="checkbox" />
+                        Sun
+                    </label>
+                </div> 
+            </template>   
+        </div>
+
+        <!-- SCRIPT: ~hidden if recurring-options:monthly selected -->
+        <div class="recurring monthly dropdown hidden">
+            <label for="each-day-number" class="single-line">
+                <input id="each-day-number" name="monthly-options" value="on-day-number" type="radio" />
+                each                      
+            </label>
+            <label for="on-the-x-day-named" class="single-line">
+                <input id="on-the-x-day-named" name="monthly-options" value="every-day-named" type="radio" />
+                on the                    
+            </label>
+            <!-- reveal if on-day-number selected -->
+            <div class="date-numbers">
+                <!-- POPULATE with CSS grid -->
+                <!-- default: item date number (due date if available) selected -->
+                <!-- can select multiple -->
+            </div>
+            <!-- reveal if on-the-x-day-named selected -->
+            <div class="on-the-x-day-named dropdown hidden">
+                <div class="on-the-x">
+                    <label for="first-day-named">
+                        <input id="first-day-named" name="first-day-named" value="first" type="checkbox" />
+                        first
+                    </label>
+                    <label for="second-day-named">
+                        <input id="second-day-named" name="second-day-named" value="second" type="checkbox" />
+                        second
+                    </label>
+                    <label for="third-day-named">
+                        <input id="third-day-named" name="third-day-named" value="third" type="checkbox" />
+                        third
+                    </label>
+                    <label for="fourth-day-named">
+                        <input id="fourth-day-named" name="fourth-day-named" value="fourth" type="checkbox" />
+                        fourth
+                    </label>
+                    <label for="last-day-named">
+                        <input id="last-day-named" name="last-day-named" value="last" type="checkbox" />
+                        last
+                    </label>      
+                </div>
+                <div class="day-named">
+                    <!-- APPEND TEMPLATE-DAY-NAMES -->
+                </div>
+                <p class="description">of the month</p>
+            </div>
+        </div>
+        <!-- SCRIPT: ~hidden if recurring-options:yearly selected -->
+        <div class="date-picker recurring yearly dropdown hidden">
+            <!-- POPULATE #date-picker template -->
+            <!-- get item:date's year/month and set as calendar's year/month. add item-date to calendar -->
+            <!-- as recurring is set, highlight affected day(s) -->
+                <!-- will be repeated annually -->
+        </div>      
+        <!-- SCRIPT: ~hidden if recurring-options:specific-dates selected -->
+        <div class="date-picker recurring custom dropdown hidden">
+            <!-- POPULATE #date-picker template -->
+            <!-- get item:date's year/month and set as calendar's year/month. add item-date to calendar -->
+            <!-- as recurring is set, highlight affected days -->
+                <!-- will not be repeated -->
+        </div>        
+    </div>
+</template>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+<template id="open-reminder-template">
+    <button id="open-reminder-button" class="dropdown-button single-line" type="button">
+        <!-- on click or if object has reminder, remove .inactive -->
+        <img class="icon inactive" src="./images/prospective-left/todo-components/reminder.svg" />
+        <!-- on click (and object has no due-date), remove .inactive -->
+        <!-- if item object has due-date, add .hidden -->
+        <span class="inactive">
+            add reminder
+        </span>
+        <!-- on click or if todo object has reminder, remove .hidden -->
+        <label for="reminder-description" class="hidden">
+            remind at
+            <!-- SCRIPT: GET REMINDER FROM TODO OBJECT -->
+            <input id="reminder-description" type="text" value="" readonly />
+        </label>
+    </button>
+</template>
+
+<template id="edit-reminder-template">
+     <!-- when any dropdown-button clicked, toggle .hidden -->
+    <div class="reminder dropdown">
+        <!-- when input selected, remove .inactive -->
+        <label for="day-of" class="inactive" >
+            <input id="day-of" name="reminder-options" value="day-of" type="radio" />
+            the day of:
+        </label>
+        <label for="day-before" class="inactive" >
+            <input id="day-before" name="reminder-options" value="day-before" type="radio" />
+            the day before: 
+        </label>  
+        <label for="week-before" class="inactive" >
+            <input id="week-before" name="reminder-options" value="week-before" type="radio" />
+            a week before: 
+        </label>  
+        <!-- reveal if "the day of" selected  -->
+        <div class="dropdown day-of description hidden">
+            <label for="reminder-hours">
+                <input id="reminder-hours" name="reminder-hours" type="number" value="0" />
+                hours
+            </label>
+            <label for="reminder-minutes">
+                <input id="reminder-minutes" name="reminder-minutes" step="5" type="number" value="15" />
+                minutes
+            </label>
+            <span>
+                before
+            </span>
+        </div>
+        <!-- reveal if "the-day-before" or "week-before" selected -->
+        <div class="dropdown day-before description hidden">
+            <label for="reminder-time">
+                at
+                <input id="reminder-time" name="reminder-time" type="time" value="" />
+            </label>
+        </div>
+    </div>
+</template>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+<template id="open-new-location-template">
+    <button id="new-location-button" class="single-line" type="button">
+        <!-- on click (and object has no location) remove .inactive -->
+        <div class="single-line inactive">
+            <img class="icon inactive" src="./images/prospective-left/todo-components/location.svg" />
+            <span>
+                add location, link, or call
+            </span>
+        </div>
+    </button>
+</template>
+
+<template id="open-physical-location-template">
+    <div class="physical location single-line">
+        <div class="left">
+            <button id="go-to-map-button"  type="button">
+                <div class="single-line">
+                    <img class="icon" src="./images/prospective-left/todo-components/map.svg" />
+                    <input id="location-physical-description" name="location-physical" type="text" value="" readonly />
+                </div>
+                <!-- remove .hidden if room -->
+                <input id="location-room-description" name="location-room" class="hidden" type="text" value="" readonly />
+                <!-- remove .hidden if travel time -->
+                <div class="single-line description hidden">
+                    <input id="travel-time-description" type="text" value="" readonly />
+                    <span>
+                        mins away
+                    </span>
+                </div>
+        </div>
+        <!-- remove .hidden on hover of .virtual.location -->
+        <button id="edit-physical-location-button" class="right hidden" type="button" >
+            <img class="minicon" src="./images/prospective-left/list-dropdown/edit.svg" />
+        </button>
+    </div>
+</template>
+
+<template id="open-virtual-location-template">
+    <div class="virtual location single-line">
+        <div class="left">
+            <button id="go-to-video-button" type="button">
+                <img class="icon" src="./images/prospective-left/todo-components/video.svg" />
+                <span class="description">
+                    go to video
+                </span>
+            </button>
+            <!-- remove .hidden if password -->
+            <button id="copy-location-code-button" class="hidden" type="button">
+                <img class="icon" src="./images/prospective-left/todo-components/password.svg" />
+                <span class="description">
+                    copy code
+                </span>
+            </button>
+        </div>
+        <!-- remove .hidden on hover of .virtual.location -->
+        <button id="edit-virtual-location-button" class="right hidden" type="button" >
+            <img class="minicon" src="./images/prospective-left/list-dropdown/edit.svg" />
+        </button>
+    </div>
+</template>
+
+<template id="edit-location-template">
+    <!-- do not hide -->
+    <div class="">
+        <label for="type-in-person">
+            <input id="type-in-person" name="location-type" type="radio" />
+            in-person event
+        </label>
+        <label for="type-virtual">
+            <input id="type-virtual" name="location-type" type="radio" />
+            virtual event
+        </label>
+    </div>
+    <!-- remove .hidden if #type-in-person selected -->
+    <div id="in-person-dropdown" class="hidden">
+        <label for="location-physical">
+            address
+            <input id="location-physical" name="location-physical" type="address" value="" />
+        </label>
+        <label for="location-room">
+            room
+            <input id="location-room" name="location-room" type="text" value="" />
+        </label>
+        <!-- remove .hidden when address selected -->
+        <div id="travel-time-dropdown" class="hidden">
+            <label for="no-travel-time-option">
+                <input id="no-travel-time-option" name="travel-time-type" type="radio" checked />
+                no travel time
+            </label>
+            <label for="from-current-location-option" class="single-line">
+                <input id="from-current-location-option" name="travel-time-type" type="radio" />
+                <span class="description">
+                    from current location (
+                </span>
+                <input id="time-from-current-location" type="text" readonly />
+                <span class="description">
+                    mins)
+                </span>
+            </label>
+            <div class="single-line">
+                <label for="custom-travel-time-option">
+                    <input id="custom-travel-time-option" name="travel-time-type" type="radio" />
+                    custom travel time:
+                </label>       
+                <label for="custom-travel-time-input" >
+                    <input id="custom-travel-time-input" name="custom-travel-time-input" type="number"/>
+                    mins
+                </div>
+            </div>     
+        </div>
+    </div>
+    <!-- remove .hidden if #type-virtual selected -->
+    <div id="virtual-dropdown" class="hidden">
+        <label for="location-virtual">
+            link
+            <input id="location-virtual" name="location-virtual" type="url" value="" />
+        </label>
+        <label for="location-code">
+            password
+            <input id="location-code" name="location-code" type="text" value="" />
+        </label>
+    </div>
+</template>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+<template id="open-list-template">
+    <button id="list-button" class="single-line" type="button">
+        <!-- if object has list, remove .inactive -->
+        <img class="icon inactive" src="./images/prospective-left/todo-components/change-list.svg" />
+        <!-- on click (but no list) remove .inactive -->
+        <!-- if object has list, add .hidden -->
+        <span class="descrption inactive">
+            add to list
+        </span>
+        <!-- if object has list, remove .hidden -->
+        <input id="list-name" type="text" class="hidden" value="none" readonly />
+    </button>
+</template>
+
+<template id="edit-list-template">
+    <div class='list-selection dropdown'>
+        <!-- SCRIPT: on click of open-list, get names of lists/sub-lists from list object for radio options -->
+        <!-- include "No List" as option -->
+        <!-- current list selected by default -->
+    </div>
+</template>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+<template id="bottom-edit-options-template">
+    <div class="single-line">
+        <div class="left">
+            <button id="all-options-button" type="button">
+                <img class="bottom icon" src="./images/prospective-left/todo-components/all-options.svg" />
+            </button>
+            <button id="duplicate-button" type="button">
+                <img class="bottom icon" src="./images/prospective-left/todo-components/duplicate.svg" />
+            </button>
+        </div>
+        <div class="right">
+            <button id="revert-button" type="button">
+                <img class="bottom icon" src="./images/prospective-left/revert.svg" />
+            </button>
+            <button id="delete-button" type="button">
+                <img class="bottom icon" src="./images/prospective-left/list-dropdown/delete.svg" />
+            </button>
+        </div>
+    </div> 
+</template>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+<template id="you-sure-template">
+    <!-- when appended, disables all else -->
+    <div class="confirm z-top">
+        this is permanent. continue?
+        <button id="do-delete-button" type="button">
+            Yes
+        </button>
+        <button id="dont-delete-button" type="button">
+            No
+        </button>
+    </div>
+</template>

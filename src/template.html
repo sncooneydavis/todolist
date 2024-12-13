@@ -8,9 +8,48 @@
 		<!-- preload fonts here -->
 		<!-- <link rel="preconnect" href="LINK_TO_FONT">  
 		<link rel="preconnect" href="LINK_TO_FONT" crossorigin> -->
-		<title>SOME TITLE</title>
+		<title>2*did</title>
 	</head>
 	<body>
-		<div id="content">Hi</div>
+		<div class="main container">
+			<div id="left-pane">
+				<div id="utility-toolbar">
+					<!-- APPEND UTILITY BAR TEMPLATE FROM LIST_VIEW, TODO_VIEW, HABIT_VIEW, VARIABLE_VIEW, OR TEMPLATE_VIEW TEMPLATES -->
+				</div>
+				<div id="item-pane">
+					<!-- APPEND ITEMS FROM LIST_VIEW, TODO_VIEW, HABIT_VIEW, VARIABLE_VIEW, OR TEMPLATE_VIEW TEMPLATES  -->
+				</div>
+			</div>
+			<div class="dragbar">
+				<div class="solid-line">
+					<!-- style line -->
+				</div>
+				<button id="list-view-button" type="button">
+					<img class="bigicon" src="./assets/images/prospective-left/toolbars/drag-view-default.svg" />
+				</button>
+				<!-- on click, toggle .inactive on option's icon-->
+				<div id="dragbar-view-toolbar">
+					<!-- APPEND FROM *_VIEW DRAGBAR TEMPLATES -->
+				</div>
+				<!-- toggle .inactive depending on current view -->
+				<div class="vertical toolbar">
+					<button id="habit-view-button" type="button">
+						<img class="bigicon inactive" src="./assets/images/prospective-left/variable-components/habit.svg" />
+					</button>
+					<button id="measurement-view-button" type="button">
+						<img class="bigicon inactive" src="./assets/images/prospective-left/toolbars/drag-view-data.svg" />
+					</button>
+					<button id="todo-view-button" type="button">
+						<img class="bigicon inactive" src="./assets/images/prospective-left/toolbars/drag-view-todo.svg" />
+					</button>
+				</div>
+				<button id="settings-view-button" type="button">
+					<img class="bigicon inactive" src="./assets/images/prospective-left/toolbars/drag-bottom-settings.svg" />
+				</button>
+			</div>
+			<div class="right panel">
+				<!-- APPEND RIGHT PANEL FROM *_VIEW_TEMPLATES -->
+			</div>
+		</div>
 	</body>
 </html>

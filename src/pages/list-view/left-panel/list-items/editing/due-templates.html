@@ -1,0 +1,54 @@
+<template id="open-due-template">
+    <!-- on click, append edit-due template below button -->
+    <button id="open-due-button" class="dropdown-button single-line" type="button">
+        <!-- on click or if object has due-date, remove .inactive -->
+        <img class="icon inactive" src="./images/prospective-left/todo-components/due-date.svg" />
+        <!-- on click (and object has no due-date), remove .inactive -->
+        <!-- add .hidden if item object has deadline -->
+        <span class="inactive description">
+            set deadline
+        </span>
+        <!-- when object has due-date AND due-time, remove .hidden and populate BOTH -->
+        <div class="description hidden single-line">
+            <span>
+                due
+            </span>
+            <input id="due-date-description" type="text" value="" readonly />
+            <input id="due-time-description" type="text" value="" readonly />
+        </div>               
+    </button>
+</template>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+<template id="edit-due-template">
+    <!-- when any dropdown-button clicked, toggle .hidden -->
+    <!-- both date and time are required -->
+    <div id="edit-due-dropdown">
+        <!-- sync #due-date/time-description and .date-picker -->
+        <!-- SCRIPT: get end of week date -->
+            <!-- make default value of #due-date-description and .date-picker -->
+            <!-- TODO LATER: change default date in settings -->
+        <div class="date-picker">
+            <!-- POPULATE date-picker-template -->
+        </div>
+        <!-- sync #due-time-description and .time-picker -->
+        <!-- default .time-picker -->
+            <!-- :range = 7am-12am (TODO LATER: can be changed in settings) -->
+        <div class="time-picker">
+            <!-- APPEND HOURS_LABEL FROM DAY_TEMPLATES -->
+            <!-- css grid: 60 rows per hour -->            
+            <!-- for each event with scheduled time, APPEND EVENT_BOX FROM DAY_TEMPLATES NEXT TO HOUR (.immobile)-->
+            <!-- for each scheduled task time, APPEND TASK_BOX FROM DAY_TEMPLATES NEXT TO HOUR (.immobile)-->
+            <!-- append due-line for default object deadline-time (5pm)-->
+        </div>
+        <!-- remove .hidden when object has due-date/time -->
+        <!-- on click -->
+            <!-- add .hidden to edit-due.dropdown and #remove-due-date-button -->
+            <!-- delete due-date and due-time from object -->
+        <button id="remove-due-date-button" class="remove-button" type="button">
+            <img class="icon inactive" src="./images/prospective-left/x.svg" />
+            clear deadline
+        </button>
+    </div>
+</template>

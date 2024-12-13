@@ -1,0 +1,89 @@
+<template id="utility-bar">
+    <div class="single-line">	
+        <!-- search patterns: -->
+            <!-- /list/sublist/item -->
+            <!-- !priority -->
+            <!-- datetime: today, tomorrow, this week, next week... -->
+        <input id="utility-input" name="utility-input" type="text" />
+        <!-- start with search, focus on first search item returned -->
+        <img class="utility icon right hidden" src="./assets/images/prospective-left/toolbars/utility-bar-search.svg" />
+        <!-- if query starts with #, @, !/!!/!!!, or datetime, or only matches one tag, person, priority, or datetime: -->
+             <!-- toggle icon to filter -->
+            <!-- in search-results: "filter by ?(query)" -->
+            <!-- on click/*ENTER*, populate todo pane in date descending order -->
+        <!-- if query starts with & and matches a template name: -->
+            <!-- give options to... -->
+                 <!-- filter by template -->
+                <!-- add new template instance -->
+        <img class="utility icon right hidden" src="./assets/images/prospective-left/toolbars/utility-bar-filter.svg" />						
+        <!-- if query matches a non-template item: -->
+             <!-- on focus, toggle add icon-->
+             <!-- on click/*ENTER*: -->
+                <!-- set list view (all collapsed, unless list is in query) -->
+                <!-- focus on item in task-pane and calendar-pane (next instance if repeating) --> 
+        <!-- if no search match exists: -->
+             <!-- toggle add icon -->
+             <!-- search results: -->
+                <!-- "add (query) as task"  -->
+                <!-- "add (query) as event" -->
+                <!-- "add (query) as habit" -->
+                <!-- "add (query) as variable" -->
+            <!-- on *ENTER*/click of item-option: -->
+                <!-- set list view as all collapsed, unless list is in query -->
+                <!-- create new item object with unique ID and save utility-input text as item title -->
+                <!-- RENDER *_TEMPLATE and EDIT_*_TEMPLATE -->
+        <img class="utility icon right" src="./assets/images/prospective-left/add.svg" />
+    </div>
+    <button id="change-order-button" type="button">
+        <img class="icon" src="./assets/images/prospective-left/toolbars/a-order.svg" />
+    </button>
+    <!-- remove .hidden when change-order-button clicked -->
+    <div class="dropdown hidden">
+        <ul>
+            <li>
+                <label for="order-by-date">
+                    <input id="order-by-date" name="order-by" type="radio" />
+                    Date
+                </label>
+            </li>
+            <li>
+                <label for="order-by-list">
+                    <input id="order-by-list" name="order-by" type="radio" />
+                    List
+                </label>
+            </li>
+            <li>
+                <label for="order-by-name">
+                    <input id="order-by-name" name="order-by" type="radio" />
+                    Name
+                </label>
+            </li>
+            <li>
+                <label for="order-by-age">
+                    <input id="order-by-age" name="order-by" type="radio" />
+                    Age
+                </label>
+            </li>
+        </ul>
+    </div>
+</template>
+
+<template id="view-lists">
+    <!-- APPEND LIST-LESS ITEMS HERE -->
+    <!-- APPEND LISTS HERE -->
+    <div class="single-line"> <!-- NEW LIST -->
+        <input id="new-list-input" name="new-list-input" class="list input" placeholder="+ list" type="text"  />
+        <div class="right-justify">
+            <button id="add-list-button" type="button">
+                <img class="line icon" src="./assets/images/prospective-left/save.svg" />
+            </button>
+            <button id="clear-list-button" type="button">
+                <img class="line icon" src="./assets/images/prospective-left/x.svg" />
+            </button>
+        </div>
+    <!-- on *ENTER* APPEND THE NEW LIST ABOVE new-list-input -->
+    </div>
+</template>
+
+
+
