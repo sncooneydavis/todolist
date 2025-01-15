@@ -1,0 +1,90 @@
+<template id="add-start-template">
+    <!-- on click -->
+        <!-- append /editing/#start-template -->
+        <!-- add .hidden to other .edit-*-dropdown's -->
+    <div class="open-start single-line">
+        <button class="open-edit-button" type="button">
+            <!-- on click or if object has start-date, remove .inactive -->
+            <img class="icon inactive single-line" src="./assets/images/prospective-left/todo-components/date.svg" />
+            <!-- on click (and object has no start-date), remove .inactive -->
+            <!-- if task object has start-date, add .hidden -->
+            <span class="inactive description">
+                schedule task
+            </span>
+            <!-- if task object has start-date, remove .hidden -->
+            <div class="hidden description">
+                <!-- format -->
+                    <!-- start date_here: start date set in future -->
+                    <!-- started date_here: start date set in past -->
+                    <!-- date_here: no deadline date -->
+                <input class="start-date description" type="text" value="" readonly />
+                <!-- if task object has start-time, ~hidden and populate -->
+                <input class="start-time description hidden" type="text" value="" readonly />
+            </div> 
+        </button>
+        <!-- remove .hidden on hover or if .edit-start.dropdown is not .hidden, assuming task has start time -->
+        <!-- on click -->
+            <!-- add .hidden .clear-start-button and .edit-start.dropdown -->
+            <!-- remove .hidden from <span>.description -->
+            <!-- delete deadline-date and deadline-time from object -->
+        <button class="clear-start-button hidden">
+            <img class="icon inactive" src="./assets/images/prospective-left/x.svg" />
+        </button>
+    </div>
+</template>
+
+<template id="edit-start-template">
+    <div class="edit-start dropdown">
+        <!-- sync .start-date.description and .date-picker -->
+        <!-- SCRIPT: get tomorrow's year/month/day -->
+            <!-- make default value of #start-date-description and .date-picker -->
+        <!-- as day is selected, show day in CALENDAR VIEW -->
+        <div class="date-picker">
+            <!-- append #date-picker-template -->
+            <!-- when selected, show day in calendar:week view -->
+            <!-- sync .start-date .description and .date-picker -->
+        </div>
+        <!-- when object has start-date but no start-time, remove .hidden from .add-start-time-button -->
+            <!-- on click or if object has start-time, add .hidden -->
+            <!-- on click -->
+                <!-- remove .hidden from .clear-start-button -->
+                <!-- set default object start-time to 12pm-1pm -->
+                <!-- remove .hidden from .time-picker -->
+        <button class="add-start-time-button single-line hidden" type="button">
+            <img class="icon inactive" src="./assets/images/prospective-left/add.svg" />
+            add start time
+        </button>
+        <!-- sync .start-time .description and .time-picker -->
+        <!-- default .time-picker:range = 7am-12am (TODO LATER: can be changed in settings) -->
+        <div class="time-picker hidden">
+            <!-- append time-picker-template -->
+            <!-- when selected, populate calendar -->
+        </div>
+        <!-- on *enter, if date, add .hidden to .edit-start.dropdown and save to object -->
+    </div>
+</template>
+
+
+<template id="edit-due-template">
+    <!-- if NO next-session, make next-session default value 5 workdays before due date (no start time) -->
+    <!-- if due-time passed without task being completed -->
+        <!-- task:status=overdue -->
+        <!-- change calendar due-line to overdue-line -->
+    <div class="edit-due dropdown hidden">
+        <!-- sync .due-date/time-description and .date-picker/.time-picker -->
+        <div class="date-picker">
+            <!-- POPULATE date-picker-template -->
+            <!-- if task has start-date, make default due value the last day of that week -->
+            <!-- on selection, show day in calendar:week -->
+        </div>
+        <!-- sync #due-time-description and .time-picker -->
+        <!-- default .time-picker -->
+            <!-- :range = 7am-12am (TODO LATER: can be changed in settings) -->
+        <div class="time-picker">
+            <!-- append time-picker-template -->
+            <!-- when selected, populate calendar -->
+            <!-- default value: 5:00pm -->
+        </div>
+        <!-- on *enter, if date, add .hidden to .edit-due.dropdown and save to object -->
+    </div>
+</template>

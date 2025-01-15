@@ -1,0 +1,104 @@
+
+<!-- when session checked complete -->
+    <!-- add session to task object:completed -->
+<!-- if session time has passed on the same date it was scheduled and session is not completed -->
+    <!-- session object:status=overdue -->
+<!-- at the end of the day session is scheduled for, if session is not complete -->
+    <!-- delete session (object and calendar) -->
+    <!-- if task has start-time, change .next-session to next day at that time -->
+    <!-- move task-line to next day in home view-->
+<template id="sessions-template">
+    <div class="edit-sessions dropdown">
+        <div class="upcoming">
+            <div class="single-line">
+                <h4>Upcoming Sessions</h4>
+                <!-- on click, remove .hidden from .add-new-session and disable this -->
+                <button class="add-button" type="button">
+                    <img class="icon inactive" src="./assets/images/prospective-left/add.svg" />
+                </button>
+            </div>
+            <div class="container">
+                <!-- append #session's here -->
+                <!-- order newest to oldest (closest to today) -->
+                <!-- scroll view to end -->
+                <div class="add-new-session single-line hidden">
+                    <div class="date-picker">
+                        <!-- append #date-picker-template -->
+                        <!-- default: day closest to today that is still within the start-due range -->
+                        <!-- only allow selection of range from start date to due date -->
+                        <!-- when selected, show day in calendar:week view -->
+                    </div>
+                    <div class="time-picker hidden">
+                        <!-- append #time-picker-template -->
+                        <!-- when selected, populate calendar -->
+                    </div>
+                        <!-- on click or *ENTER, save new session to task object -->
+                    <button class="save-button active" type="button">
+                        <img class="icon" src="./assets/images/prospective-left/save.svg" />
+                    </button>
+                    <!-- on click, delete session -->
+                    <button class="delete-button" type="button">
+                        <img class="icon" src="./assets/images/prospective-left/x.svg" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="completed">
+            <div class="single-line">
+                <h4>Completed Sessions</h4>
+                <!-- on click, remove .hidden from .add-new-session and disable this -->
+                <button class="add-button" type="button">
+                    <img class="icon inactive" src="./assets/images/prospective-left/add.svg" />
+                </button>
+            </div>
+            <div class="container">
+                <div class="add-new-session single-line hidden">
+                    <div class="date-picker">
+                        <!-- append #date-picker-template -->
+                        <!-- default: day closest to today that is still within the start-due range -->
+                        <!-- only allow selection of range from start date to due date -->
+                        <!-- when selected, show day in calendar:week view -->
+                    </div>
+                    <div class="time-picker hidden">
+                        <!-- append #time-picker-template -->
+                        <!-- when selected, populate calendar -->
+                    </div>
+                        <!-- on click or *ENTER, save new session to task object -->
+                    <button class="save-button active" type="button">
+                        <img class="icon" src="./assets/images/prospective-left/save.svg" />
+                    </button>
+                    <!-- on click, delete session -->
+                    <button class="delete-button" type="button">
+                        <img class="icon" src="./assets/images/prospective-left/x.svg" />
+                    </button>
+                </div>
+                <!-- append #session's here -->
+                <!-- order newest (closest to today) to oldest -->
+            </div>   
+        </div>
+    </div>
+</template>
+
+<template id="session-template">
+    <!-- input id -->
+    <div data-logged-time-id="" class="session">
+        <div class="single-line">
+            <!-- calculate from other inputs -->
+            <input class="session-time" type="text" placeholder="HH:MM" readonly />
+            <!-- in format -->
+                <!-- if this year: Month ## -->
+                <!-- if prior years: ##/##/## -->
+            <input class="session-upcoming session" type="text" placeholder="date" />
+            <input class="session-start-time" type="text" placeholder="0:00" />
+            <span>-</span>
+            <!-- remove hidden if past start date -->
+            <input class="session-end-date hidden" type="text" placeholder="date" />
+            <input class="session-end-time" type="text" placeholder="0:00" />
+            <!-- remove .hidden on hover -->
+            <!-- on click, delete session -->
+            <button class="delete-session-button hidden" type="button">
+                <img class="icon" src="./assets/images/prospective-left/x.svg" />
+            </button>
+        </div>
+    </div>
+</template>

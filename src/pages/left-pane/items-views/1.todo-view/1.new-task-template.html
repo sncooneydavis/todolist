@@ -1,0 +1,138 @@
+<template id="new-task-template">
+    <!-- script: populate data-item-id with item # -->
+    <!-- background is lightest color of list -->
+    <div data-item-id="" data-item-type="task" class="task container">
+        <div class="task-bar">
+            <input class="checkbox" type="checkbox" disabled />
+            <input class="editable-title" type="text" value="TASK_TITLE" placeholder="add task" />
+        </div>  
+        <!-- when editing, on click of .collapse-task-details-button or anywhere off task -->
+                <!-- if deadline or schedule set -->
+                    <!-- save values to task object -->
+                    <!-- add .hidden to .collapse-task-details-button -->
+                    <!-- remove .hidden from .task-details-off -->
+                    <!-- add .hidden to .task-schedule-dropdown and .task-details.dropdown -->
+                <!-- else -->
+                    <!-- replace this template with #new-task-template and collapse both .dropdowns -->
+                    <!-- save values to task object -->
+        <div class="add-details single-line">
+            <!-- if checklist/notes contain items, add .hidden to .add-*-button -->
+            <!-- if checklist/notes empty, remove .hidden from .add-*-button -->
+            <!-- on click -->
+                <!-- remove .inactive to .add-*-button -->
+                <!-- remove .hidden from corresponding container -->   
+                <!-- focus first item -->
+            <button class="add-checklist-button" class="" type="button">
+                <img class="icon" src="./assets/images/prospective-left/list-dropdown/add-task.svg" />
+            </button>
+            <button class="add-notes-button" class="" type="button">
+                <img class="icon" src="./assets/images/prospective-left/todo-components/note.svg" />
+            </button>
+            <!-- TODO: build out attachment module -->
+            <button class="add-attachment-button" class="" type="button">
+                <img class="icon" src="./assets/images/prospective-left/todo-components/location-out.svg" />
+            </button>
+        </div>
+        <div class="task-details dropdown">
+            <!-- when editing, on click of anywhere off task -->
+                <!-- if due or schedule set -->
+                    <!-- save values to task object -->
+                    <!-- replace this template with #old-task-template -->
+                <!-- else -->
+                    <!-- save values to task object -->
+                    <!-- add .hidden to .task-schedule.dropdown and .task-details.dropdown -->
+            <div class="checklist container hidden">
+                <!-- APPEND SUBTASK_TEMPLATEs here -->
+                <input type="text" class="search-bar" placeholder="add checklist item" />
+            </div>
+                <!-- if empty, rows="1" -->
+                <!-- if not empty, rows= as many as needed to fit text -->
+            <textarea class="notes container hidden" placeholder="add notes"></textarea>
+            <div class="attachment container">
+                <!-- append attachment templates here -->
+            </div>
+        </div>
+        <div class="task-schedule dropdown"> 
+            <div class="open-initial-datetime single-line">
+                <button class="open-initial-datetime-button" type="button">
+                    <!-- on click or if object has initial-datetime, remove .inactive -->
+                    <img class="icon inactive single-line" src="./assets/images/prospective-left/todo-components/date.svg" />
+                    <!-- on click (and object has no initial-datetime), remove .inactive -->
+                    <!-- if task object has initial-datetime, add .hidden -->
+                    <span class="inactive description">
+                        schedule task
+                    </span>
+                    <!-- if task object has initial-datetime-type, remove .hidden -->
+                        <!-- if 'workday': "start MM/DD" -->
+                    <input class="initial-datetime description hidden" type="text" value="" readonly />
+                </button>
+                <!-- remove .hidden on hover, assuming task has start time -->
+                <!-- on click -->
+                    <!-- clear initial-datetime, initial-datetime-type, start-date, reminders, repeat from task object -->
+                    <!-- append #new-task-template with task name and details -->
+                <button class="clear-initial-datetime-button hidden">
+                    <img class="icon inactive" src="./assets/images/prospective-left/x.svg" />
+                </button>
+            </div>
+            <div class="open-due single-line">
+                <!-- on click append /editing/#task-date-template -->
+                <button class="open-due-button single-line" type="button">
+                    <!-- on hover, remove .inactive -->
+                    <img class="icon inactive" src="./assets/images/prospective-left/todo-components/due-date.svg" />
+                    <!-- on hover, remove .inactive -->
+                    <!-- add .hidden once item object has deadline -->
+                    <span class="inactive description">
+                        set deadline
+                    </span>
+                    <!-- when object has due-date AND due-time, remove .hidden and populate BOTH -->
+                    <div class="description hidden single-line">
+                        <span>
+                            due
+                        </span>
+                        <input class="due-date description" type="text" value="" readonly />
+                        <input class="due-time description" type="text" value="" readonly />
+                    </div>               
+                </button>
+                <!-- remove .hidden on hover or if .edit-due.dropdown is not .hidden, assuming task has due -->
+                <!-- on click -->
+                    <!-- add .hidden to edit-due.dropdown and .clear-due-button -->
+                    <!-- remove .hidden from <span>.description -->
+                    <!-- delete due-date and due-time from object -->
+                <button class="clear-due-button hidden">
+                    <img class="icon inactive" src="./assets/images/prospective-left/x.svg" />
+                </button>
+            </div>  
+            
+            <div class="open-start single-line">
+                
+            </div>
+            <!-- on click -->
+                <!-- append /editing/#sessions-template -->
+                <!-- add .hidden to other .edit-*.dropdown's -->
+            <div class="open-sessions single-line">
+                <button class="open-edit-button" type="button">
+                    <!-- on click or if object has upcoming session, remove .inactive -->
+                    <img class="icon inactive single-line" src="./assets/images/prospective-left/todo-components/time-set.svg" />
+                    <!-- if task object has no upcoming session, remove .hidden -->
+                        <!-- on click remove .inactive -->
+                    <span class="inactive hidden description">
+                        schedule task session
+                    </span>
+                    <!-- if task object has upcoming session, remove .hidden -->
+                    <div class="next-session description hidden">
+                        <span>next session:  </span>
+                        <input class="date" type="text" value="" readonly />
+                        <!-- if task object has start-time, ~hidden and populate -->
+                        <input class="time" type="text" value="" readonly />
+                    </div> 
+                </button>
+            </div>
+            
+            <!-- TODO: REMINDERS -->
+            <!-- TODO: RECURRING -->
+            <div class="bottom-section">
+                <!-- append #bottom-template -->
+            </div>
+        </div>  
+    </div>
+</template>

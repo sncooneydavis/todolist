@@ -1,0 +1,79 @@
+<template id="open-initial-datetime-template">
+    <!-- on click remove .hidden from .-->
+        <!-- append #edit-initial-datetime-template -->
+        <!-- add .hidden to other .edit-*-dropdown's -->
+    
+</template>
+
+<template id="edit-initial-datetime-template">
+    <div class="edit-initial-datetime dropdown">
+        <!-- SCRIPT: get tomorrow's year/month/day and make default value of .date-picker -->
+        <div class="date-picker">
+            <!-- append #date-picker-component -->
+            <!-- default: tomorrow -->
+            <!-- when selected, show day in calendar:week view -->
+        </div>
+        <div class="initial-datetime-type">
+            <label>
+                <input class="workday" type="radio" name="date-type" />workday
+            </label>
+            <label>
+                <input class="deadline" type="radio" name="date-type" />deadline
+            </label>
+        </div>
+        <!-- when .initial-datetime-type selected -->
+            <!-- if .workday selected -->
+                <!-- append... -->
+                    <!-- #open-timeblock-template -->
+                    <!-- #open-due-template -->
+                <!--  -->
+            <!-- if .deadline selected -->
+                <!-- append... -->
+                    <!-- #open-start-template -->
+                    <!-- #open-timeblock-template -->
+                <!-- remove .hidden from .time-picker -->
+        <div class="time-picker dropdown hidden">
+            <!-- append #time-picker-component -->
+            <!-- show line in calendar:week view; draggable -->
+            <!-- if .initial-datetime-type:workday -->
+                <!-- default: next open hour -->
+            <!-- if .initial-date-time-type:deadline -->
+                <!-- default: 5pm -->
+        </div>
+    </div>
+</template>
+
+<template id="add-start-template">
+    <!-- on click -->
+        <!-- append /editing/#start-template -->
+        <!-- add .hidden to other .edit-*-dropdown's -->
+    <div class="open-start single-line">
+        <button class="open-edit-button" type="button">
+            <!-- on click or if object has start-date, remove .inactive -->
+            <img class="icon inactive single-line" src="./assets/images/prospective-left/todo-components/date.svg" />
+            <!-- on click (and object has no start-date), remove .inactive -->
+            <!-- if task object has start-date, add .hidden -->
+            <span class="inactive description">
+                schedule task
+            </span>
+            <!-- if task object has start-date, remove .hidden -->
+            <div class="hidden description">
+                <!-- format -->
+                    <!-- start date_here: start date set in future -->
+                    <!-- started date_here: start date set in past -->
+                    <!-- date_here: no deadline date -->
+                <input class="start-date description" type="text" value="" readonly />
+                <!-- if task object has start-time, ~hidden and populate -->
+                <input class="start-time description hidden" type="text" value="" readonly />
+            </div> 
+        </button>
+        <!-- remove .hidden on hover or if .edit-start.dropdown is not .hidden, assuming task has start time -->
+        <!-- on click -->
+            <!-- add .hidden .clear-start-button and .edit-start.dropdown -->
+            <!-- remove .hidden from <span>.description -->
+            <!-- delete deadline-date and deadline-time from object -->
+        <button class="clear-start-button hidden">
+            <img class="icon inactive" src="./assets/images/prospective-left/x.svg" />
+        </button>
+    </div>
+</template>

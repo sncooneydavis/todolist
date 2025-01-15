@@ -1,0 +1,25 @@
+<template id="bottom-template">
+    <div class="single-line">
+        <div class="left">
+            <!-- on click, append list-edit component template -->
+            <!-- TODO: create list-edit component -->
+            <button class="change-list-button" type="button">
+                <img class="bottom icon" src="./assets/images/prospective-left/todo-components/change-list.svg" />
+            </button>
+            <!-- on click, create new task with same info -->
+            <button class="duplicate-button" type="button">
+                <img class="bottom icon" src="./assets/images/prospective-left/todo-components/duplicate.svg" />
+            </button>
+        </div>
+        <div class="right">
+            <button id="delete-button" type="button">
+                <img class="bottom icon" src="./assets/images/prospective-left/list-dropdown/delete.svg" />
+            </button>
+            <!-- inactive if no changes made -->
+            <!-- on click, repopulate template with existing data -->
+            <button class="revert-button inactive" type="button">
+                <img class="bottom icon" src="./assets/images/prospective-left/revert.svg" />
+            </button>
+        </div>
+    </div> 
+</template>

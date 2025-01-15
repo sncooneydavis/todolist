@@ -1,0 +1,53 @@
+<template id="drag-bar-template">
+    <div class="solid-line"></div>
+    <div class="z-top top">
+        <div class="main-timer">
+            <!-- on click -->
+                <!-- if no set item(task/habit) -->
+                    <!-- remove .hidden from .todays-items -->
+                <!-- if set item -->
+                    <!-- if not timing -->
+                        <!-- disable showing timers on calendar pane tasks -->
+                        <!-- remove .inactive from #main-timer-item-button -->
+                        <!-- disable #main-timer-item-button -->
+                        <!-- initiate timer.js -->
+                    <!-- if timing -->
+                        <!-- send timer value to item object -->
+                        <!-- reset value of .countup -->
+                        <!-- reverse of above -->
+            <button id="main-timer-button" class="inactive" type="button">
+                <img class="bigicon" src="./images/prospective-left/todo-components/time-stopwatch.svg" />
+                <input class="countup hidden" value="0:00" type="time" step="1" readonly />
+            </button>
+            <!-- if chars exceed maxlength, on hover -->
+                <!-- set maxlength to 50 -->
+            <!-- on click, remove .hidden from .todays-items -->
+            <button id="main-timer-item-button" class="hidden">
+                <!-- populate with set task name -->
+                <input id="main-timer-item-name" value="" type="text" maxlength="15" readonly />
+            </button>
+        </div>
+        <!-- on click of option -->
+            <!-- populate name in #main-timer-task-button -->
+            <!-- remove .hidden from .countup -->
+        <div class="todays-items hidden">
+            <!-- populate with names of today and overdue tasks -->
+        </div>
+    </div>
+    <!-- on click -->
+        <!-- toggle .active on option's icon -->
+        <!-- change .right.pane to correct view with consideration for which panel is active-->
+    <div class="z-top-middle">
+        <button id="calendar-view-button" type="button">
+            <img class="bigicon" src="./assets/images/prospective-left/todo-components/date.svg" />
+        </button>
+        <button id="data-view-button" type="button">
+            <img class="bigicon" src="./assets/images/prospective-left/toolbars/drag-view-data.svg" />
+        </button>
+    </div>
+    <div class="z-top bottom">
+        <button id="settings-view-button" type="button">
+            <img class="bigicon" src="./assets/images/prospective-left/toolbars/drag-bottom-settings.svg" />
+        </button>
+    </div> 
+</template>
