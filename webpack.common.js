@@ -6,9 +6,10 @@ import ESLintWebpackPlugin from "eslint-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const isDev = process.env.NODE_ENV === "development";
 
 export default {
-	mode: 'development',
+	mode: isDev ? "development" : "production",
 	entry: "./src/index.js",
 	output: {
 		filename: "scripts/[name].js",
