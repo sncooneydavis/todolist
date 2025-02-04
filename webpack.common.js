@@ -6,14 +6,12 @@ import ESLintWebpackPlugin from "eslint-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const isDev = process.env.NODE_ENV === "development";
 
 export default {
-	mode: isDev ? "development" : "production",
-	entry: "./src/index.js",
+  entry: { app: './src/index.js' },
 	output: {
-		filename: "scripts/[name].js",
-		path: path.resolve(__dirname, "dist"),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
 		clean: true,
 	},
 	plugins: [
