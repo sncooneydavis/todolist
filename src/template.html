@@ -13,68 +13,98 @@
 	<body>
 		<div class="main container">
 			<div id="left-pane">
-				<div id="utility-toolbar" class="single-line">	
-					<!-- use utility-search.js component with following search patterns: -->
-						<!-- /list/sublist/item -->
-						<!-- !priority -->
-						<!-- datetime: today, tomorrow, this week, next week... -->
-					<input id="utility-input" name="utility-input" type="text" />
-					<!-- if query matches a non-template item: -->
-						<!-- on click/*ENTER*: -->
-						<!-- set list view (all collapsed, unless list is in query) -->
-						<!-- focus on item in task-pane and calendar-pane (next instance if repeating) --> 
-					<img class="utility icon right hidden" src="./assets/images/prospective-left/toolbars/utility-bar-search.svg" />
-					<!-- if query starts with #, @, !, datetime/'nodate', or only matches one tag, person, priority, or datetime: -->
-							<!-- toggle icon to filter -->
-						<!-- in search-results: "filter by (query)" -->
-						<!-- on click/*ENTER*, populate todo pane in date descending order -->
-					<!-- if query starts with & and matches a template name: -->
-						<!-- give options to... -->
-							<!-- filter by template -->
-							<!-- add new template instance -->
-					<img class="utility icon right hidden" src="./assets/images/prospective-left/toolbars/utility-bar-filter.svg" />						
-					<!-- if no search match exists: -->
-							<!-- toggle add icon -->
-							<!-- if in default or todo view, options: -->
-								<!-- "quick add" (focussed) -->
-								<!-- "add as a new task" -->
-								<!-- "add as a new event" -->
-						<!-- on *ENTER*/click of item-option: -->
-							<!-- set list view as all collapsed, unless list is in query -->
-							<!-- create new item object with unique ID and save utility-input text as item title -->
-							<!-- RENDER *_TEMPLATE and EDIT_*_TEMPLATE -->
-					<img class="utility icon right" src="./assets/images/prospective-left/add.svg" />
+				<div class="left container">
+					<div id="utility-toolbar" class="single-line">	
+						<!-- use utility-search.js component with following search patterns: -->
+							<!-- /list/sublist/item -->
+							<!-- !priority -->
+							<!-- datetime: today, tomorrow, this week, next week... -->
+						<input id="utility-input" name="utility-input" type="text" />
+						<!-- if query matches a non-template item: -->
+							<!-- on click/*ENTER*: -->
+							<!-- set list view (all collapsed, unless list is in query) -->
+							<!-- focus on item in task-pane and calendar-pane (next instance if repeating) --> 
+						<button class="utility button inactive">
+							<img class="hidden" src="./assets/images/prospective-left/toolbars/utility-bar-search.svg" />
+							<!-- if query starts with #, @, !, datetime/'nodate', or only matches one tag, person, priority, or datetime: -->
+									<!-- toggle icon to filter -->
+								<!-- in search-results: "filter by (query)" -->
+								<!-- on click/*ENTER*, populate todo pane in date descending order -->
+							<!-- if query starts with & and matches a template name: -->
+								<!-- give options to... -->
+									<!-- filter by template -->
+									<!-- add new template instance -->
+							<img class="hidden" src="./assets/images/prospective-left/toolbars/utility-bar-filter.svg" />						
+							<!-- if no search match exists: -->
+									<!-- toggle add icon -->
+									<!-- if in default or todo view, options: -->
+										<!-- "quick add" (focussed) -->
+										<!-- "add as a new task" -->
+										<!-- "add as a new event" -->
+								<!-- on *ENTER*/click of item-option: -->
+									<!-- set list view as all collapsed, unless list is in query -->
+									<!-- create new item object with unique ID and save utility-input text as item title -->
+									<!-- RENDER *_TEMPLATE and EDIT_*_TEMPLATE -->
+							<img class="" src="./assets/images/prospective-left/add.svg" />
+						</button>
+					</div>
+					<div id="left-view-toolbar">
+						<!-- in home view -->
+							<!-- list is indicated by color of task background (lighter version of list color)-->
+							<!-- priority is indicated by -->
+								<!-- ! outer border darker version of list color -->
+							<!-- task details populate in right pane -->
+						<button id="home-view-button"  type="button">
+							<img class="bigicon inactive" src="./assets/images/prospective-left/toolbars/drag-view-default.svg" />
+						</button>
+						<button id="todo-view-button" type="button">
+							<img class="bigicon" src="./assets/images/prospective-left/list-dropdown/view-completed.svg" />
+							<img class="bigicon options hidden" src="./assets/images/prospective-left/todo-components/all-options.svg" />
+						</button>
+						<button id="habit-view-button" type="button">
+							<img class="bigicon inactive" src="./assets/images/prospective-left/variable-components/habit.svg" />
+							<img class="bigicon options hidden" src="./assets/images/prospective-left/todo-components/all-options.svg" />
+						</button>
+						<button id="measurement-view-button" type="button">
+							<img class="bigicon inactive" src="./assets/images/prospective-left/variable-components/add-variable.svg" />
+							<img class="bigicon options hidden" src="./assets/images/prospective-left/todo-components/all-options.svg" />
+						</button>
+					</div>
+					<div id="todo-panel">
+						<!-- APPEND LISTS FROM LIST_VIEW, TODO_VIEW, HABIT_VIEW, VARIABLE_VIEW, OR TEMPLATE_VIEW TEMPLATES  -->
+					</div>
+					<div id="timer-panel" class="hidden">
+						<!-- on click -->
+							<!-- if no set item(task/habit) -->
+								<!-- remove .hidden from .todays-items -->
+							<!-- if set item -->
+								<!-- if not timing -->
+									<!-- disable showing timers on calendar pane tasks -->
+									<!-- remove .inactive from #main-timer-item-button -->
+									<!-- disable #main-timer-item-button -->
+									<!-- initiate timer.js -->
+								<!-- if timing -->
+									<!-- send timer value to item object -->
+									<!-- reset value of .countup -->
+									<!-- reverse of above -->
+						<button id="main-timer-button" class=" dragbar-button" type="button">
+							<img class="bigicon inactive" src="./assets/images/prospective-left/todo-components/time-stopwatch.svg" />
+							<input class="countup hidden" value="00:00" type="time" step="1" readonly />
+						</button>
+						<!-- if chars exceed maxlength, on hover -->
+							<!-- set maxlength to 50 -->
+						<!-- on click, remove .hidden from .todays-items -->
+						<button id="main-timer-item-button" class=" dragbar-button" class="hidden">
+							<!-- populate with set task name -->
+							<input id="main-timer-item-name" class="" value="task and time here" type="text" maxlength="15" readonly />
+						</button>
+					</div>
 				</div>
-				<div id="left-view-toolbar single-line">
-					<!-- in home view -->
-						<!-- list is indicated by color of task background (lighter version of list color)-->
-						<!-- priority is indicated by -->
-							<!-- ! outer border darker version of list color -->
-						<!-- task details populate in right pane -->
-					<button id="home-view-button" type="button">
-						<img class="bigicon" src="./assets/images/prospective-left/toolbars/drag-view-default.svg" />
-					</button>
-					<button id="todo-view-button" type="button">
-						<img class="bigicon" src="./assets/images/prospective-left/list-dropdown/view-completed.svg" />
-						<img class="bigicon options hidden" src="./assets/images/prospective-left/todo-components/all-options.svg" />
-					</button>
-					<button id="habit-view-button" type="button">
-						<img class="bigicon" src="./assets/images/prospective-left/variable-components/habit.svg" />
-						<img class="bigicon options hidden" src="./assets/images/prospective-left/todo-components/all-options.svg" />
-					</button>
-					<button id="measurement-view-button" type="button">
-						<img class="bigicon" src="./assets/images/prospective-left/variable-components/add-variable.svg" />
-						<img class="bigicon options hidden" src="./assets/images/prospective-left/todo-components/all-options.svg" />
-					</button>
-				</div>
-				<div id="item-panel">
-					<!-- APPEND LISTS FROM LIST_VIEW, TODO_VIEW, HABIT_VIEW, VARIABLE_VIEW, OR TEMPLATE_VIEW TEMPLATES  -->
+				<div class="dragbar right">
+					<!-- if in list/habit/tracker view, append pages/#drag-bar-template -->
 				</div>
 			</div>
-			<div class="dragbar">
-				<!-- if in list/habit/tracker view, append pages/#drag-bar-template -->
-			</div>
-			<div class="right pane">
+			<div id="right-pane">
 				<!-- APPEND RIGHT PANE FROM *_VIEW_TEMPLATES -->
 			</div>
 		</div>

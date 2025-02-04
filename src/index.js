@@ -1,14 +1,34 @@
+/* eslint-disable import/extensions */
 import './styles.css';
-import './pages/list-view/left-panel/1-structure-templates.html';
-import './pages/list-view/left-panel/2-dragbar-template.html';
-import './pages/list-view/left-panel/3-list-template.html';
-import './pages/list-view/left-panel/list-items/1.task-template.html';
-import './pages/list-view/left-panel/list-items/2.event-template.html';
-import './pages/list-view/left-panel/list-items/3.components-templates.html';
-import './pages/list-view/left-panel/list-items/editing/due-templates.html';
-// add other editing templates here 
-import './pages/list-view/quick-add-templates.html';
+import dragbarHTML from './components/drag-bar-template.html';
+import TodoPanelController from './controller/todo-panel-control.js';
 
-// populate inbox list
+// class MainFrameController {
+//   static utilityInputElement = document.getElementById('utility-input');
+// }
 
-// populate 
+const init = () => {
+  const dragDiv = document.querySelector('.dragbar');
+  dragDiv.innerHTML += dragbarHTML;
+
+  const todoPanelController = new TodoPanelController(
+    document.getElementById('todo-panel')
+  );
+  todoPanelController.renderAllLists();
+
+  // const mainFrameController = new MainFrameController();
+  // MainFrameController.utilityInputElement.addEventListener('input', parseInput);
+};
+
+init();
+
+// function updateClock() {
+//   const now = new Date();
+//   const hours = now.getHours();
+//   const minutes = now.getMinutes();
+//   const seconds = now.getSeconds();
+
+//   requestAnimationFrame(updateClock); // Keep updating
+// }
+
+// updateClock();

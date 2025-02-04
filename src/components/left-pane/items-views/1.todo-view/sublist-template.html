@@ -1,0 +1,71 @@
+<!-- add list ID -->
+<div data-list-id="" data-sublist-id="" class="sublist">
+    <!-- script: place near open list -->
+        <!-- on click -->
+            <!-- when list-state:closed -->
+                <!-- close all other open headings -->
+                <!-- remove .hidden from .list-body.container -->
+                <!-- remove .hidden from .left-gutter and .edit-list-button -->
+                <!-- append order-options-template above -->
+            <!-- when list-state:open -->
+                <!-- add .hidden to .list-body.container -->
+                <!-- add .hidden to .left-gutter and .edit-list-button -->
+                <!-- remove order-options-template above -->
+            <!-- on hover -->
+                <!-- remove .hidden .edit-list-button -->
+    <div class="heading single-line">
+        <button class="open-list-button" type="button">
+            <input class="readonly title" type="text" value="LIST_TITLE" readonly />
+        </button>
+        <input data-field="name" class="editing-list-title hidden" type="text" value="LIST_TITLE" />
+        <button class="options-list-button hidden" type="button">
+            <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="-1 -1 24 24" 
+                id="open-options-icon">
+                <desc>Reward Stars 2 Streamline Icon: https://streamlinehq.com</desc>
+                <path 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    d="M9.855083333333333 1.2604166666666665c-0.02291666666666667 5.757583333333333 2.776583333333333 9.023666666666665 9.166666666666666 9.166666666666666 -5.92625 -0.02291666666666667 -8.866 3.1542499999999998 -9.166666666666666 9.166666666666666 -0.057749999999999996 -5.6714166666666666 -2.5923516666666666 -9.174916666666666 -9.16668775 -9.166666666666666 5.881336083333333 -0.08249999999999999 9.143771083333332 -2.9214166666666666 9.16668775 -9.166666666666666Z" 
+                    stroke-width="2">
+                </path>
+                <path 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    d="M17.427666666666667 1.2604166666666665v3.6666666666666665" 
+                    stroke-width="2">
+                </path>
+                <path 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    d="M15.594333333333333 3.09375h3.6666666666666665" 
+                    stroke-width="2">
+                </path>
+                <path 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    d="M19.479166666666664 17.072916666666664v3.6666666666666665" 
+                    stroke-width="2">
+                </path>
+                <path 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    d="M17.645833333333332 18.90625h3.6666666666666665" 
+                    stroke-width="2">
+                </path>
+            </svg>
+        </button>
+    </div>
+    <!-- append /*-view/#add-item-from-list-template -->
+    <div class="body container hidden">
+        <div class="options popover hidden">
+            <button class="print-sublist-button">
+                Print Sublist
+            </button>
+            <button class="archive-list-button">
+                Archive Sublist
+            </button>
+        </div>
+        <button class="tiny-add-bar-list" type="button"></div> 
+        <!-- APPEND ITEMS HERE -->
+        <!-- APPEND SUBLISTS HERE -->
+    </div> 
+</div>     
+

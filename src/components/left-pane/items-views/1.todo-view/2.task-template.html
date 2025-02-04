@@ -1,0 +1,262 @@
+<div data-list-id="" data-sublist-id="" data-todo-id="" data-todo-type="" class="todo">
+    <!-- when checkbox selected-->
+        <!-- remove from left pane -->
+        <!-- task name, work/deadline date/time(s) -->
+    <div class="todo-bar">
+        <input data-field="isCompleted" class="task-checkbox popover hidden"  type="checkbox" /> 
+        <div class="left">
+            <input data-field="name" class="todo-title top" type="text" placeholder="add task name" />
+            <div class="bottom single-line">
+                <!-- datetime-formatter.js -->
+                    <!-- times: -->
+                        <!-- if whole hour, hour only -->
+                    <!-- if task has no deadline (type: workday)-->
+                        <!-- timeblock today: 'Today 1:00-2:00' -->
+                            <!-- if in past, turn red -->
+                        <!-- within 7 days: "Friday 1:00-2:00" -->
+                        <!-- within this year: "May 3" -->
+                    <!-- if task has deadline: -->
+                        <!-- deadline date in past: 'overdue by X days' (red) -->
+                        <!-- work date in future: "May 1 - May 30" -->
+                        <!-- work date in past, deadline in future past 7 days: "Next: Thursday 1:00-2:00" "Due: May 30 5:00" -->
+                        <!-- work date in past, deadline in future within 7 days: "Next: Thursday 1:00-2:00" "Due: Friday 5:00" -->
+                        <!-- if deadline within 12 hours: "Due: 4hrs 3mins" (orange-yellow) -->
+                        <!-- if deadline within 12-48 hours: "Due: tomorrow at 12pm" (orange-yellow) -->                    
+                <button class="nearest-datetime-button single-line" type="button" >
+                    <input data-field="nextSession" class="readonly datetime indicator" type="text" value="" readonly />
+                </button>
+                <!-- on click of indicator for component-* --> 
+                    <!-- append #-template with editing dropdown not .hidden -->
+                    <!-- if 'cycle=yes, remove .hidden -->
+                <button class="cycle-indicator-button hidden" type="button">
+                    <img class="indicator" src="./assets/recurring.svg" />
+                </button>
+                <!-- if 'reminder=yes', remove .hidden -->
+                <button class="reminder-indicator-button hidden" type="button">
+                    <img class="indicator" src="./assets/reminder.svg" />
+                </button>
+            </div>
+        </div>   
+        <button class="todo-details-on right" type="button">
+            <img class="off" src="./assets/up.png" />
+            <img class="on hidden" src="./assets/down.png" />
+        </button> 
+    </div>  
+    <div class="todo-edit-dropdown hidden">
+        <div class="todo-details-dropdown hidden">
+            <!-- when editing, on click of .collapse-task-details-button or anywhere off task -->
+                <!-- if deadline or schedule set -->
+                    <!-- save values to task object -->
+                    <!-- add .hidden to .collapse-task-details-button -->
+                    <!-- remove .hidden from .task-details-off -->
+                    <!-- add .hidden to .task-schedule-dropdown and .task-details.dropdown -->
+                <!-- else -->
+                    <!-- replace this template with #new-task-template and collapse both .dropdowns -->
+                    <!-- save values to task object -->
+            <div class="checklist container">
+                <div class="blank subtask single-line">
+                    <input class="subtask-checkbox" type="checkbox" disabled />
+                    <input class="subtask-title blank" type="text" value="" placeholder="click enter to add"/>
+                </div>
+                <div class="extant-subtasks"></div>
+            </div>
+            <textarea data-field="notes" class="notes container" placeholder="Notes"></textarea>
+            <div class="attachment container hidden">
+                <!-- append attachment templates here -->
+            </div>
+        </div>
+        <div class="todo-schedule-dropdown hidden">   
+            <div class="schedule-type-selection single-line">
+                <button class="datetime-only-button" type="button">
+                    datetime
+                </button>
+                <button class="add-repeat-button" type="button">
+                    cycle
+                </button>
+                <button class="add-deadline-button" type="button">
+                    deadline
+                </button>
+            </div> 
+            <div class="schedule-calendar">
+                <!-- on load append datetime-picker template -->
+            </div>
+            <div class="deadline-description hidden">
+                <!-- TODO: create deadline description (see p14)  -->
+            </div> 
+            <!-- when date(s) set in .schedule-calendar, remove .hidden from .scheduled-datetimes-dropdown -->
+            <div class="scheduled-datetimes-dropdown hidden">
+                <!-- TODO (see p14) -->
+            </div> 
+            <!-- when first scheduled time past, remove .hidden from .logged-datetimes-dropdown -->
+            <div class="logged-datetimes-dropdown hidden">
+                <!-- TODO (see p14) -->
+            </div>
+            <div class="open-recurring single-line hidden">
+                <!-- on click -->
+                <!-- append /editing/#edit-deadline-template -->
+                <!-- add .hidden to other .edit-*-dropdown's -->
+                <button class="open-recurring-button single-line" type="button">
+                    <!-- on click or if object has recurrence, remove .inactive -->
+                    <img class="icon inactive" src="./assets/recurring.svg" />
+                    <!-- on click (and object has no recurrence), remove .inactive -->
+                    <!-- if item object has recurrence, add .hidden -->
+                    <span class="inactive description">
+                        set recurrence
+                    </span>
+                    <!-- if todo object has recurrence, remove .hidden and populate -->
+                    <div class="hidden single-line description">
+                        <!-- remove hidden if task has recurrence -->
+                        <span class="hidden">
+                            repeats
+                        </span>
+                        <!-- SCRIPT: populate with combined and formatted values of recurring-dropdown inputs -->
+                        <input class="recurring-description" type="text" value="" readonly />
+                    </div>
+                </button>
+                <!-- remove .hidden on hover or if .edit-recurring.dropdown is not .hidden, assuming task has deadline -->
+                    <!-- on click -->
+                        <!-- add .hidden to .edit-recurring.dropdown and .clear-deadline-button -->
+                        <!-- remove .hidden from <span>.description -->
+                        <!-- delete deadline-date and deadline-time from object -->
+                <button class="clear-recurring-button hidden">
+                    <img class="icon inactive" src="./assets/x.svg" />
+                </button>
+            </div>    
+            <div class="open-reminder single-line hidden">
+            </div>      
+        </div>
+        <div class="bottom-section single-line">
+            <button class="add-datetime-button left hidden" type="button">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="-1 -1 24 24" 
+                    id="add-datetime-icon">
+                    <desc>App Window Clock Streamline Icon: https://streamlinehq.com</desc>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="M19.949416666666668 7.565185833333333v-5.5c0 -0.3646775 -0.14483333333333334 -0.7144133333333333 -0.40269166666666667 -0.9722716666666665 -0.2578583333333333 -0.25786291666666666 -0.6076583333333333 -0.4027283333333333 -0.9723083333333332 -0.4027283333333333h-16.5c-0.3646683333333333 0 -0.7144133333333333 0.14486541666666666 -0.9722716666666665 0.4027283333333333C0.8442829999999999 1.3507725 0.6994166666666667 1.7005083333333333 0.6994166666666667 2.0651858333333335V17.190158333333333c0 0.36474166666666663 0.14486633333333335 0.7144499999999999 0.4027283333333333 0.9723083333333332 0.2578583333333333 0.2578583333333333 0.6076033333333333 0.40269166666666667 0.9722716666666665 0.40269166666666667h5.5" 
+                        stroke-width="2">
+                    </path>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="M0.6994166666666667 4.8151858333333335h19.25" 
+                        stroke-width="2">
+                    </path>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="M10.321666666666665 15.815158333333333c0 0.7223333333333334 0.14226666666666665 1.4375166666666666 0.41864166666666663 2.1047583333333333 0.27646666666666664 0.6673333333333333 0.6815416666666667 1.2736166666666666 1.1923083333333333 1.7843833333333334 0.510675 0.510675 1.1170499999999999 0.9158416666666667 1.7842916666666666 1.1922166666666667 0.6673333333333333 0.276375 1.3825166666666666 0.41864166666666663 2.1047583333333333 0.41864166666666663s1.4375166666666666 -0.14226666666666665 2.1047583333333333 -0.41864166666666663c0.6673333333333333 -0.276375 1.2736166666666666 -0.6815416666666667 1.7843833333333334 -1.1922166666666667 0.510675 -0.5107666666666667 0.9158416666666667 -1.1170499999999999 1.1922166666666667 -1.7843833333333334 0.276375 -0.6672416666666666 0.41864166666666663 -1.382425 0.41864166666666663 -2.1047583333333333 0 -0.7222416666666667 -0.14226666666666665 -1.437425 -0.41864166666666663 -2.1047583333333333 -0.276375 -0.6672416666666666 -0.6815416666666667 -1.2736166666666666 -1.1923083333333333 -1.7842916666666666 -0.510675 -0.5107666666666667 -1.1169583333333333 -0.9158416666666667 -1.7842916666666666 -1.1922166666666667 -0.6672416666666666 -0.27646666666666664 -1.3825166666666666 -0.4187333333333333 -2.1047583333333333 -0.4187333333333333s-1.437425 0.14226666666666665 -2.1047583333333333 0.4187333333333333c-0.6672416666666666 0.276375 -1.2736166666666666 0.6814499999999999 -1.7842916666666666 1.1922166666666667 -0.5107666666666667 0.510675 -0.9158416666666667 1.1170499999999999 -1.1923083333333333 1.7842916666666666 -0.276375 0.6673333333333333 -0.41864166666666663 1.3825166666666666 -0.41864166666666663 2.1047583333333333Z" 
+                        stroke-width="2">
+                    </path>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="M18.252666666666666 15.815341666666665H15.821666666666667v-2.430083333333333" 
+                        stroke-width="2">
+                    </path>
+                </svg>
+            </button>
+            <button class="add-details-button left hidden" type="button">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="-1 -1 24 24" 
+                    id="add-details-icon">
+                    <desc>Notes Checklist Flip Streamline Icon: https://streamlinehq.com</desc>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="M2.0625 2.0625h17.875s1.375 0 1.375 1.375v16.5s0 1.375 -1.375 1.375H2.0625s-1.375 0 -1.375 -1.375v-16.5s0 -1.375 1.375 -1.375Z" 
+                        stroke-width="2">
+                    </path>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="M4.8125 0.6875v2.75" stroke-width="2">
+                    </path>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.1875 0.6875v2.75" 
+                        stroke-width="2">
+                    </path>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="M11.6875 16.5h4.125" 
+                        stroke-width="2">
+                    </path>
+                    <path
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="M11.6875 9.625h4.125" stroke-width="2"></path>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="m9.075 14.025 -2.8874999999999997 3.85 -2.0625 -2.0625" 
+                        stroke-width="2">
+                    </path>
+                    <path 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        d="m9.075 6.875 -2.8874999999999997 3.85L4.125 8.6625" 
+                        stroke-width="2">
+                    </path>
+                </svg>
+            </button>
+            <div class="right">
+                <button class="duplicate-button" type="button">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        id="duplicate-task-icon"
+                        >
+                        <desc>Duplicate Streamline Icon: https://streamlinehq.com</desc>
+                        <path
+                            stroke-linecap="round" stroke-linejoin="round"
+                            d="M16.75 4.5V1.75c0 -0.55228 -0.4477 -1 -1 -1h-14c-0.55228 0 -1 0.44771 -1 1v14c0 0.5523 0.44772 1 1 1H4.5"
+                            stroke-width="2.5"
+                        ></path>
+                        <path
+                            stroke-linejoin="round"
+                            d="M7.25 8.25c0 -0.55229 0.44772 -1 1 -1h14c0.5523 0 1 0.44772 1 1v14c0 0.5523 -0.4477 1 -1 1h-14c-0.55229 0 -1 -0.4477 -1 -1v-14Z"
+                            stroke-width="2.5"
+                        ></path>
+                    </svg>
+                </button>
+                <button class="delete-button" type="button">
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        id="delete-task-icon"
+                        >
+                        <desc>Bin 1 Streamline Icon: https://streamlinehq.com</desc>
+                        <path 
+                            stroke-linecap="round" stroke-linejoin="round" 
+                            d="M1 5h22" 
+                            stroke-width="2"
+                        ></path>
+                        <path 
+                            stroke-linecap="round" stroke-linejoin="round" 
+                            d="M14.25 1h-4.5c-0.39782 0 -0.77936 0.15804 -1.06066 0.43934C8.40804 1.72064 8.25 2.10218 8.25 2.5V5h7.5V2.5c0 -0.39782 -0.158 -0.77936 -0.4393 -1.06066C15.0294 1.15804 14.6478 1 14.25 1Z" 
+                            stroke-width="2"
+                        ></path>
+                        <path 
+                            stroke-linecap="round" stroke-linejoin="round" 
+                            d="M9.75 17.75v-7.5" 
+                            stroke-width="2"
+                        ></path>
+                        <path 
+                            stroke-linecap="round" stroke-linejoin="round" 
+                            d="M14.25 17.75v-7.5" 
+                            stroke-width="2"
+                        ></path>
+                        <path 
+                            stroke-linecap="round" stroke-linejoin="round" 
+                            d="M18.86 21.62c-0.0278 0.3758 -0.197 0.7271 -0.4735 0.9832 -0.2764 0.256 -0.6397 0.3978 -1.0165 0.3968H6.63c-0.37683 0.001 -0.74006 -0.1408 -1.01653 -0.3968 -0.27647 -0.2561 -0.44565 -0.6074 -0.47347 -0.9832L3.75 5h16.5l-1.39 16.62Z" 
+                            stroke-width="2">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div> 
+</div>
+<button class="tiny-add-bar" type="button"></div> 
+
+
+
