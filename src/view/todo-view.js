@@ -153,9 +153,10 @@ export default class TodoView {
     const todoClone = this.renderTodo(todoData);
     const { parentNode } = event.target;
     parentNode.insertBefore(todoClone, event.target.nextSibling);
-    parentNode
-      .querySelector(`.todo[data-todo-id='${todoData.todoId}'] .todo-title`)
-      .focus();
+    const todoTitleElement = parentNode.querySelector(
+      `.todo[data-todo-id='${todoData.todoId}'] .todo-title`
+    );
+    todoTitleElement.focus();
     // TDL: show datetime button 'schedule task' then hide until datetime added
   }
 
@@ -319,13 +320,16 @@ export default class TodoView {
 
   handleSubtaskAddOnEnter(event) {
     if (event.key === 'Enter') {
-      const newSubtaskData = this.todoController.addAndReturnNewSubtask(event);
-      // eslint-disable-next-line no-param-reassign
-      event.target.value = '';
-      const extantSubtasksContainer = event.target
-        .closest('.todo')
-        .querySelector(TodoView.SELECTORS.extantSubtasks);
-      this.addSubtaskToDOMfromData(newSubtaskData, extantSubtasksContainer);
+      if (event.target.value !== '') {
+        const newSubtaskData =
+          this.todoController.addAndReturnNewSubtask(event);
+        // eslint-disable-next-line no-param-reassign
+        event.target.value = '';
+        const extantSubtasksContainer = event.target
+          .closest('.todo')
+          .querySelector(TodoView.SELECTORS.extantSubtasks);
+        this.addSubtaskToDOMfromData(newSubtaskData, extantSubtasksContainer);
+      }
     }
   }
 

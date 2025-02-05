@@ -504,6 +504,18 @@ module.exports = __webpack_require__.p + "assets/images/x.svg";
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -511,7 +523,25 @@ module.exports = __webpack_require__.p + "assets/images/x.svg";
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "./";
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
@@ -1309,9 +1339,10 @@ class TodoView {
     const todoClone = this.renderTodo(todoData);
     const { parentNode } = event.target;
     parentNode.insertBefore(todoClone, event.target.nextSibling);
-    parentNode
-      .querySelector(`.todo[data-todo-id='${todoData.todoId}'] .todo-title`)
-      .focus();
+    const todoTitleElement = parentNode.querySelector(
+      `.todo[data-todo-id='${todoData.todoId}'] .todo-title`
+    );
+    todoTitleElement.focus();
     // TDL: show datetime button 'schedule task' then hide until datetime added
   }
 
@@ -1475,13 +1506,16 @@ class TodoView {
 
   handleSubtaskAddOnEnter(event) {
     if (event.key === 'Enter') {
-      const newSubtaskData = this.todoController.addAndReturnNewSubtask(event);
-      // eslint-disable-next-line no-param-reassign
-      event.target.value = '';
-      const extantSubtasksContainer = event.target
-        .closest('.todo')
-        .querySelector(TodoView.SELECTORS.extantSubtasks);
-      this.addSubtaskToDOMfromData(newSubtaskData, extantSubtasksContainer);
+      if (event.target.value !== '') {
+        const newSubtaskData =
+          this.todoController.addAndReturnNewSubtask(event);
+        // eslint-disable-next-line no-param-reassign
+        event.target.value = '';
+        const extantSubtasksContainer = event.target
+          .closest('.todo')
+          .querySelector(TodoView.SELECTORS.extantSubtasks);
+        this.addSubtaskToDOMfromData(newSubtaskData, extantSubtasksContainer);
+      }
     }
   }
 
