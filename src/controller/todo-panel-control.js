@@ -5,31 +5,17 @@ import ListView from '../view/list-view.js';
 import TodoModeller from '../model/todo-model.js';
 import { TodoData, SubtaskData } from '../model/item-classes.js';
 
-// TDL: add other panel views (habit, variable)
-
 export default class TodoPanelController {
-  constructor(container) {
-    this.container = container;
-    this.todoModeller = new TodoModeller();
+  constructor(userInstance) {
+    this.userInstance = userInstance;
+    this.todoModeller = new TodoModeller(userInstance.storedLists, this);
     this.todoModel = this.todoModeller.todoModel;
     this.listView = new ListView(this.todoModeller, this);
-
-    this.container.addEventListener(
-      'change',
-      this.handleInputChange.bind(this)
-    );
   }
 
-  renderAllLists() {
-    this.container.innerHTML = '';
-    this.todoModeller.todoModel.forEach((list) => {
-      this.container.appendChild(this.listView.renderList(list));
-      // this is a hack; TDL: replace with default list
-      if (list.listId === 'list-1') {
-        list.toggleOpen();
-        ListView.toggleListOpen(list);
-      }
-    });
+  savetoLocalStorage() {
+    this.userInstance.storedLists = this.todoModel;
+    localStorage.setItem(this.userInstance.email, this.userInstance);
   }
 
   static getIDsFromElement(element) {

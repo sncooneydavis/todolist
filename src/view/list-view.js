@@ -10,6 +10,8 @@ export default class ListView {
     this.todoModeller = modeller;
     this.todoModel = modeller.todoModel;
     this.todoView = new TodoView(modeller, controller);
+
+    this.renderView();
   }
 
   static SELECTORS = {
@@ -23,6 +25,23 @@ export default class ListView {
     openListButton: '.open-list-button',
     tinyAdd: '.tiny-add-bar-list',
   };
+
+  renderView() {
+    const container = document.getElementById('todo-panel');
+    container.innerHTML = '';
+    this.todoModel.forEach((list) => {
+      container.appendChild(this.renderList(list));
+      // this is a hack; TDL: replace with default list
+      if (list.listId === 'list-1') {
+        list.toggleOpen();
+        ListView.toggleListOpen(list);
+      }
+    });
+    container.addEventListener(
+      'change',
+      this.todoController.handleInputChange.bind(this)
+    );
+  }
 
   renderList(list) {
     const listTemplate = document.createElement('template');
