@@ -4,24 +4,9 @@
 import { ListData } from './item-classes.js';
 
 export default class TodoModeller {
-  constructor() {
-    this.todoModel = this.loadData();
-  }
-
-  loadData() {
-    // STORAGE EMPTY => POPULATE DEMO DATA
-    if (localStorage.length === 0) {
-      // eslint-disable-next-line no-use-before-define
-      this.todoModel = demoData.map((list) => new ListData(list));
-      this.saveToLocalStorage();
-      return this.todoModel;
-    }
-    const storedData = localStorage.getItem('storedLists');
-    return JSON.parse(storedData).map((list) => new ListData(list)); // converts raw objects to class instances
-  }
-
-  saveToLocalStorage() {
-    localStorage.setItem('storedLists', JSON.stringify(this.todoModel));
+  constructor(rawUserListData, controller) {
+    this.todoModel = rawUserListData.map((list) => new ListData(list));
+    this.controller = controller;
   }
 
   updateFieldInModelAndStore(
@@ -74,7 +59,7 @@ export default class TodoModeller {
     } else if (list) {
       list[field] = value;
     }
-    this.saveToLocalStorage();
+    this.controller.saveToLocalStorage();
   }
 
   deleteFromModelAndStore(dataElement) {
@@ -115,207 +100,6 @@ export default class TodoModeller {
       );
       list.todos.splice(index, 1);
     }
-    this.saveToLocalStorage();
+    this.controller.saveToLocalStorage();
   }
 }
-
-// FOR DEMO PURPOSE ONLY - WILL DELETE
-const demoData = [
-  {
-    listId: 'list-1',
-    name: 'Todo List Project',
-    isOpen: false,
-    todos: [
-      {
-        listId: 'list-1',
-        sublistId: null,
-        todoId: 'todo-1',
-        name: 'hover between tasks to add task',
-        type: 'task',
-        isDetailsOpen: false,
-        isScheduleOpen: false,
-        isCompleted: false,
-        schedule: [
-          {
-            sessionId: 'session-1',
-            startDate: '2025-02-11',
-            startTime: null,
-            endDate: '2025-02-11',
-            endTime: null,
-            isLogged: false,
-            isPast: false,
-          },
-        ],
-        nextSession: '2025-02-11',
-        checklist: [
-          {
-            subtaskId: 'subtask-1',
-            name: 'can complete tasks',
-            isCompleted: false,
-          },
-          {
-            subtaskId: 'subtask-2',
-            name: 'can delete tasks',
-            isCompleted: false,
-          },
-          {
-            subtaskId: 'subtask-3',
-            name: 'cannot duplicate tasks',
-            isCompleted: false,
-          },
-        ],
-        notes: null,
-      },
-      {
-        listId: 'list-1',
-        sublistId: null,
-        todoId: 'todo-2',
-        name: 'click the arrow to add date',
-        type: 'task',
-        isDetailsOpen: false,
-        isScheduleOpen: false,
-        isCompleted: false,
-        schedule: [],
-        nextSession: '',
-        checklist: [
-          {
-            name: 'click the "schedule" button',
-            subtaskId: 'subtask-4',
-            isCompleted: false,
-          },
-          {
-            name: '(lower left hand corner)',
-            subtaskId: 'subtask-5',
-            isCompleted: false,
-          },
-          {
-            name: 'click on month and year to adjust',
-            subtaskId: 'subtask-6',
-            isCompleted: false,
-          },
-        ],
-        notes: '',
-      },
-    ],
-    sublists: [
-      {
-        sublistId: 'sublist-1',
-        name: 'Click to open sublist',
-        isOpen: false,
-        todos: [
-          {
-            listId: 'list-1',
-            sublistId: 'sublist-1',
-            todoId: 'todo-3',
-            name: 'cannot add new (sub)lists',
-            type: 'task',
-            isDetailsOpen: false,
-            isScheduleOpen: false,
-            isCompleted: false,
-            schedule: [
-              {
-                sessionId: 'session-2',
-                startDate: '2025-02-11',
-                startTime: null,
-                endDate: '2025-02-11',
-                endTime: null,
-                isLogged: false,
-                isPast: false,
-              },
-            ],
-            nextSession: '2025-02-11',
-            checklist: [],
-            notes: '',
-          },
-          {
-            listId: 'list-1',
-            sublistId: 'sublist-1',
-            todoId: 'todo-4',
-            name: 'can edit (sub)list name',
-            type: 'task',
-            isDetailsOpen: false,
-            isScheduleOpen: false,
-            isCompleted: false,
-            schedule: [],
-            nextSession: null,
-            checklist: [],
-            notes: '',
-          },
-        ],
-      },
-      {
-        sublistId: 'sublist-2',
-        name: 'Details',
-        isOpen: false,
-        todos: [
-          {
-            listId: 'list-1',
-            sublistId: 'sublist-2',
-            todoId: 'todo-5',
-            name: 'can add details',
-            type: 'task',
-            isDetailsOpen: false,
-            isScheduleOpen: false,
-            isCompleted: false,
-            schedule: [],
-            nextSession: null,
-            checklist: [
-              {
-                name: 'can add subtasks',
-                subtaskId: 'subtask-7',
-                isCompleted: false,
-              },
-              {
-                name: 'can complete subtasks',
-                subtaskId: 'subtask-8',
-                isCompleted: false,
-              },
-              {
-                name: 'can delete subtasks',
-                subtaskId: 'subtask-9',
-                isCompleted: false,
-              },
-            ],
-            notes: 'can add notes!',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    listId: 'list-2',
-    name: 'The Odin Project JavaScript',
-    isOpen: false,
-    todos: [
-      {
-        listId: 'list-2',
-        sublistId: null,
-        todoId: 'todo-6',
-        name: 'dynamic UI interactions',
-        type: 'task',
-        isDetailsOpen: false,
-        isScheduleOpen: false,
-        isCompleted: false,
-        schedule: [],
-        nextSession: null,
-        checklist: [
-          {
-            subtaskId: 'subtask-10',
-            name: 'drop down menus',
-            type: 'subtask',
-            isCompleted: false,
-          },
-          {
-            subtaskId: 'subtask-11',
-            name: 'image carousels',
-            type: 'subtask',
-            isCompleted: false,
-          },
-        ],
-        notes:
-          'https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions',
-      },
-    ],
-    sublists: [],
-  },
-];

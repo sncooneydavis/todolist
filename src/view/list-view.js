@@ -3,6 +3,7 @@
 import TodoView from './todo-view.js';
 import listHTML from '../components/left-pane/items-views/1.todo-view/list-template.html';
 import sublistHTML from '../components/left-pane/items-views/1.todo-view/sublist-template.html';
+import mainPageHTML from '../components/main-page.html';
 
 export default class ListView {
   constructor(modeller, controller) {
@@ -27,6 +28,7 @@ export default class ListView {
   };
 
   renderView() {
+    document.querySelector('body').innerHTML = mainPageHTML;
     const container = document.getElementById('todo-panel');
     container.innerHTML = '';
     this.todoModel.forEach((list) => {

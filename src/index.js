@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable import/extensions */
 import './styles.css';
 import mainPageContents from './components/main-page.html';
@@ -214,122 +215,147 @@ const init = () => {
   // LOGIN WITH EXISTING ACCOUNT FORM
   const loginForm = document.querySelector('#login-form');
   const email = loginForm.querySelector('input[type=email]');
-  const emailError = loginForm.querySelector('.input-container').children[1];
+  const emailError = loginForm.querySelector('.login.input-container')
+    .children[1];
   const password = loginForm.querySelector('input[type=password]');
-  const passwordError = loginForm.querySelector('.input-container').children[3];
-  const submitButton = loginForm.querySelector('#submit-existing-login');
+  const passwordError = loginForm.querySelector('.login.input-container')
+    .children[3];
 
-  loginForm.addEventListener('input', () => {
-    if (email.validity.valueMissing) {
+  email.addEventListener('input', (event) => {
+    if (!email.validity.valid) {
       emailError.textContent = 'Email required';
       emailError.classList.remove('hidden');
-    } else if (password.validity.valueMissing) {
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
+    } else {
+      emailError.classList.add('hidden');
+      event.target.style.border = 'none';
+    }
+  });
+  password.addEventListener('input', (event) => {
+    if (password.validity.tooShort) {
       passwordError.textContent = 'Password required';
       passwordError.classList.remove('hidden');
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
     } else {
-      submitButton.removeAttribute('disabled');
+      passwordError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
-  loginForm.addEventListener('submit', () => {
-    const id = email.value.toLowerCase();
-    const storedData = JSON.parse(localStorage.getItem(id)) || null;
-    if (storedData.email === id && storedData.password === password.value) {
-      document.querySelector('body').innerHTML = mainPageContents;
-      // eslint-disable-next-line no-new
-      new TodoPanelController(storedData);
-    } else if (storedData === null) {
-      email.error.textContent = 'Email not found';
-      email.error.classList.remove('hidden');
-    } else if (
-      storedData.email === id &&
-      storedData.password !== password.value
-    ) {
-      passwordError.textContent = 'Wrong password';
-      passwordError.classList.remove('hidden');
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (email.validity.valid && password.validity.valid) {
+      const id = email.value.toLowerCase();
+      const storedData = JSON.parse(localStorage.getItem(id)) || null;
+      if (storedData.email === id && storedData.password === password.value) {
+        document.querySelector('body').innerHTML = mainPageContents;
+        // eslint-disable-next-line no-new
+        new TodoPanelController(storedData);
+      } else if (storedData === null) {
+        email.error.textContent = 'Email not found';
+        email.error.classList.remove('hidden');
+      } else if (
+        storedData.email === id &&
+        storedData.password !== password.value
+      ) {
+        passwordError.textContent = 'Wrong password';
+        event.target.style.border = '2px solid var(--red-orange-lighter)';
+        passwordError.classList.remove('hidden');
+      }
     }
   });
 
   // LOGIN WITH NEW ACCOUNT FORM
   const signupForm = document.querySelector('#signup-form');
-  const submitNewLoginButton = signupForm.querySelector('#submit-new-login');
 
   const name = signupForm.querySelector('input[type=text]');
-  const nameError = signupForm.querySelector('input-container').children[1];
-  name.addEventListener('input', () => {
-    if (name.validity.valueMissing) {
+  const nameError = signupForm.querySelector('.signup.input-container')
+    .children[1];
+  name.addEventListener('input', (event) => {
+    if (!/^[a-zA-Z]+(?: [a-zA-Z]+) *$/.test(name.value)) {
       nameError.classList.remove('hidden');
-      name.validity.valid = false;
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
     } else {
-      name.validity.valid = true;
+      nameError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
   const newEmail = signupForm.querySelector('input[type=email]');
-  const newEmailError =
-    signupForm.querySelector('.input-container').children[3];
-  newEmail.addEventListener('input', () => {
+  const newEmailError = signupForm.querySelector('.signup.input-container')
+    .children[3];
+  newEmail.addEventListener('input', (event) => {
     if (!newEmail.validity.valid) {
       newEmailError.classList.remove('hidden');
-      newEmail.validity.valid = false;
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
     } else {
-      newEmail.validity.valid = true;
+      newEmailError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
   const newPassword = signupForm.querySelector('input[type=password]');
-  const passwordShortError =
-    signupForm.querySelector('.input-container').children[5];
-  const passwordNumberError =
-    signupForm.querySelector('.input-container').children[6];
-  const passwordLetterError =
-    signupForm.querySelector('.input-container').children[7];
-  newPassword.addEventListener('input', () => {
-    if (newPassword.length < 6) {
+  const passwordShortError = signupForm.querySelector('.signup.input-container')
+    .children[5];
+  const passwordNumberError = signupForm.querySelector(
+    '.signup.input-container'
+  ).children[6];
+  const passwordLetterError = signupForm.querySelector(
+    '.signup.input-container'
+  ).children[7];
+  newPassword.addEventListener('input', (event) => {
+    if (newPassword.value.length < 6) {
       passwordShortError.classList.remove('hidden');
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
+    } else {
+      passwordShortError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
     if (!/\d/.test(newPassword.value)) {
       passwordNumberError.classList.remove('hidden');
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
+    } else {
+      passwordNumberError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
     if (!/[a-zA-Z]/.test(newPassword.value)) {
       passwordLetterError.classList.remove('hidden');
-    }
-    if (
-      newPassword.length > 5 &&
-      /\d/.test(newPassword.value) &&
-      /[a-zA-Z]/.test(newPassword.value)
-    ) {
-      newPassword.validity.valid = true;
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
+    } else {
+      passwordLetterError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
   const newPasswordConfirmation = signupForm.querySelector('.confirm');
-  const newPasswordConfirmationError =
-    signupForm.querySelector('.input-container').children[9];
-  newPasswordConfirmation.addEventListener('input', () => {
+  const newPasswordConfirmationError = signupForm.querySelector(
+    '.signup.input-container'
+  ).children[9];
+  newPasswordConfirmation.addEventListener('input', (event) => {
     if (newPasswordConfirmation.value !== newPassword.value) {
       newPasswordConfirmationError.classList.remove('hidden');
-      newPasswordConfirmation.validity.valid = false;
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
     } else {
-      newPasswordConfirmation.validity.valid = true;
+      newPasswordConfirmationError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
-  if (
-    name.validity.valid &&
-    newEmail.validity.valid &&
-    newPassword.validity.valid &&
-    newPasswordConfirmation.validity.valid
-  ) {
-    submitNewLoginButton.removeAttribute('disabled');
-  }
-
-  signupForm.addEventListener('submit', () => {
-    // eslint-disable-next-line no-new
-    const controller = new TodoPanelController(
-      new User(email.value.toLowerCase(), password.value)
-    );
-    controller.saveToLocalStorage();
+  signupForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (
+      name.validity.valid &&
+      newEmail.validity.valid &&
+      newPassword.validity.valid &&
+      newPasswordConfirmation.validity.valid
+    ) {
+      // eslint-disable-next-line no-new
+      const controller = new TodoPanelController(
+        new User(newEmail.value.toLowerCase(), newPassword.value)
+      );
+      controller.saveToLocalStorage();
+      signupForm.submit();
+    }
   });
 };
 

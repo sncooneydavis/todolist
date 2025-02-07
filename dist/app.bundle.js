@@ -387,10 +387,38 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ 355:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/add.svg";
+
+/***/ }),
+
+/***/ 732:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/view-completed.svg";
+
+/***/ }),
+
+/***/ 782:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/all-options.svg";
+
+/***/ }),
+
 /***/ 162:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "assets/images/date.svg";
+
+/***/ }),
+
+/***/ 547:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/time-stopwatch.svg";
 
 /***/ }),
 
@@ -405,6 +433,41 @@ module.exports = __webpack_require__.p + "assets/images/drag-bottom-settings.svg
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "assets/images/drag-view-data.svg";
+
+/***/ }),
+
+/***/ 415:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/drag-view-default.svg";
+
+/***/ }),
+
+/***/ 42:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/utility-bar-filter.svg";
+
+/***/ }),
+
+/***/ 216:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/utility-bar-search.svg";
+
+/***/ }),
+
+/***/ 528:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/add-variable.svg";
+
+/***/ }),
+
+/***/ 940:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/habit.svg";
 
 /***/ }),
 
@@ -625,24 +688,33 @@ var update = injectStylesIntoStyleTag_default()(styles/* default */.A, options);
 
        /* harmony default export */ const src_styles = (styles/* default */.A && styles/* default */.A.locals ? styles/* default */.A.locals : undefined);
 
-;// ./src/components/drag-bar-template.html
+;// ./src/components/main-page.html
 // Imports
-var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(162), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(928), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(81), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(216), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(42), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(355), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(415), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(732), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(782), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(940), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(528), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(547), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(162), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(928), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(81), __webpack_require__.b);
 // Module
-var code = `<div class="solid-line"></div> <div class="z-top top"> <button id="calendar-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon" src="${___HTML_LOADER_IMPORT_0___}"/> </button> <button id="data-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_1___}"/> </button> </div> <div class="z-top bottom"> <button id="settings-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_2___}"/> </button> </div> `;
+var code = `<div class="main container"> <div id="left-pane"> <div class="left container"> <div id="utility-toolbar" class="single-line"> <input id="utility-input" name="utility-input" type="text"/> <button class="utility button inactive"> <img class="hidden" src="${___HTML_LOADER_IMPORT_0___}"/> <img class="hidden" src="${___HTML_LOADER_IMPORT_1___}"/> <img class="" src="${___HTML_LOADER_IMPORT_2___}"/> </button> </div> <div id="left-view-toolbar"> <button id="home-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_3___}"/> </button> <button id="todo-view-button" type="button"> <img class="bigicon" src="${___HTML_LOADER_IMPORT_4___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="habit-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_6___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="measurement-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_7___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> </div> <div id="todo-panel"> </div> <div id="timer-panel" class="hidden"> <button id="main-timer-button" class="dragbar-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_8___}"/> <input class="countup hidden" value="00:00" type="time" step="1" readonly="readonly"/> </button> <button id="main-timer-item-button" class="dragbar-button" class="hidden"> <input id="main-timer-item-name" class="" value="task and time here" type="text" maxlength="15" readonly="readonly"/> </button> </div> </div> <div class="dragbar right"> <div class="solid-line"></div> <div class="z-top top"> <button id="calendar-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon" src="${___HTML_LOADER_IMPORT_9___}"/> </button> <button id="data-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_10___}"/> </button> </div> <div class="z-top bottom"> <button id="settings-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_11___}"/> </button> </div> </div> </div> <div id="right-pane"> </div> </div>`;
 // Exports
-/* harmony default export */ const drag_bar_template = (code);
+/* harmony default export */ const main_page = (code);
 ;// ./src/components/left-pane/items-views/1.todo-view/2.task-template.html
 // Imports
 var _2_task_template_HTML_LOADER_IMPORT_0_ = new URL(/* asset import */ __webpack_require__(405), __webpack_require__.b);
 var _2_task_template_HTML_LOADER_IMPORT_1_ = new URL(/* asset import */ __webpack_require__(282), __webpack_require__.b);
 var _2_task_template_HTML_LOADER_IMPORT_2_ = new URL(/* asset import */ __webpack_require__(152), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(699), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(544), __webpack_require__.b);
+var _2_task_template_HTML_LOADER_IMPORT_3_ = new URL(/* asset import */ __webpack_require__(699), __webpack_require__.b);
+var _2_task_template_HTML_LOADER_IMPORT_4_ = new URL(/* asset import */ __webpack_require__(544), __webpack_require__.b);
 // Module
-var _2_task_template_code = `<div data-list-id="" data-sublist-id="" data-todo-id="" data-todo-type="" class="todo"> <div class="todo-bar"> <input data-field="isCompleted" class="task-checkbox popover hidden" type="checkbox"/> <div class="left"> <input data-field="name" class="todo-title top" type="text" placeholder="add task name"/> <div class="bottom single-line"> <button class="nearest-datetime-button single-line" type="button"> <input data-field="nextSession" class="readonly datetime indicator" type="text" value="" readonly="readonly"/> </button> <button class="cycle-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> </button> <button class="reminder-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_1_}"/> </button> </div> </div> <button class="todo-details-on right" type="button"> <img class="off" src="${_2_task_template_HTML_LOADER_IMPORT_2_}"/> <img class="on hidden" src="${___HTML_LOADER_IMPORT_3___}"/> </button> </div> <div class="todo-edit-dropdown hidden"> <div class="todo-details-dropdown hidden"> <div class="checklist container"> <div class="blank subtask single-line"> <input class="subtask-checkbox" type="checkbox" disabled="disabled"/> <input class="subtask-title blank" type="text" value="" placeholder="click enter to add"/> </div> <div class="extant-subtasks"></div> </div> <textarea data-field="notes" class="notes container" placeholder="Notes"></textarea> <div class="attachment container hidden"> </div> </div> <div class="todo-schedule-dropdown hidden"> <div class="schedule-type-selection single-line"> <button class="datetime-only-button" type="button"> datetime </button> <button class="add-repeat-button" type="button"> cycle </button> <button class="add-deadline-button" type="button"> deadline </button> </div> <div class="schedule-calendar"> </div> <div class="deadline-description hidden"> </div> <div class="scheduled-datetimes-dropdown hidden"> </div> <div class="logged-datetimes-dropdown hidden"> </div> <div class="open-recurring single-line hidden"> <button class="open-recurring-button single-line" type="button"> <img class="icon inactive" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> <span class="inactive description"> set recurrence </span> <div class="hidden single-line description"> <span class="hidden"> repeats </span> <input class="recurring-description" type="text" value="" readonly="readonly"/> </div> </button> <button class="clear-recurring-button hidden"> <img class="icon inactive" src="${___HTML_LOADER_IMPORT_4___}"/> </button> </div> <div class="open-reminder single-line hidden"> </div> </div> <div class="bottom-section single-line"> <button class="add-datetime-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-datetime-icon"> <desc>App Window Clock Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M19.949416666666668 7.565185833333333v-5.5c0 -0.3646775 -0.14483333333333334 -0.7144133333333333 -0.40269166666666667 -0.9722716666666665 -0.2578583333333333 -0.25786291666666666 -0.6076583333333333 -0.4027283333333333 -0.9723083333333332 -0.4027283333333333h-16.5c-0.3646683333333333 0 -0.7144133333333333 0.14486541666666666 -0.9722716666666665 0.4027283333333333C0.8442829999999999 1.3507725 0.6994166666666667 1.7005083333333333 0.6994166666666667 2.0651858333333335V17.190158333333333c0 0.36474166666666663 0.14486633333333335 0.7144499999999999 0.4027283333333333 0.9723083333333332 0.2578583333333333 0.2578583333333333 0.6076033333333333 0.40269166666666667 0.9722716666666665 0.40269166666666667h5.5" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M0.6994166666666667 4.8151858333333335h19.25" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M10.321666666666665 15.815158333333333c0 0.7223333333333334 0.14226666666666665 1.4375166666666666 0.41864166666666663 2.1047583333333333 0.27646666666666664 0.6673333333333333 0.6815416666666667 1.2736166666666666 1.1923083333333333 1.7843833333333334 0.510675 0.510675 1.1170499999999999 0.9158416666666667 1.7842916666666666 1.1922166666666667 0.6673333333333333 0.276375 1.3825166666666666 0.41864166666666663 2.1047583333333333 0.41864166666666663s1.4375166666666666 -0.14226666666666665 2.1047583333333333 -0.41864166666666663c0.6673333333333333 -0.276375 1.2736166666666666 -0.6815416666666667 1.7843833333333334 -1.1922166666666667 0.510675 -0.5107666666666667 0.9158416666666667 -1.1170499999999999 1.1922166666666667 -1.7843833333333334 0.276375 -0.6672416666666666 0.41864166666666663 -1.382425 0.41864166666666663 -2.1047583333333333 0 -0.7222416666666667 -0.14226666666666665 -1.437425 -0.41864166666666663 -2.1047583333333333 -0.276375 -0.6672416666666666 -0.6815416666666667 -1.2736166666666666 -1.1923083333333333 -1.7842916666666666 -0.510675 -0.5107666666666667 -1.1169583333333333 -0.9158416666666667 -1.7842916666666666 -1.1922166666666667 -0.6672416666666666 -0.27646666666666664 -1.3825166666666666 -0.4187333333333333 -2.1047583333333333 -0.4187333333333333s-1.437425 0.14226666666666665 -2.1047583333333333 0.4187333333333333c-0.6672416666666666 0.276375 -1.2736166666666666 0.6814499999999999 -1.7842916666666666 1.1922166666666667 -0.5107666666666667 0.510675 -0.9158416666666667 1.1170499999999999 -1.1923083333333333 1.7842916666666666 -0.276375 0.6673333333333333 -0.41864166666666663 1.3825166666666666 -0.41864166666666663 2.1047583333333333Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.252666666666666 15.815341666666665H15.821666666666667v-2.430083333333333" stroke-width="2"> </path> </svg> </button> <button class="add-details-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-details-icon"> <desc>Notes Checklist Flip Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M2.0625 2.0625h17.875s1.375 0 1.375 1.375v16.5s0 1.375 -1.375 1.375H2.0625s-1.375 0 -1.375 -1.375v-16.5s0 -1.375 1.375 -1.375Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M4.8125 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.1875 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 16.5h4.125" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 9.625h4.125" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 14.025 -2.8874999999999997 3.85 -2.0625 -2.0625" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 6.875 -2.8874999999999997 3.85L4.125 8.6625" stroke-width="2"> </path> </svg> </button> <div class="right"> <button class="duplicate-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="duplicate-task-icon"> <desc>Duplicate Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M16.75 4.5V1.75c0 -0.55228 -0.4477 -1 -1 -1h-14c-0.55228 0 -1 0.44771 -1 1v14c0 0.5523 0.44772 1 1 1H4.5" stroke-width="2.5"></path> <path stroke-linejoin="round" d="M7.25 8.25c0 -0.55229 0.44772 -1 1 -1h14c0.5523 0 1 0.44772 1 1v14c0 0.5523 -0.4477 1 -1 1h-14c-0.55229 0 -1 -0.4477 -1 -1v-14Z" stroke-width="2.5"></path> </svg> </button> <button class="delete-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="delete-task-icon"> <desc>Bin 1 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M1 5h22" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 1h-4.5c-0.39782 0 -0.77936 0.15804 -1.06066 0.43934C8.40804 1.72064 8.25 2.10218 8.25 2.5V5h7.5V2.5c0 -0.39782 -0.158 -0.77936 -0.4393 -1.06066C15.0294 1.15804 14.6478 1 14.25 1Z" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.86 21.62c-0.0278 0.3758 -0.197 0.7271 -0.4735 0.9832 -0.2764 0.256 -0.6397 0.3978 -1.0165 0.3968H6.63c-0.37683 0.001 -0.74006 -0.1408 -1.01653 -0.3968 -0.27647 -0.2561 -0.44565 -0.6074 -0.47347 -0.9832L3.75 5h16.5l-1.39 16.62Z" stroke-width="2"> </path> </svg> </button> </div> </div> </div> </div> <button class="tiny-add-bar" type="button"> </button>`;
+var _2_task_template_code = `<div data-list-id="" data-sublist-id="" data-todo-id="" data-todo-type="" class="todo"> <div class="todo-bar"> <input data-field="isCompleted" class="task-checkbox popover hidden" type="checkbox"/> <div class="left"> <input data-field="name" class="todo-title top" type="text" placeholder="add task name"/> <div class="bottom single-line"> <button class="nearest-datetime-button single-line" type="button"> <input data-field="nextSession" class="readonly datetime indicator" type="text" value="" readonly="readonly"/> </button> <button class="cycle-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> </button> <button class="reminder-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_1_}"/> </button> </div> </div> <button class="todo-details-on right" type="button"> <img class="off" src="${_2_task_template_HTML_LOADER_IMPORT_2_}"/> <img class="on hidden" src="${_2_task_template_HTML_LOADER_IMPORT_3_}"/> </button> </div> <div class="todo-edit-dropdown hidden"> <div class="todo-details-dropdown hidden"> <div class="checklist container"> <div class="blank subtask single-line"> <input class="subtask-checkbox" type="checkbox" disabled="disabled"/> <input class="subtask-title blank" type="text" value="" placeholder="click enter to add"/> </div> <div class="extant-subtasks"></div> </div> <textarea data-field="notes" class="notes container" placeholder="Notes"></textarea> <div class="attachment container hidden"> </div> </div> <div class="todo-schedule-dropdown hidden"> <div class="schedule-type-selection single-line"> <button class="datetime-only-button" type="button"> datetime </button> <button class="add-repeat-button" type="button"> cycle </button> <button class="add-deadline-button" type="button"> deadline </button> </div> <div class="schedule-calendar"> </div> <div class="deadline-description hidden"> </div> <div class="scheduled-datetimes-dropdown hidden"> </div> <div class="logged-datetimes-dropdown hidden"> </div> <div class="open-recurring single-line hidden"> <button class="open-recurring-button single-line" type="button"> <img class="icon inactive" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> <span class="inactive description"> set recurrence </span> <div class="hidden single-line description"> <span class="hidden"> repeats </span> <input class="recurring-description" type="text" value="" readonly="readonly"/> </div> </button> <button class="clear-recurring-button hidden"> <img class="icon inactive" src="${_2_task_template_HTML_LOADER_IMPORT_4_}"/> </button> </div> <div class="open-reminder single-line hidden"> </div> </div> <div class="bottom-section single-line"> <button class="add-datetime-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-datetime-icon"> <desc>App Window Clock Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M19.949416666666668 7.565185833333333v-5.5c0 -0.3646775 -0.14483333333333334 -0.7144133333333333 -0.40269166666666667 -0.9722716666666665 -0.2578583333333333 -0.25786291666666666 -0.6076583333333333 -0.4027283333333333 -0.9723083333333332 -0.4027283333333333h-16.5c-0.3646683333333333 0 -0.7144133333333333 0.14486541666666666 -0.9722716666666665 0.4027283333333333C0.8442829999999999 1.3507725 0.6994166666666667 1.7005083333333333 0.6994166666666667 2.0651858333333335V17.190158333333333c0 0.36474166666666663 0.14486633333333335 0.7144499999999999 0.4027283333333333 0.9723083333333332 0.2578583333333333 0.2578583333333333 0.6076033333333333 0.40269166666666667 0.9722716666666665 0.40269166666666667h5.5" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M0.6994166666666667 4.8151858333333335h19.25" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M10.321666666666665 15.815158333333333c0 0.7223333333333334 0.14226666666666665 1.4375166666666666 0.41864166666666663 2.1047583333333333 0.27646666666666664 0.6673333333333333 0.6815416666666667 1.2736166666666666 1.1923083333333333 1.7843833333333334 0.510675 0.510675 1.1170499999999999 0.9158416666666667 1.7842916666666666 1.1922166666666667 0.6673333333333333 0.276375 1.3825166666666666 0.41864166666666663 2.1047583333333333 0.41864166666666663s1.4375166666666666 -0.14226666666666665 2.1047583333333333 -0.41864166666666663c0.6673333333333333 -0.276375 1.2736166666666666 -0.6815416666666667 1.7843833333333334 -1.1922166666666667 0.510675 -0.5107666666666667 0.9158416666666667 -1.1170499999999999 1.1922166666666667 -1.7843833333333334 0.276375 -0.6672416666666666 0.41864166666666663 -1.382425 0.41864166666666663 -2.1047583333333333 0 -0.7222416666666667 -0.14226666666666665 -1.437425 -0.41864166666666663 -2.1047583333333333 -0.276375 -0.6672416666666666 -0.6815416666666667 -1.2736166666666666 -1.1923083333333333 -1.7842916666666666 -0.510675 -0.5107666666666667 -1.1169583333333333 -0.9158416666666667 -1.7842916666666666 -1.1922166666666667 -0.6672416666666666 -0.27646666666666664 -1.3825166666666666 -0.4187333333333333 -2.1047583333333333 -0.4187333333333333s-1.437425 0.14226666666666665 -2.1047583333333333 0.4187333333333333c-0.6672416666666666 0.276375 -1.2736166666666666 0.6814499999999999 -1.7842916666666666 1.1922166666666667 -0.5107666666666667 0.510675 -0.9158416666666667 1.1170499999999999 -1.1923083333333333 1.7842916666666666 -0.276375 0.6673333333333333 -0.41864166666666663 1.3825166666666666 -0.41864166666666663 2.1047583333333333Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.252666666666666 15.815341666666665H15.821666666666667v-2.430083333333333" stroke-width="2"> </path> </svg> </button> <button class="add-details-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-details-icon"> <desc>Notes Checklist Flip Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M2.0625 2.0625h17.875s1.375 0 1.375 1.375v16.5s0 1.375 -1.375 1.375H2.0625s-1.375 0 -1.375 -1.375v-16.5s0 -1.375 1.375 -1.375Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M4.8125 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.1875 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 16.5h4.125" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 9.625h4.125" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 14.025 -2.8874999999999997 3.85 -2.0625 -2.0625" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 6.875 -2.8874999999999997 3.85L4.125 8.6625" stroke-width="2"> </path> </svg> </button> <div class="right"> <button class="duplicate-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="duplicate-task-icon"> <desc>Duplicate Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M16.75 4.5V1.75c0 -0.55228 -0.4477 -1 -1 -1h-14c-0.55228 0 -1 0.44771 -1 1v14c0 0.5523 0.44772 1 1 1H4.5" stroke-width="2.5"></path> <path stroke-linejoin="round" d="M7.25 8.25c0 -0.55229 0.44772 -1 1 -1h14c0.5523 0 1 0.44772 1 1v14c0 0.5523 -0.4477 1 -1 1h-14c-0.55229 0 -1 -0.4477 -1 -1v-14Z" stroke-width="2.5"></path> </svg> </button> <button class="delete-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="delete-task-icon"> <desc>Bin 1 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M1 5h22" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 1h-4.5c-0.39782 0 -0.77936 0.15804 -1.06066 0.43934C8.40804 1.72064 8.25 2.10218 8.25 2.5V5h7.5V2.5c0 -0.39782 -0.158 -0.77936 -0.4393 -1.06066C15.0294 1.15804 14.6478 1 14.25 1Z" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.86 21.62c-0.0278 0.3758 -0.197 0.7271 -0.4735 0.9832 -0.2764 0.256 -0.6397 0.3978 -1.0165 0.3968H6.63c-0.37683 0.001 -0.74006 -0.1408 -1.01653 -0.3968 -0.27647 -0.2561 -0.44565 -0.6074 -0.47347 -0.9832L3.75 5h16.5l-1.39 16.62Z" stroke-width="2"> </path> </svg> </button> </div> </div> </div> </div> <button class="tiny-add-bar" type="button"> </button>`;
 // Exports
 /* harmony default export */ const _2_task_template = (_2_task_template_code);
 ;// ./src/components/left-pane/items-views/1.todo-view/subtask-template.html
@@ -1596,6 +1668,8 @@ class ListView {
     this.todoModeller = modeller;
     this.todoModel = modeller.todoModel;
     this.todoView = new TodoView(modeller, controller);
+
+    this.renderView();
   }
 
   static SELECTORS = {
@@ -1609,6 +1683,23 @@ class ListView {
     openListButton: '.open-list-button',
     tinyAdd: '.tiny-add-bar-list',
   };
+
+  renderView() {
+    const container = document.getElementById('todo-panel');
+    container.innerHTML = '';
+    this.todoModel.forEach((list) => {
+      container.appendChild(this.renderList(list));
+      // this is a hack; TDL: replace with default list
+      if (list.listId === 'list-1') {
+        list.toggleOpen();
+        ListView.toggleListOpen(list);
+      }
+    });
+    container.addEventListener(
+      'change',
+      this.todoController.handleInputChange.bind(this)
+    );
+  }
 
   renderList(list) {
     const listTemplate = document.createElement('template');
@@ -2355,31 +2446,17 @@ const demoData = [
 
 
 
-// TDL: add other panel views (habit, variable)
-
 class TodoPanelController {
-  constructor(container) {
-    this.container = container;
-    this.todoModeller = new TodoModeller();
+  constructor(userInstance) {
+    this.userInstance = userInstance;
+    this.todoModeller = new TodoModeller(userInstance.storedLists, this);
     this.todoModel = this.todoModeller.todoModel;
     this.listView = new ListView(this.todoModeller, this);
-
-    this.container.addEventListener(
-      'change',
-      this.handleInputChange.bind(this)
-    );
   }
 
-  renderAllLists() {
-    this.container.innerHTML = '';
-    this.todoModeller.todoModel.forEach((list) => {
-      this.container.appendChild(this.listView.renderList(list));
-      // this is a hack; TDL: replace with default list
-      if (list.listId === 'list-1') {
-        list.toggleOpen();
-        ListView.toggleListOpen(list);
-      }
-    });
+  savetoLocalStorage() {
+    this.userInstance.storedLists = this.todoModel;
+    localStorage.setItem(this.userInstance.email, this.userInstance);
   }
 
   static getIDsFromElement(element) {
@@ -2549,21 +2626,334 @@ class TodoPanelController {
 
 
 
-// class MainFrameController {
-//   static utilityInputElement = document.getElementById('utility-input');
-// }
+class User {
+  constructor(email, password) {
+    this.email = email;
+    this.password = password;
+  }
+
+  storedLists = [
+    {
+      listId: 'list-1',
+      name: 'Todo List Project',
+      isOpen: false,
+      todos: [
+        {
+          listId: 'list-1',
+          sublistId: null,
+          todoId: 'todo-1',
+          name: 'hover between tasks to add task',
+          type: 'task',
+          isDetailsOpen: false,
+          isScheduleOpen: false,
+          isCompleted: false,
+          schedule: [
+            {
+              sessionId: 'session-1',
+              startDate: '2025-02-11',
+              startTime: null,
+              endDate: '2025-02-11',
+              endTime: null,
+              isLogged: false,
+              isPast: false,
+            },
+          ],
+          nextSession: '2025-02-11',
+          checklist: [
+            {
+              subtaskId: 'subtask-1',
+              name: 'can complete tasks',
+              isCompleted: false,
+            },
+            {
+              subtaskId: 'subtask-2',
+              name: 'can delete tasks',
+              isCompleted: false,
+            },
+            {
+              subtaskId: 'subtask-3',
+              name: 'cannot duplicate tasks',
+              isCompleted: false,
+            },
+          ],
+          notes: null,
+        },
+        {
+          listId: 'list-1',
+          sublistId: null,
+          todoId: 'todo-2',
+          name: 'click the arrow to add date',
+          type: 'task',
+          isDetailsOpen: false,
+          isScheduleOpen: false,
+          isCompleted: false,
+          schedule: [],
+          nextSession: '',
+          checklist: [
+            {
+              name: 'click the "schedule" button',
+              subtaskId: 'subtask-4',
+              isCompleted: false,
+            },
+            {
+              name: '(lower left hand corner)',
+              subtaskId: 'subtask-5',
+              isCompleted: false,
+            },
+            {
+              name: 'click on month and year to adjust',
+              subtaskId: 'subtask-6',
+              isCompleted: false,
+            },
+          ],
+          notes: '',
+        },
+      ],
+      sublists: [
+        {
+          sublistId: 'sublist-1',
+          name: 'Click to open sublist',
+          isOpen: false,
+          todos: [
+            {
+              listId: 'list-1',
+              sublistId: 'sublist-1',
+              todoId: 'todo-3',
+              name: 'cannot add new (sub)lists',
+              type: 'task',
+              isDetailsOpen: false,
+              isScheduleOpen: false,
+              isCompleted: false,
+              schedule: [
+                {
+                  sessionId: 'session-2',
+                  startDate: '2025-02-11',
+                  startTime: null,
+                  endDate: '2025-02-11',
+                  endTime: null,
+                  isLogged: false,
+                  isPast: false,
+                },
+              ],
+              nextSession: '2025-02-11',
+              checklist: [],
+              notes: '',
+            },
+            {
+              listId: 'list-1',
+              sublistId: 'sublist-1',
+              todoId: 'todo-4',
+              name: 'can edit (sub)list name',
+              type: 'task',
+              isDetailsOpen: false,
+              isScheduleOpen: false,
+              isCompleted: false,
+              schedule: [],
+              nextSession: null,
+              checklist: [],
+              notes: '',
+            },
+          ],
+        },
+        {
+          sublistId: 'sublist-2',
+          name: 'Details',
+          isOpen: false,
+          todos: [
+            {
+              listId: 'list-1',
+              sublistId: 'sublist-2',
+              todoId: 'todo-5',
+              name: 'can add details',
+              type: 'task',
+              isDetailsOpen: false,
+              isScheduleOpen: false,
+              isCompleted: false,
+              schedule: [],
+              nextSession: null,
+              checklist: [
+                {
+                  name: 'can add subtasks',
+                  subtaskId: 'subtask-7',
+                  isCompleted: false,
+                },
+                {
+                  name: 'can complete subtasks',
+                  subtaskId: 'subtask-8',
+                  isCompleted: false,
+                },
+                {
+                  name: 'can delete subtasks',
+                  subtaskId: 'subtask-9',
+                  isCompleted: false,
+                },
+              ],
+              notes: 'can add notes!',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      listId: 'list-2',
+      name: 'The Odin Project JavaScript',
+      isOpen: false,
+      todos: [
+        {
+          listId: 'list-2',
+          sublistId: null,
+          todoId: 'todo-6',
+          name: 'dynamic UI interactions',
+          type: 'task',
+          isDetailsOpen: false,
+          isScheduleOpen: false,
+          isCompleted: false,
+          schedule: [],
+          nextSession: null,
+          checklist: [
+            {
+              subtaskId: 'subtask-10',
+              name: 'drop down menus',
+              type: 'subtask',
+              isCompleted: false,
+            },
+            {
+              subtaskId: 'subtask-11',
+              name: 'image carousels',
+              type: 'subtask',
+              isCompleted: false,
+            },
+          ],
+          notes:
+            'https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions',
+        },
+      ],
+      sublists: [],
+    },
+  ];
+}
 
 const init = () => {
-  const dragDiv = document.querySelector('.dragbar');
-  dragDiv.innerHTML += drag_bar_template;
+  // LOGIN WITH EXISTING ACCOUNT FORM
+  const loginForm = document.querySelector('#login-form');
+  const email = loginForm.querySelector('input[type=email]');
+  const emailError = loginForm.querySelector('.input-container').children[1];
+  const password = loginForm.querySelector('input[type=password]');
+  const passwordError = loginForm.querySelector('.input-container').children[3];
+  const submitButton = loginForm.querySelector('#submit-existing-login');
 
-  const todoPanelController = new TodoPanelController(
-    document.getElementById('todo-panel')
-  );
-  todoPanelController.renderAllLists();
+  loginForm.addEventListener('input', () => {
+    if (email.validity.valueMissing) {
+      emailError.textContent = 'Email required';
+      emailError.classList.remove('hidden');
+    } else if (password.validity.valueMissing) {
+      passwordError.textContent = 'Password required';
+      passwordError.classList.remove('hidden');
+    } else {
+      submitButton.removeAttribute('disabled');
+    }
+  });
 
-  // const mainFrameController = new MainFrameController();
-  // MainFrameController.utilityInputElement.addEventListener('input', parseInput);
+  loginForm.addEventListener('submit', () => {
+    const id = email.value.toLowerCase();
+    const storedData = JSON.parse(localStorage.getItem(id)) || null;
+    if (storedData.email === id && storedData.password === password.value) {
+      document.querySelector('body').innerHTML = main_page;
+      // eslint-disable-next-line no-new
+      new TodoPanelController(storedData);
+    } else if (storedData === null) {
+      email.error.textContent = 'Email not found';
+      email.error.classList.remove('hidden');
+    } else if (
+      storedData.email === id &&
+      storedData.password !== password.value
+    ) {
+      passwordError.textContent = 'Wrong password';
+      passwordError.classList.remove('hidden');
+    }
+  });
+
+  // LOGIN WITH NEW ACCOUNT FORM
+  const signupForm = document.querySelector('#signup-form');
+  const submitNewLoginButton = signupForm.querySelector('#submit-new-login');
+
+  const name = signupForm.querySelector('input[type=text]');
+  const nameError = signupForm.querySelector('input-container').children[1];
+  name.addEventListener('input', () => {
+    if (name.validity.valueMissing) {
+      nameError.classList.remove('hidden');
+      name.validity.valid = false;
+    } else {
+      name.validity.valid = true;
+    }
+  });
+
+  const newEmail = signupForm.querySelector('input[type=email]');
+  const newEmailError =
+    signupForm.querySelector('.input-container').children[3];
+  newEmail.addEventListener('input', () => {
+    if (!newEmail.validity.valid) {
+      newEmailError.classList.remove('hidden');
+      newEmail.validity.valid = false;
+    } else {
+      newEmail.validity.valid = true;
+    }
+  });
+
+  const newPassword = signupForm.querySelector('input[type=password]');
+  const passwordShortError =
+    signupForm.querySelector('.input-container').children[5];
+  const passwordNumberError =
+    signupForm.querySelector('.input-container').children[6];
+  const passwordLetterError =
+    signupForm.querySelector('.input-container').children[7];
+  newPassword.addEventListener('input', () => {
+    if (newPassword.length < 6) {
+      passwordShortError.classList.remove('hidden');
+    }
+    if (!/\d/.test(newPassword.value)) {
+      passwordNumberError.classList.remove('hidden');
+    }
+    if (!/[a-zA-Z]/.test(newPassword.value)) {
+      passwordLetterError.classList.remove('hidden');
+    }
+    if (
+      newPassword.length > 5 &&
+      /\d/.test(newPassword.value) &&
+      /[a-zA-Z]/.test(newPassword.value)
+    ) {
+      newPassword.validity.valid = true;
+    }
+  });
+
+  const newPasswordConfirmation = signupForm.querySelector('.confirm');
+  const newPasswordConfirmationError =
+    signupForm.querySelector('.input-container').children[9];
+  newPasswordConfirmation.addEventListener('input', () => {
+    if (newPasswordConfirmation.value !== newPassword.value) {
+      newPasswordConfirmationError.classList.remove('hidden');
+      newPasswordConfirmation.validity.valid = false;
+    } else {
+      newPasswordConfirmation.validity.valid = true;
+    }
+  });
+
+  if (
+    name.validity.valid &&
+    newEmail.validity.valid &&
+    newPassword.validity.valid &&
+    newPasswordConfirmation.validity.valid
+  ) {
+    submitNewLoginButton.removeAttribute('disabled');
+  }
+
+  signupForm.addEventListener('submit', () => {
+    // eslint-disable-next-line no-new
+    const controller = new TodoPanelController(
+      new User(email.value.toLowerCase(), password.value)
+    );
+    controller.saveToLocalStorage();
+  });
 };
 
 init();

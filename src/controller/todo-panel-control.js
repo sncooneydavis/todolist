@@ -13,9 +13,10 @@ export default class TodoPanelController {
     this.listView = new ListView(this.todoModeller, this);
   }
 
-  savetoLocalStorage() {
+  saveToLocalStorage() {
     this.userInstance.storedLists = this.todoModel;
-    localStorage.setItem(this.userInstance.email, this.userInstance);
+    const stringToSave = JSON.stringify(this.userInstance);
+    localStorage.setItem(this.userInstance.email, stringToSave);
   }
 
   static getIDsFromElement(element) {

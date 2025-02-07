@@ -14,30 +14,30 @@
 		<div class="login container" id="form-container">
 			<form id="login-form" novalidate>
 					<h2>Log In</h2>
-					<div class="input-container">
+					<div class="login input-container">
 							<input type="email" placeholder="Email" required>
 							<span class="error hidden"></span>
-							<input type="password" placeholder="Password" required>
+							<input type="password" placeholder="Password" minlength="6 s" required>
 							<span class="error hidden"></span>
 					</div>
-					<button id="submit-existing-login" disabled>Go</button>
+					<button id="submit-existing-login">Go</button>
 					<p class="toggle-link" onclick="showSignUp()">Create new account</p>
 				</form>
 			<form id="signup-form" style="display: none;" novalidate>
 					<h2>Create New Account</h2>
-					<div class="input-container">
-							<input type="text" placeholder="Name">
-							<span class="error hidden">Required</span>
-							<input type="email" placeholder="Email">
-							<span class="error hidden">Must be a valid email</span>
-							<input type="password" minlength="6" placeholder="Password">
-							<span class="error hidden">Must be 6 characters or longer</span>
-							<span class="error hidden">Must contain a number</span>
-							<span class="error hidden">Must contain a letter</span>
-							<input type="password" placeholder="Confirm Password">
-							<span class="error hidden">Passwords must match</span>
+					<div class="signup input-container">
+						<input type="text" placeholder="Name" pattern="[a-zA-Z]+(?: [a-zA-Z]+)? *" required>
+						<span class="error hidden">Full name required</span>
+						<input type="email" placeholder="Email" required>
+						<span class="error hidden">Must be a valid email</span>
+						<input type="password" minlength="6" pattern="(?=.*[a-zA-Z])(?=.*\d).{6,}" placeholder="Password" required>
+						<span class="error hidden">Must be 6 characters or longer</span>
+						<span class="error hidden">Must contain a number</span>
+						<span class="error hidden">Must contain a letter</span>
+						<input type="password" class="confirm" placeholder="Confirm Password" required>
+						<span class="error hidden">Passwords must match</span>
 					</div>
-					<button id="submit-new-login" disabled>Go</button>
+					<button id="submit-new-login">Go</button>
 					<p class="toggle-link" onclick="showLogin()">Back to login</p>
 				</form>
     </div>
