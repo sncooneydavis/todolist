@@ -408,10 +408,11 @@ const init = () => {
 
 // eslint-disable-next-line no-unused-vars
 const devInit = () => {
-  const storedData = JSON.parse(localStorage.getItem('s@gmail.com'));
   document.querySelector('body').innerHTML = mainPageContents;
-  // eslint-disable-next-line no-new
-  new TodoPanelController(storedData);
+  const controller = new TodoPanelController(
+    new User('default user', 'password1')
+  );
+  controller.saveToLocalStorage();
 };
 
 devInit();
