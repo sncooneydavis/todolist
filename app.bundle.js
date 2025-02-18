@@ -703,7 +703,7 @@ var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(
 var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(928), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(81), __webpack_require__.b);
 // Module
-var code = `<div class="main container"> <div id="left-pane"> <div class="left container"> <div id="utility-toolbar" class="single-line"> <input id="utility-input" name="utility-input" type="text"/> <button class="utility button inactive"> <img class="hidden" src="${___HTML_LOADER_IMPORT_0___}"/> <img class="hidden" src="${___HTML_LOADER_IMPORT_1___}"/> <img class="" src="${___HTML_LOADER_IMPORT_2___}"/> </button> </div> <div id="left-view-toolbar"> <button id="home-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_3___}"/> </button> <button id="todo-view-button" type="button"> <img class="bigicon" src="${___HTML_LOADER_IMPORT_4___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="habit-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_6___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="measurement-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_7___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> </div> <div id="todo-panel"> </div> <div id="timer-panel" class="hidden"> <button id="main-timer-button" class="dragbar-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_8___}"/> <input class="countup hidden" value="00:00" type="time" step="1" readonly="readonly"/> </button> <button id="main-timer-item-button" class="dragbar-button" class="hidden"> <input id="main-timer-item-name" class="" value="task and time here" type="text" maxlength="15" readonly="readonly"/> </button> </div> </div> <div class="dragbar right"> <div class="solid-line"></div> <div class="z-top top"> <button id="calendar-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon" src="${___HTML_LOADER_IMPORT_9___}"/> </button> <button id="data-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_10___}"/> </button> </div> <div class="z-top bottom"> <button id="settings-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_11___}"/> </button> </div> </div> </div> <div id="right-pane"> </div> </div>`;
+var code = `<div class="main container"> <div id="left-pane"> <div class="left container"> <div id="utility-toolbar" class="single-line"> <div id="utility-input" contenteditable="true"></div> <div id="utility-results" class="hidden"></div> <button class="utility button inactive"> <img class="hidden" src="${___HTML_LOADER_IMPORT_0___}"/> <img class="hidden" src="${___HTML_LOADER_IMPORT_1___}"/> <img class="" src="${___HTML_LOADER_IMPORT_2___}"/> </button> </div> <div id="left-view-toolbar"> <button id="home-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_3___}"/> </button> <button id="todo-view-button" type="button"> <img class="bigicon" src="${___HTML_LOADER_IMPORT_4___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="habit-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_6___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="measurement-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_7___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> </div> <div id="todo-panel"> </div> <div id="timer-panel" class="hidden"> <button id="main-timer-button" class="dragbar-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_8___}"/> <input class="countup hidden" value="00:00" type="time" step="1" readonly="readonly"/> </button> <button id="main-timer-item-button" class="dragbar-button" class="hidden"> <input id="main-timer-item-name" class="" value="task and time here" type="text" maxlength="15" readonly="readonly"/> </button> </div> </div> <div class="dragbar right"> <div class="solid-line"></div> <div class="z-top top"> <button id="calendar-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon" src="${___HTML_LOADER_IMPORT_9___}"/> </button> <button id="data-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_10___}"/> </button> </div> <div class="z-top bottom"> <button id="settings-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_11___}"/> </button> </div> </div> </div> <div id="right-pane"> </div> </div>`;
 // Exports
 /* harmony default export */ const main_page = (code);
 ;// ./src/components/left-pane/items-views/1.todo-view/2.task-template.html
@@ -714,7 +714,7 @@ var _2_task_template_HTML_LOADER_IMPORT_2_ = new URL(/* asset import */ __webpac
 var _2_task_template_HTML_LOADER_IMPORT_3_ = new URL(/* asset import */ __webpack_require__(699), __webpack_require__.b);
 var _2_task_template_HTML_LOADER_IMPORT_4_ = new URL(/* asset import */ __webpack_require__(544), __webpack_require__.b);
 // Module
-var _2_task_template_code = `<div data-list-id="" data-sublist-id="" data-todo-id="" data-todo-type="" class="todo"> <div class="todo-bar"> <input data-field="isCompleted" class="task-checkbox popover hidden" type="checkbox"/> <div class="left"> <input data-field="name" class="todo-title top" type="text" placeholder="add task name"/> <div class="bottom single-line"> <button class="nearest-datetime-button single-line" type="button"> <input data-field="nextSession" class="readonly datetime indicator" type="text" value="" readonly="readonly"/> </button> <button class="cycle-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> </button> <button class="reminder-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_1_}"/> </button> </div> </div> <button class="todo-details-on right" type="button"> <img class="off" src="${_2_task_template_HTML_LOADER_IMPORT_2_}"/> <img class="on hidden" src="${_2_task_template_HTML_LOADER_IMPORT_3_}"/> </button> </div> <div class="todo-edit-dropdown hidden"> <div class="todo-details-dropdown hidden"> <div class="checklist container"> <div class="blank subtask single-line"> <input class="subtask-checkbox" type="checkbox" disabled="disabled"/> <input class="subtask-title blank" type="text" value="" placeholder="click enter to add"/> </div> <div class="extant-subtasks"></div> </div> <textarea data-field="notes" class="notes container" placeholder="Notes"></textarea> <div class="attachment container hidden"> </div> </div> <div class="todo-schedule-dropdown hidden"> <div class="schedule-type-selection single-line"> <button class="datetime-only-button" type="button"> datetime </button> <button class="add-repeat-button" type="button"> cycle </button> <button class="add-deadline-button" type="button"> deadline </button> </div> <div class="schedule-calendar"> </div> <div class="deadline-description hidden"> </div> <div class="scheduled-datetimes-dropdown hidden"> </div> <div class="logged-datetimes-dropdown hidden"> </div> <div class="open-recurring single-line hidden"> <button class="open-recurring-button single-line" type="button"> <img class="icon inactive" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> <span class="inactive description"> set recurrence </span> <div class="hidden single-line description"> <span class="hidden"> repeats </span> <input class="recurring-description" type="text" value="" readonly="readonly"/> </div> </button> <button class="clear-recurring-button hidden"> <img class="icon inactive" src="${_2_task_template_HTML_LOADER_IMPORT_4_}"/> </button> </div> <div class="open-reminder single-line hidden"> </div> </div> <div class="bottom-section single-line"> <button class="add-datetime-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-datetime-icon"> <desc>App Window Clock Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M19.949416666666668 7.565185833333333v-5.5c0 -0.3646775 -0.14483333333333334 -0.7144133333333333 -0.40269166666666667 -0.9722716666666665 -0.2578583333333333 -0.25786291666666666 -0.6076583333333333 -0.4027283333333333 -0.9723083333333332 -0.4027283333333333h-16.5c-0.3646683333333333 0 -0.7144133333333333 0.14486541666666666 -0.9722716666666665 0.4027283333333333C0.8442829999999999 1.3507725 0.6994166666666667 1.7005083333333333 0.6994166666666667 2.0651858333333335V17.190158333333333c0 0.36474166666666663 0.14486633333333335 0.7144499999999999 0.4027283333333333 0.9723083333333332 0.2578583333333333 0.2578583333333333 0.6076033333333333 0.40269166666666667 0.9722716666666665 0.40269166666666667h5.5" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M0.6994166666666667 4.8151858333333335h19.25" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M10.321666666666665 15.815158333333333c0 0.7223333333333334 0.14226666666666665 1.4375166666666666 0.41864166666666663 2.1047583333333333 0.27646666666666664 0.6673333333333333 0.6815416666666667 1.2736166666666666 1.1923083333333333 1.7843833333333334 0.510675 0.510675 1.1170499999999999 0.9158416666666667 1.7842916666666666 1.1922166666666667 0.6673333333333333 0.276375 1.3825166666666666 0.41864166666666663 2.1047583333333333 0.41864166666666663s1.4375166666666666 -0.14226666666666665 2.1047583333333333 -0.41864166666666663c0.6673333333333333 -0.276375 1.2736166666666666 -0.6815416666666667 1.7843833333333334 -1.1922166666666667 0.510675 -0.5107666666666667 0.9158416666666667 -1.1170499999999999 1.1922166666666667 -1.7843833333333334 0.276375 -0.6672416666666666 0.41864166666666663 -1.382425 0.41864166666666663 -2.1047583333333333 0 -0.7222416666666667 -0.14226666666666665 -1.437425 -0.41864166666666663 -2.1047583333333333 -0.276375 -0.6672416666666666 -0.6815416666666667 -1.2736166666666666 -1.1923083333333333 -1.7842916666666666 -0.510675 -0.5107666666666667 -1.1169583333333333 -0.9158416666666667 -1.7842916666666666 -1.1922166666666667 -0.6672416666666666 -0.27646666666666664 -1.3825166666666666 -0.4187333333333333 -2.1047583333333333 -0.4187333333333333s-1.437425 0.14226666666666665 -2.1047583333333333 0.4187333333333333c-0.6672416666666666 0.276375 -1.2736166666666666 0.6814499999999999 -1.7842916666666666 1.1922166666666667 -0.5107666666666667 0.510675 -0.9158416666666667 1.1170499999999999 -1.1923083333333333 1.7842916666666666 -0.276375 0.6673333333333333 -0.41864166666666663 1.3825166666666666 -0.41864166666666663 2.1047583333333333Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.252666666666666 15.815341666666665H15.821666666666667v-2.430083333333333" stroke-width="2"> </path> </svg> </button> <button class="add-details-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-details-icon"> <desc>Notes Checklist Flip Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M2.0625 2.0625h17.875s1.375 0 1.375 1.375v16.5s0 1.375 -1.375 1.375H2.0625s-1.375 0 -1.375 -1.375v-16.5s0 -1.375 1.375 -1.375Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M4.8125 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.1875 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 16.5h4.125" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 9.625h4.125" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 14.025 -2.8874999999999997 3.85 -2.0625 -2.0625" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 6.875 -2.8874999999999997 3.85L4.125 8.6625" stroke-width="2"> </path> </svg> </button> <div class="right"> <button class="duplicate-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="duplicate-task-icon"> <desc>Duplicate Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M16.75 4.5V1.75c0 -0.55228 -0.4477 -1 -1 -1h-14c-0.55228 0 -1 0.44771 -1 1v14c0 0.5523 0.44772 1 1 1H4.5" stroke-width="2.5"></path> <path stroke-linejoin="round" d="M7.25 8.25c0 -0.55229 0.44772 -1 1 -1h14c0.5523 0 1 0.44772 1 1v14c0 0.5523 -0.4477 1 -1 1h-14c-0.55229 0 -1 -0.4477 -1 -1v-14Z" stroke-width="2.5"></path> </svg> </button> <button class="delete-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="delete-task-icon"> <desc>Bin 1 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M1 5h22" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 1h-4.5c-0.39782 0 -0.77936 0.15804 -1.06066 0.43934C8.40804 1.72064 8.25 2.10218 8.25 2.5V5h7.5V2.5c0 -0.39782 -0.158 -0.77936 -0.4393 -1.06066C15.0294 1.15804 14.6478 1 14.25 1Z" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.86 21.62c-0.0278 0.3758 -0.197 0.7271 -0.4735 0.9832 -0.2764 0.256 -0.6397 0.3978 -1.0165 0.3968H6.63c-0.37683 0.001 -0.74006 -0.1408 -1.01653 -0.3968 -0.27647 -0.2561 -0.44565 -0.6074 -0.47347 -0.9832L3.75 5h16.5l-1.39 16.62Z" stroke-width="2"> </path> </svg> </button> </div> </div> </div> </div> <button class="tiny-add-bar" type="button"> </button>`;
+var _2_task_template_code = `<div data-list-id="" data-sublist-id="" data-todo-id="" data-todo-type="" class="todo"> <div class="todo-bar"> <input data-field="isCompleted" class="task-checkbox popover hidden" type="checkbox"/> <div class="left"> <input data-field="name" class="todo-title top" type="text" placeholder="add task name"/> <div class="bottom single-line"> <button class="nearest-datetime-button single-line" type="button"> <input data-field="nextSession" class="readonly datetime indicator" type="text" value="" readonly="readonly"/> </button> <button class="cycle-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> </button> <button class="reminder-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_1_}"/> </button> </div> </div> <button class="todo-details-on right" type="button"> <img class="off" src="${_2_task_template_HTML_LOADER_IMPORT_2_}"/> <img class="on hidden" src="${_2_task_template_HTML_LOADER_IMPORT_3_}"/> </button> </div> <div class="todo-edit-dropdown hidden"> <div class="todo-details-dropdown hidden"> <div class="checklist container"> <div class="blank subtask single-line"> <input class="subtask-checkbox" type="checkbox" disabled="disabled"/> <input class="subtask-title blank" type="text" value="" placeholder="click enter to add"/> </div> <div class="extant-subtasks"></div> </div> <textarea data-field="notes" class="notes container" placeholder="Notes"></textarea> <div class="attachment container hidden"> </div> </div> <div class="todo-schedule-dropdown hidden"> <div class="schedule-type-selection single-line"> <button class="datetime-only-button" type="button"> datetime </button> <button class="add-repeat-button" type="button"> cycle </button> <button class="add-deadline-button" type="button"> deadline </button> </div> <div class="schedule-calendar"> </div> <div class="deadline-description hidden"> </div> <div class="scheduled-datetimes-dropdown hidden"> </div> <div class="logged-datetimes-dropdown hidden"> </div> <div class="open-recurring single-line hidden"> <button class="open-recurring-button single-line" type="button"> <img class="icon inactive" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> <span class="inactive description"> set recurrence </span> <div class="hidden single-line description"> <span class="hidden"> repeats </span> <input class="recurring-description" type="text" value="" readonly="readonly"/> </div> </button> <button class="clear-recurring-button hidden"> <img class="icon inactive" src="${_2_task_template_HTML_LOADER_IMPORT_4_}"/> </button> </div> <div class="open-reminder single-line hidden"> </div> </div> <div class="bottom-section single-line"> <button class="add-datetime-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-datetime-icon"> <desc>App Window Clock Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M19.949416666666668 7.565185833333333v-5.5c0 -0.3646775 -0.14483333333333334 -0.7144133333333333 -0.40269166666666667 -0.9722716666666665 -0.2578583333333333 -0.25786291666666666 -0.6076583333333333 -0.4027283333333333 -0.9723083333333332 -0.4027283333333333h-16.5c-0.3646683333333333 0 -0.7144133333333333 0.14486541666666666 -0.9722716666666665 0.4027283333333333C0.8442829999999999 1.3507725 0.6994166666666667 1.7005083333333333 0.6994166666666667 2.0651858333333335V17.190158333333333c0 0.36474166666666663 0.14486633333333335 0.7144499999999999 0.4027283333333333 0.9723083333333332 0.2578583333333333 0.2578583333333333 0.6076033333333333 0.40269166666666667 0.9722716666666665 0.40269166666666667h5.5" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M0.6994166666666667 4.8151858333333335h19.25" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M10.321666666666665 15.815158333333333c0 0.7223333333333334 0.14226666666666665 1.4375166666666666 0.41864166666666663 2.1047583333333333 0.27646666666666664 0.6673333333333333 0.6815416666666667 1.2736166666666666 1.1923083333333333 1.7843833333333334 0.510675 0.510675 1.1170499999999999 0.9158416666666667 1.7842916666666666 1.1922166666666667 0.6673333333333333 0.276375 1.3825166666666666 0.41864166666666663 2.1047583333333333 0.41864166666666663s1.4375166666666666 -0.14226666666666665 2.1047583333333333 -0.41864166666666663c0.6673333333333333 -0.276375 1.2736166666666666 -0.6815416666666667 1.7843833333333334 -1.1922166666666667 0.510675 -0.5107666666666667 0.9158416666666667 -1.1170499999999999 1.1922166666666667 -1.7843833333333334 0.276375 -0.6672416666666666 0.41864166666666663 -1.382425 0.41864166666666663 -2.1047583333333333 0 -0.7222416666666667 -0.14226666666666665 -1.437425 -0.41864166666666663 -2.1047583333333333 -0.276375 -0.6672416666666666 -0.6815416666666667 -1.2736166666666666 -1.1923083333333333 -1.7842916666666666 -0.510675 -0.5107666666666667 -1.1169583333333333 -0.9158416666666667 -1.7842916666666666 -1.1922166666666667 -0.6672416666666666 -0.27646666666666664 -1.3825166666666666 -0.4187333333333333 -2.1047583333333333 -0.4187333333333333s-1.437425 0.14226666666666665 -2.1047583333333333 0.4187333333333333c-0.6672416666666666 0.276375 -1.2736166666666666 0.6814499999999999 -1.7842916666666666 1.1922166666666667 -0.5107666666666667 0.510675 -0.9158416666666667 1.1170499999999999 -1.1923083333333333 1.7842916666666666 -0.276375 0.6673333333333333 -0.41864166666666663 1.3825166666666666 -0.41864166666666663 2.1047583333333333Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.252666666666666 15.815341666666665H15.821666666666667v-2.430083333333333" stroke-width="2"> </path> </svg> </button> <button class="add-details-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-details-icon"> <desc>Notes Checklist Flip Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M2.0625 2.0625h17.875s1.375 0 1.375 1.375v16.5s0 1.375 -1.375 1.375H2.0625s-1.375 0 -1.375 -1.375v-16.5s0 -1.375 1.375 -1.375Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M4.8125 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.1875 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 16.5h4.125" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 9.625h4.125" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 14.025 -2.8874999999999997 3.85 -2.0625 -2.0625" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 6.875 -2.8874999999999997 3.85L4.125 8.6625" stroke-width="2"> </path> </svg> </button> <div class="right"> <button class="duplicate-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="duplicate-task-icon"> <desc>Duplicate Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M16.75 4.5V1.75c0 -0.55228 -0.4477 -1 -1 -1h-14c-0.55228 0 -1 0.44771 -1 1v14c0 0.5523 0.44772 1 1 1H4.5" stroke-width="2.5"></path> <path stroke-linejoin="round" d="M7.25 8.25c0 -0.55229 0.44772 -1 1 -1h14c0.5523 0 1 0.44772 1 1v14c0 0.5523 -0.4477 1 -1 1h-14c-0.55229 0 -1 -0.4477 -1 -1v-14Z" stroke-width="2.5"></path> </svg> </button> <button class="delete-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="delete-task-icon"> <desc>Bin 1 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M1 5h22" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 1h-4.5c-0.39782 0 -0.77936 0.15804 -1.06066 0.43934C8.40804 1.72064 8.25 2.10218 8.25 2.5V5h7.5V2.5c0 -0.39782 -0.158 -0.77936 -0.4393 -1.06066C15.0294 1.15804 14.6478 1 14.25 1Z" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.86 21.62c-0.0278 0.3758 -0.197 0.7271 -0.4735 0.9832 -0.2764 0.256 -0.6397 0.3978 -1.0165 0.3968H6.63c-0.37683 0.001 -0.74006 -0.1408 -1.01653 -0.3968 -0.27647 -0.2561 -0.44565 -0.6074 -0.47347 -0.9832L3.75 5h16.5l-1.39 16.62Z" stroke-width="2"> </path> </svg> </button> </div> </div> </div> </div> <button class="tiny-add-bar-task" type="button"></button> `;
 // Exports
 /* harmony default export */ const _2_task_template = (_2_task_template_code);
 ;// ./src/components/left-pane/items-views/1.todo-view/subtask-template.html
@@ -1292,7 +1292,7 @@ class TodoView {
     datetimeAndDeadlineButton: '.add-deadline-button',
     scheduleCalendar: '.schedule-calendar',
     deleteButton: '.delete-button',
-    tinyAdd: '.tiny-add-bar',
+    tinyAdd: '.tiny-add-bar-task',
   };
 
   renderTodo(todo) {
@@ -1407,7 +1407,9 @@ class TodoView {
   handleTinyAddBarBelowTaskClick(event) {
     const priorTodo = event.target.previousElementSibling;
     const todoData =
-      this.todoController.appendToMiddleOfModelAndReturnBlankTodo(priorTodo);
+      this.todoController.appendToMiddleOfModelAndReturnBlankTodoFrom(
+        priorTodo
+      );
     const todoClone = this.renderTodo(todoData);
     const { parentNode } = event.target;
     parentNode.insertBefore(todoClone, event.target.nextSibling);
@@ -1418,10 +1420,11 @@ class TodoView {
     // TDL: show datetime button 'schedule task' then hide until datetime added
   }
 
-  handleTinyAddBarBelowListClick(event) {
-    const todoData = this.todoController.appendToStartOfListAndReturnBlankTodo(
-      event.target.nextElementSibling
-    );
+  handleTinyAddBarInTodoContainerClick(event) {
+    const todoData =
+      this.todoController.appendToStartOfModelAndReturnBlankTodoFrom(
+        event.target.nextElementSibling
+      );
     const todoClone = this.renderTodo(todoData);
     event.target.after(todoClone);
     event.target.parentNode
@@ -1441,9 +1444,9 @@ class TodoView {
     const dataElementToDelete = this.todoController.getTodoData(
       event.currentTarget
     );
-    this.todoModeller.deleteFromModelAndStore(dataElementToDelete);
+    this.todoModeller.deleteTodoFromModelAndStore(dataElementToDelete);
     const todoDiv = event.target.closest('.todo');
-    if (todoDiv.nextElementSibling.classList.contains('tiny-add-bar')) {
+    if (todoDiv.nextElementSibling.classList.contains('tiny-add-bar-task')) {
       todoDiv.nextElementSibling.remove();
     }
     todoDiv.remove();
@@ -1647,17 +1650,18 @@ class TodoView {
 var list_template_HTML_LOADER_IMPORT_0_ = new URL(/* asset import */ __webpack_require__(847), __webpack_require__.b);
 var list_template_HTML_LOADER_IMPORT_1_ = new URL(/* asset import */ __webpack_require__(699), __webpack_require__.b);
 // Module
-var list_template_code = ` <div class="left popover hidden"> <button class="collapse-one-level-button" type="button"> <img class="edit icon" src="${list_template_HTML_LOADER_IMPORT_0_}"/> </button> <button class="expand-one-level-button" type="button"> <img class="edit icon" src="${list_template_HTML_LOADER_IMPORT_1_}"/> </button> <button class="organize-by-button" type="button"> ○ </button> </div> <ul class="order-options popover hidden"> <li> <input id="order-by-name" name="organize-by" type="radio"/> Name </li> <li> <input id="order-by-type" name="organize-by" type="radio"/> Type </li> <li> <input id="order-by-oldest-to-newest" name="organize-by" type="radio"/> Oldest to Newest </li> <li> <input id="order-by-newest-to-oldest" name="organize-by" type="radio"/> Newest to Oldest </li> </ul> <div data-list-id="" class="list"> <div class="heading single-line"> <button class="open-list-button" type="button"> <input class="readonly title" type="text" value="LIST_TITLE" readonly="readonly"/> </button> <input data-field="name" class="editing-list-title hidden" type="text" value="LIST_TITLE"/> <button class="options-list-button hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="open-options-icon"> <desc>Reward Stars 2 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M9.855083333333333 1.2604166666666665c-0.02291666666666667 5.757583333333333 2.776583333333333 9.023666666666665 9.166666666666666 9.166666666666666 -5.92625 -0.02291666666666667 -8.866 3.1542499999999998 -9.166666666666666 9.166666666666666 -0.057749999999999996 -5.6714166666666666 -2.5923516666666666 -9.174916666666666 -9.16668775 -9.166666666666666 5.881336083333333 -0.08249999999999999 9.143771083333332 -2.9214166666666666 9.16668775 -9.166666666666666Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.427666666666667 1.2604166666666665v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M15.594333333333333 3.09375h3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M19.479166666666664 17.072916666666664v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.645833333333332 18.90625h3.6666666666666665" stroke-width="2"> </path> </svg> </button> </div> <div class="body container hidden"> <div class="options popover hidden"> <button class="add-sublist-button"> Add Sublist </button> <button class="print-list-button"> Print List </button> <button class="archive-list-button"> Archive List </button> </div> <div class="todo container"> <button class="tiny-add-bar-list" type="button"> </button></div> <div class="sublist container"> </div> </div> </div> `;
+var list_template_code = ` <div class="left popover hidden"> <button class="collapse-one-level-button" type="button"> <img class="edit icon" src="${list_template_HTML_LOADER_IMPORT_0_}"/> </button> <button class="expand-one-level-button" type="button"> <img class="edit icon" src="${list_template_HTML_LOADER_IMPORT_1_}"/> </button> <button class="organize-by-button" type="button"> ○ </button> </div> <ul class="order-options popover hidden"> <li> <input id="order-by-name" name="organize-by" type="radio"/> Name </li> <li> <input id="order-by-type" name="organize-by" type="radio"/> Type </li> <li> <input id="order-by-oldest-to-newest" name="organize-by" type="radio"/> Oldest to Newest </li> <li> <input id="order-by-newest-to-oldest" name="organize-by" type="radio"/> Newest to Oldest </li> </ul> <div data-list-id="" class="list"> <div class="heading single-line"> <button class="open-list-button" type="button"> <input class="readonly title" type="text" value="LIST_TITLE" readonly="readonly"/> </button> <input data-field="name" class="editing-list-title hidden" type="text" value="LIST_TITLE"/> <button class="options-list-button hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="open-options-icon"> <desc>Reward Stars 2 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M9.855083333333333 1.2604166666666665c-0.02291666666666667 5.757583333333333 2.776583333333333 9.023666666666665 9.166666666666666 9.166666666666666 -5.92625 -0.02291666666666667 -8.866 3.1542499999999998 -9.166666666666666 9.166666666666666 -0.057749999999999996 -5.6714166666666666 -2.5923516666666666 -9.174916666666666 -9.16668775 -9.166666666666666 5.881336083333333 -0.08249999999999999 9.143771083333332 -2.9214166666666666 9.16668775 -9.166666666666666Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.427666666666667 1.2604166666666665v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M15.594333333333333 3.09375h3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M19.479166666666664 17.072916666666664v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.645833333333332 18.90625h3.6666666666666665" stroke-width="2"> </path> </svg> </button> </div> <div class="body container hidden"> <div class="options popover hidden"> <button class="add-sublist-button"> Add Sublist </button> <button class="print-list-button"> Print List </button> <button class="archive-list-button"> Archive List </button> </div> <div class="todo container"> <button class="tiny-add-bar-todo" type="button"></button> </div> <div class="sublist container"> <button class="tiny-add-bar-sublist" type="button"></button> </div> </div> </div> <button class="tiny-add-bar-list" type="button"></button> `;
 // Exports
 /* harmony default export */ const list_template = (list_template_code);
 ;// ./src/components/left-pane/items-views/1.todo-view/sublist-template.html
 // Module
-var sublist_template_code = ` <div data-list-id="" data-sublist-id="" class="sublist"> <div class="heading single-line"> <button class="open-list-button" type="button"> <input class="readonly title" type="text" value="LIST_TITLE" readonly="readonly"/> </button> <input data-field="name" class="editing-list-title hidden" type="text" value="LIST_TITLE"/> <button class="options-list-button hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="open-options-icon"> <desc>Reward Stars 2 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M9.855083333333333 1.2604166666666665c-0.02291666666666667 5.757583333333333 2.776583333333333 9.023666666666665 9.166666666666666 9.166666666666666 -5.92625 -0.02291666666666667 -8.866 3.1542499999999998 -9.166666666666666 9.166666666666666 -0.057749999999999996 -5.6714166666666666 -2.5923516666666666 -9.174916666666666 -9.16668775 -9.166666666666666 5.881336083333333 -0.08249999999999999 9.143771083333332 -2.9214166666666666 9.16668775 -9.166666666666666Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.427666666666667 1.2604166666666665v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M15.594333333333333 3.09375h3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M19.479166666666664 17.072916666666664v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.645833333333332 18.90625h3.6666666666666665" stroke-width="2"> </path> </svg> </button> </div> <div class="body container hidden"> <div class="options popover hidden"> <button class="print-sublist-button"> Print Sublist </button> <button class="archive-list-button"> Archive Sublist </button> </div> <button class="tiny-add-bar-list" type="button"></button></div> </div> `;
+var sublist_template_code = ` <div data-list-id="" data-sublist-id="" class="sublist"> <div class="heading single-line"> <button class="open-list-button" type="button"> <input class="readonly title" type="text" value="LIST_TITLE" readonly="readonly"/> </button> <input data-field="name" class="editing-list-title hidden" type="text" value="LIST_TITLE"/> <button class="options-list-button hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="open-options-icon"> <desc>Reward Stars 2 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M9.855083333333333 1.2604166666666665c-0.02291666666666667 5.757583333333333 2.776583333333333 9.023666666666665 9.166666666666666 9.166666666666666 -5.92625 -0.02291666666666667 -8.866 3.1542499999999998 -9.166666666666666 9.166666666666666 -0.057749999999999996 -5.6714166666666666 -2.5923516666666666 -9.174916666666666 -9.16668775 -9.166666666666666 5.881336083333333 -0.08249999999999999 9.143771083333332 -2.9214166666666666 9.16668775 -9.166666666666666Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.427666666666667 1.2604166666666665v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M15.594333333333333 3.09375h3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M19.479166666666664 17.072916666666664v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.645833333333332 18.90625h3.6666666666666665" stroke-width="2"> </path> </svg> </button> </div> <div class="body container hidden"> <div class="options popover hidden"> <button class="print-sublist-button"> Print Sublist </button> <button class="archive-list-button"> Archive Sublist </button> </div> <button class="tiny-add-bar-todo" type="button"></button></div> </div>  <button class="tiny-add-bar-sublist" type="button"> </button>`;
 // Exports
 /* harmony default export */ const sublist_template = (sublist_template_code);
 ;// ./src/view/list-view.js
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
+
 
 
 
@@ -1681,12 +1685,14 @@ class ListView {
     sublistContainer: '.sublist.container',
     bodyContainer: '.body.container',
     openListButton: '.open-list-button',
-    tinyAdd: '.tiny-add-bar-list',
+    tinyAddTodo: '.tiny-add-bar-todo',
+    tinyAddList: '.tiny-add-bar-list',
+    tinyAddSublist: '.tiny-add-bar-sublist',
   };
 
   renderView() {
+    document.querySelector('body').innerHTML = main_page;
     const container = document.getElementById('todo-panel');
-    container.innerHTML = '';
     this.todoModel.forEach((list) => {
       container.appendChild(this.renderList(list));
       // this is a hack; TDL: replace with default list
@@ -1724,24 +1730,64 @@ class ListView {
     );
     optionsListButton.addEventListener('click', ListView.optionsListClick);
 
-    // tiny add bar fxy
+    // tiny add bar (todo) fxy
     listClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener('mouseover', (event) => {
         // eslint-disable-next-line no-param-reassign
         event.target.innerHTML = '+';
       });
     listClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener('mouseout', (event) => {
         // eslint-disable-next-line no-param-reassign
         event.target.innerHTML = '';
       });
     listClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener(
         'click',
-        this.todoView.handleTinyAddBarBelowListClick.bind(this.todoView)
+        this.todoView.handleTinyAddBarInTodoContainerClick.bind(this.todoView)
+      );
+
+    // tiny add bar (sublist) fxy
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener('mouseover', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '+';
+      });
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener('mouseout', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '';
+      });
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener(
+        'click',
+        this.handleTinyAddBarInSublistContainerClick.bind(this)
+      );
+
+    // tiny add bar (list) fxy
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddList)
+      .addEventListener('mouseover', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '+';
+      });
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddList)
+      .addEventListener('mouseout', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '';
+      });
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddList)
+      .addEventListener(
+        'click',
+        this.handleTinyAddBarBelowListClick.bind(this)
       );
 
     // Populate todo container
@@ -1760,7 +1806,7 @@ class ListView {
     );
     if (list.sublists.length !== 0) {
       list.sublists.forEach((sublist) => {
-        const sublistClone = this.populateSublist(sublist);
+        const sublistClone = this.renderSublist(sublist);
         if (sublistClone) {
           sublistContainer.appendChild(sublistClone);
         }
@@ -1776,15 +1822,15 @@ class ListView {
       .closest('.sublist')
       ?.getAttribute('data-sublist-id');
     const listId = event.target.closest('.list').getAttribute('data-list-id');
-
     if (!sublistId) {
       this.todoModel.forEach((list) => {
-        list.toggleOpen();
-        ListView.toggleListOpen(list);
+        if (list.isOpen || list.listId === listId) {
+          list.toggleOpen();
+          ListView.toggleListOpen(list);
+        }
       });
     } else {
       const listData = this.todoModel.find((list) => list.listId === listId);
-      console.log('sublist ID', sublistId);
       listData.sublists.forEach((sublist) => {
         if (sublist.isOpen || sublist.sublistId === sublistId) {
           sublist.toggleOpen();
@@ -1804,13 +1850,15 @@ class ListView {
   }
 
   static toggleListOpen(list) {
+    console.log('toggle the list', list.listId);
     let listDiv;
-    if (list.listId) {
-      listDiv = document.querySelector(`div[data-list-id="${list.listId}"]`);
-    } else if (list.sublistId) {
+    if (list.sublistId) {
       listDiv = document.querySelector(
-        `div[data-sublist-id="${list.sublistId}"]`
+        `.sublist[data-sublist-id="${list.sublistId}"]`
       );
+    } else if (list.listId) {
+      listDiv = document.querySelector(`.list[data-list-id="${list.listId}"]`);
+      console.log('list div being toggled', listDiv);
     }
     if (listDiv) {
       const bodyContainer = listDiv.querySelector(
@@ -1854,12 +1902,13 @@ class ListView {
     }
   }
 
-  populateSublist(sublist) {
+  renderSublist(sublist) {
     const sublistTemplate = document.createElement('template');
     sublistTemplate.innerHTML = sublist_template;
     const sublistClone = document.importNode(sublistTemplate.content, true);
 
     const sublistDiv = sublistClone.querySelector('.sublist');
+    sublistDiv.setAttribute('data-list-id', sublist.listId);
     sublistDiv.setAttribute('data-sublist-id', sublist.sublistId);
     const readonlySublistTitleDiv = sublistClone.querySelector(
       ListView.SELECTORS.readonlyTitle
@@ -1878,24 +1927,44 @@ class ListView {
     );
     optionsSublistButton.addEventListener('click', ListView.optionsListClick);
 
-    // tiny add bar fxy
+    // tiny add bar (todo) fxy
     sublistClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener('mouseover', (event) => {
         // eslint-disable-next-line no-param-reassign
         event.target.innerHTML = '+';
       });
     sublistClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener('mouseout', (event) => {
         // eslint-disable-next-line no-param-reassign
         event.target.innerHTML = '';
       });
     sublistClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener(
         'click',
-        this.todoView.handleTinyAddBarBelowListClick.bind(this.todoView)
+        this.handleTinyAddBarBelowSublistClick.bind(this.todoView)
+      );
+
+    // tiny add bar (sublist) fxy
+    sublistClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener('mouseover', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '+';
+      });
+    sublistClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener('mouseout', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '';
+      });
+    sublistClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener(
+        'click',
+        this.handleTinyAddBarBelowSublistClick.bind(this)
       );
 
     // Populate todo container
@@ -1908,6 +1977,50 @@ class ListView {
       }
     });
     return sublistClone;
+  }
+
+  handleTinyAddBarBelowListClick(event) {
+    const priorList = event.target.previousElementSibling;
+    const listData =
+      this.todoController.appendToMiddleOfModelAndReturnBlankListFrom(
+        priorList
+      );
+    const listClone = this.renderList(listData);
+    const { parentNode } = event.target;
+    parentNode.insertBefore(listClone, event.target.nextSibling);
+    const listTitleElement = parentNode.querySelector(
+      `.list[data-list-id='${listData.listId}'] .editing-list-title`
+    );
+    listTitleElement.focus();
+  }
+
+  handleTinyAddBarInSublistContainerClick(event) {
+    const sublistData =
+      this.todoController.appendToStartOfModelAndReturnBlankSublistFrom(
+        event.target.nextElementSibling
+      );
+    const sublistClone = this.renderSublist(sublistData);
+    event.target.after(sublistClone);
+    event.target.parentNode
+      .querySelector(
+        `.sublist[data-sublist-id='${sublistData.sublistId}'] .editing-list-title`
+      )
+      .focus();
+  }
+
+  handleTinyAddBarBelowSublistClick(event) {
+    const priorSublist = event.target.previousElementSibling;
+    const sublistData =
+      this.todoController.appendToMiddleOfModelAndReturnBlankSublistFrom(
+        priorSublist
+      );
+    const sublistClone = this.renderSublist(sublistData);
+    const { parentNode } = event.target;
+    parentNode.insertBefore(sublistClone, event.target.nextSibling);
+    const sublistTitleElement = parentNode.querySelector(
+      `.sublist[data-sublist-id='${sublistData.sublistId}'] .editing-list-title`
+    );
+    sublistTitleElement.focus();
   }
 }
 
@@ -2057,7 +2170,8 @@ class SublistData {
 
   #isOpen;
 
-  constructor({ name, isOpen = false, todos = [] }) {
+  constructor({ listId = '', name = '', isOpen = false, todos = [] }) {
+    this.listId = listId;
     this.sublistId = `sublist-${SublistData.incrementCounter()}`;
     this.name = name;
     this.#isOpen = isOpen;
@@ -2090,7 +2204,7 @@ class ListData {
 
   #isOpen;
 
-  constructor({ name, isOpen = false, todos = [], sublists = [] }) {
+  constructor({ name = '', isOpen = false, todos = [], sublists = [] }) {
     this.listId = `list-${ListData.incrementCounter()}`;
     this.name = name;
     this.#isOpen = isOpen;
@@ -2122,24 +2236,9 @@ class ListData {
 
 
 class TodoModeller {
-  constructor() {
-    this.todoModel = this.loadData();
-  }
-
-  loadData() {
-    // STORAGE EMPTY => POPULATE DEMO DATA
-    if (localStorage.length === 0) {
-      // eslint-disable-next-line no-use-before-define
-      this.todoModel = demoData.map((list) => new ListData(list));
-      this.saveToLocalStorage();
-      return this.todoModel;
-    }
-    const storedData = localStorage.getItem('storedLists');
-    return JSON.parse(storedData).map((list) => new ListData(list)); // converts raw objects to class instances
-  }
-
-  saveToLocalStorage() {
-    localStorage.setItem('storedLists', JSON.stringify(this.todoModel));
+  constructor(rawUserListData, controller) {
+    this.todoModel = rawUserListData.map((list) => new ListData(list));
+    this.controller = controller;
   }
 
   updateFieldInModelAndStore(
@@ -2192,10 +2291,11 @@ class TodoModeller {
     } else if (list) {
       list[field] = value;
     }
-    this.saveToLocalStorage();
+    this.controller.saveToLocalStorage();
   }
 
-  deleteFromModelAndStore(dataElement) {
+  // not being used???
+  deleteTodoFromModelAndStore(dataElement) {
     const list = this.todoModel.find(
       (listData) => listData.listId === dataElement.listId
     );
@@ -2233,210 +2333,332 @@ class TodoModeller {
       );
       list.todos.splice(index, 1);
     }
-    this.saveToLocalStorage();
+    this.controller.saveToLocalStorage();
   }
 }
 
-// FOR DEMO PURPOSE ONLY - WILL DELETE
-const demoData = [
-  {
-    listId: 'list-1',
-    name: 'Todo List Project',
-    isOpen: false,
-    todos: [
-      {
-        listId: 'list-1',
-        sublistId: null,
-        todoId: 'todo-1',
-        name: 'hover between tasks to add task',
-        type: 'task',
-        isDetailsOpen: false,
-        isScheduleOpen: false,
-        isCompleted: false,
-        schedule: [
-          {
-            sessionId: 'session-1',
-            startDate: '2025-02-11',
-            startTime: null,
-            endDate: '2025-02-11',
-            endTime: null,
-            isLogged: false,
-            isPast: false,
-          },
-        ],
-        nextSession: '2025-02-11',
-        checklist: [
-          {
-            subtaskId: 'subtask-1',
-            name: 'can complete tasks',
-            isCompleted: false,
-          },
-          {
-            subtaskId: 'subtask-2',
-            name: 'can delete tasks',
-            isCompleted: false,
-          },
-          {
-            subtaskId: 'subtask-3',
-            name: 'cannot duplicate tasks',
-            isCompleted: false,
-          },
-        ],
-        notes: null,
-      },
-      {
-        listId: 'list-1',
-        sublistId: null,
-        todoId: 'todo-2',
-        name: 'click the arrow to add date',
-        type: 'task',
-        isDetailsOpen: false,
-        isScheduleOpen: false,
-        isCompleted: false,
-        schedule: [],
-        nextSession: '',
-        checklist: [
-          {
-            name: 'click the "schedule" button',
-            subtaskId: 'subtask-4',
-            isCompleted: false,
-          },
-          {
-            name: '(lower left hand corner)',
-            subtaskId: 'subtask-5',
-            isCompleted: false,
-          },
-          {
-            name: 'click on month and year to adjust',
-            subtaskId: 'subtask-6',
-            isCompleted: false,
-          },
-        ],
-        notes: '',
-      },
-    ],
-    sublists: [
-      {
-        sublistId: 'sublist-1',
-        name: 'Click to open sublist',
-        isOpen: false,
-        todos: [
-          {
-            listId: 'list-1',
-            sublistId: 'sublist-1',
-            todoId: 'todo-3',
-            name: 'cannot add new (sub)lists',
-            type: 'task',
-            isDetailsOpen: false,
-            isScheduleOpen: false,
-            isCompleted: false,
-            schedule: [
-              {
-                sessionId: 'session-2',
-                startDate: '2025-02-11',
-                startTime: null,
-                endDate: '2025-02-11',
-                endTime: null,
-                isLogged: false,
-                isPast: false,
-              },
-            ],
-            nextSession: '2025-02-11',
-            checklist: [],
-            notes: '',
-          },
-          {
-            listId: 'list-1',
-            sublistId: 'sublist-1',
-            todoId: 'todo-4',
-            name: 'can edit (sub)list name',
-            type: 'task',
-            isDetailsOpen: false,
-            isScheduleOpen: false,
-            isCompleted: false,
-            schedule: [],
-            nextSession: null,
-            checklist: [],
-            notes: '',
-          },
-        ],
-      },
-      {
-        sublistId: 'sublist-2',
-        name: 'Details',
-        isOpen: false,
-        todos: [
-          {
-            listId: 'list-1',
-            sublistId: 'sublist-2',
-            todoId: 'todo-5',
-            name: 'can add details',
-            type: 'task',
-            isDetailsOpen: false,
-            isScheduleOpen: false,
-            isCompleted: false,
-            schedule: [],
-            nextSession: null,
-            checklist: [
-              {
-                name: 'can add subtasks',
-                subtaskId: 'subtask-7',
-                isCompleted: false,
-              },
-              {
-                name: 'can complete subtasks',
-                subtaskId: 'subtask-8',
-                isCompleted: false,
-              },
-              {
-                name: 'can delete subtasks',
-                subtaskId: 'subtask-9',
-                isCompleted: false,
-              },
-            ],
-            notes: 'can add notes!',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    listId: 'list-2',
-    name: 'The Odin Project JavaScript',
-    isOpen: false,
-    todos: [
-      {
-        listId: 'list-2',
-        sublistId: null,
-        todoId: 'todo-6',
-        name: 'dynamic UI interactions',
-        type: 'task',
-        isDetailsOpen: false,
-        isScheduleOpen: false,
-        isCompleted: false,
-        schedule: [],
-        nextSession: null,
-        checklist: [
-          {
-            subtaskId: 'subtask-10',
-            name: 'drop down menus',
-            type: 'subtask',
-            isCompleted: false,
-          },
-          {
-            subtaskId: 'subtask-11',
-            name: 'image carousels',
-            type: 'subtask',
-            isCompleted: false,
-          },
-        ],
-        notes:
-          'https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions',
-      },
-    ],
-    sublists: [],
-  },
-];
+;// ./src/utilities/utility-bar.js
+/* eslint-disable no-console */
+class UtilityBar {
+  constructor(model, controller) {
+    this.model = model;
+    this.controller = controller;
+
+    this.utilityToolbarElement = document.querySelector('#utility-toolbar');
+    this.utilityInputElement = document.querySelector('#utility-input');
+    this.utilityResultsElement = document.querySelector('#utility-results');
+    this.addUtilityBarInputHandler();
+  }
+
+  addUtilityBarInputHandler() {
+    this.utilityInputElement.addEventListener('input', (event) => {
+      this.utilityResultsElement.classList.remove('hidden');
+      this.utilityResultsElement.innerHTML = '';
+
+      // if search is constrained to a sublist by prior input:
+      // search for todos
+      // add as todo
+      const listConstraint = event.target.previousElementSibling || null;
+      if (listConstraint?.querySelector('div[data-sublist-id]')) {
+        const listId = listConstraint
+          .querySelector('[data-list-id]')
+          .getAttribute('data-list-id');
+        const sublistId = listConstraint
+          .querySelector('[data-sublist-id]')
+          .getAttribute('data-sublist-id');
+        this.populateResultsFrom(listId, sublistId, event.target.innerText);
+        this.appendNewTodoOptionToResultsFrom(
+          listId,
+          sublistId,
+          event.target.innerText
+        );
+      }
+      // if input is constrained to a list by prior input:
+      // search for sublists
+      // search for todos
+      // add as todo
+      // if input starts with list symbol:
+      // add as sublist
+      else if (listConstraint) {
+        const listId = listConstraint.getAttribute('data-list-id');
+        this.populateResultsFrom(listId, null, event.target.innerText);
+        this.appendNewTodoOptionToResultsFrom(
+          listId,
+          null,
+          event.target.innerText
+        );
+        if (event.target.innerText.startsWith('/')) {
+          this.appendNewSublistOptionToResultsFrom(
+            listId,
+            event.target.innerText.slice(1)
+          ).bind(this);
+        }
+      }
+      // if input starts with list symbol:
+      // search for lists
+      // search for sublists
+      // add as list
+      else if (event.target.innerText.startsWith('/')) {
+        this.populateResultsFrom(null, null, event.target.innerText.slice(1));
+        this.appendNewListOptionToResultsFrom(
+          event.target.innerText.slice(1)
+        ).bind(this);
+      }
+      // if input has no list symbol and no prior input
+      // search for lists
+      // search for sublists
+      // search for todos
+      // add as todo to first list in DOM
+      else {
+        this.populateResultsFrom(null, null, event.target.innerText);
+        this.appendNewTodoOptionToResultsFrom(
+          null,
+          null,
+          event.target.innerText
+        );
+      }
+      // LATER: if list symbol comes after text input
+    });
+  }
+
+  populateResultsFrom(listId, sublistId, inputFragment) {
+    let listData = null;
+    if (listId) {
+      listData = this.model.find((list) => list.listId === listId);
+      console.log('this LIST', listData);
+    }
+    let sublistData = null;
+    if (sublistId) {
+      sublistData = listData?.sublists.find(
+        (sublist) => sublist.sublistId === sublistId
+      );
+    }
+    let filteredLists = [];
+    let filteredSublists = [];
+    let filteredTodos = [];
+    if (!listData) {
+      filteredLists = this.model.filter((list) =>
+        list.name.toLowerCase().startsWith(inputFragment.toLowerCase())
+      );
+      filteredSublists = this.model.flatMap((list) => [
+        ...list.sublists.filter((sublist) =>
+          sublist.name.toLowerCase().startsWith(inputFragment.toLowerCase())
+        ),
+      ]);
+      filteredTodos = this.model.flatMap((list) => [
+        ...list.todos.filter((todo) =>
+          todo.name.toLowerCase().startsWith(inputFragment.toLowerCase())
+        ),
+        ...list.sublists.flatMap((sublist) =>
+          sublist.todos.filter((todo) =>
+            todo.name.toLowerCase().startsWith(inputFragment.toLowerCase())
+          )
+        ),
+      ]);
+    } else if (!sublistData) {
+      filteredSublists = listData.sublists.filter((sublist) =>
+        sublist.name.toLowerCase().startsWith(inputFragment.toLowerCase())
+      );
+      if (filteredSublists.length !== 0) {
+        filteredTodos = listData.sublists.flatMap((sublist) => [
+          ...sublist.todos.filter((todo) =>
+            todo.name.toLowerCase().startsWith(inputFragment.toLowerCase())
+          ),
+        ]);
+      } else {
+        filteredTodos = listData.todos.filter((todo) =>
+          todo.name.toLowerCase().startsWith(inputFragment.toLowerCase())
+        );
+      }
+    } else {
+      filteredTodos = sublistData.todos.filter((todo) =>
+        todo.name.toLowerCase().startsWith(inputFragment.toLowerCase())
+      );
+    }
+    filteredLists.forEach((list) => {
+      const listOption = document.createElement('div');
+      listOption.innerText = `/${list.name}`;
+      listOption.dataset.listId = list.listId;
+      listOption.classList.add('list-option', 'option');
+      listOption.addEventListener(
+        'click',
+        this.handleClickSearchResult.bind(this)
+      );
+      this.utilityResultsElement.appendChild(listOption);
+    });
+    filteredSublists.forEach((sublist) => {
+      const sublistOption = document.createElement('div');
+      const parentListData = this.model.find(
+        (list) => list.listId === sublist.listId
+      );
+      sublistOption.innerText = `/${parentListData.name}/${sublist.name}`;
+      sublistOption.dataset.listId = parentListData.listId;
+      sublistOption.dataset.sublistId = sublist.sublistId;
+      sublistOption.classList.add('sublist-option', 'option');
+      sublistOption.addEventListener(
+        'click',
+        this.handleClickSearchResult.bind(this)
+      );
+      this.utilityResultsElement.appendChild(sublistOption);
+    });
+    filteredTodos.forEach((todo) => {
+      const todoOption = document.createElement('div');
+      const parentListData = this.model.find(
+        (list) => list.listId === todo.listId
+      );
+      const parentSublistData = parentListData.sublists.find(
+        (sublist) => sublist.sublistId === todo.sublistId
+      );
+      const parentSublistText = parentSublistData
+        ? `/${parentSublistData.name}`
+        : '';
+      todoOption.innerText = `/${parentListData.name}${parentSublistText}: ${todo.name}`;
+      todoOption.dataset.listId = todo.listId;
+      if (todo.sublistId) {
+        todoOption.dataset.sublistId = todo.sublistId;
+      }
+      todoOption.dataset.todoId = todo.todoId;
+      todoOption.classList.add('todo-option', 'option');
+      todoOption.addEventListener(
+        'click',
+        this.handleClickSearchResult.bind(this)
+      );
+      this.utilityResultsElement.appendChild(todoOption);
+    });
+  }
+
+  emptyAllUtilityElements() {
+    while (this.utilityInputElement.firstChild) {
+      this.utilityInputElement.removeChild(this.utilityInputElement.firstChild);
+    }
+    while (this.utilityResultsElement.firstChild) {
+      this.utilityResultsElement.removeChild(
+        this.utilityResultsElement.firstChild
+      );
+    }
+    this.utilityToolbarElement
+      .querySelectorAll('.option')
+      .forEach((option) => option.remove());
+    this.utilityResultsElement.classList.add('hidden');
+  }
+
+  emptyResultsElementsAndHide() {
+    while (this.utilityResultsElement.firstChild) {
+      this.utilityResultsElement.removeChild(
+        this.utilityResultsElement.firstChild
+      );
+    }
+    this.utilityResultsElement.classList.add('hidden');
+  }
+
+  handleClickSearchResult(event) {
+    const targetOption = event.target;
+    if (this.utilityInputElement.querySelector('.option')) {
+      document
+        .querySelector(
+          `.todo[data-todo-id='${targetOption.getAttribute('data-todo-id')}'] button.todo-details-on`
+        )
+        .click();
+      this.emptyAllUtilityElements();
+    } else {
+      if (targetOption.hasAttribute('data-list-id')) {
+        const listId = targetOption.getAttribute('data-list-id');
+        const listData = this.model.find((list) => list.listId === listId);
+        if (!listData.isOpen) {
+          document
+            .querySelector(`.list[data-list-id='${listId}'] .readonly.title`)
+            .click();
+        }
+        this.utilityInputElement.textContent = '';
+        this.utilityToolbarElement.prepend(targetOption);
+        this.emptyResultsElementsAndHide();
+      }
+      if (targetOption.hasAttribute('data-sublist-id')) {
+        const sublistId = targetOption.getAttribute('data-sublist-id');
+        document
+          .querySelector(
+            `.sublist[data-sublist-id='${sublistId}'] button.open-list-button`
+          )
+          .click();
+        this.utilityInputElement.textContent = '';
+        this.utilityToolbarElement.innerHTML = targetOption;
+        this.emptyResultsElementsAndHide();
+      }
+      if (targetOption.hasAttribute('data-todo-id')) {
+        document
+          .querySelector(
+            `.todo[data-todo-id='${targetOption.getAttribute('data-todo-id')}'] button.todo-details-on`
+          )
+          .click();
+        this.emptyAllUtilityElements();
+      }
+    }
+  }
+
+  appendNewListOptionToResultsFrom(inputFragment) {
+    const newListOption = document.createElement('div');
+    newListOption.innerText = `+ /${inputFragment} list`;
+    newListOption.addEventListener('click', () => {
+      document.querySelector(`#todo-panel`).lastElementChild.click();
+      this.emptyAllUtilityElements();
+    });
+    this.utilityResultsElement.appendChild(newListOption);
+  }
+
+  appendNewSublistOptionToResultsFrom(listId, inputFragment) {
+    const listData = this.model.find((list) => list.listId === listId);
+    const listName = listData?.name || null;
+    const newSublistOption = document.createElement('div');
+    newSublistOption.innerText = `+ /${inputFragment} sublist to /${listName}`;
+    newSublistOption.addEventListener('click', () => {
+      document
+        .querySelector(`.list[data-list-id="${listId}"] .sublist.container`)
+        .lastElementChild.click();
+      this.emptyAllUtilityElements();
+    });
+    this.utilityResultsElement.appendChild(newSublistOption);
+  }
+
+  appendNewTodoOptionToResultsFrom(listId, sublistId, inputFragment) {
+    const listData = this.model.find((list) => list.listId === listId);
+    const listName = listData?.name || null;
+    let sublistName = null;
+    if (sublistId) {
+      sublistName = listData.sublists.find(
+        (sublist) => sublist.sublistId === sublistId
+      ).name;
+    }
+    let listIdOrFirstList = listId;
+    if (!listId) {
+      listIdOrFirstList = 'list-1';
+    }
+    const newTodoOption = document.createElement('div');
+    const listText = listName
+      ? `/${listName}`
+      : document.querySelector('.list .readonly.title').getAttribute('value');
+    const sublistText = sublistName ? `/${sublistName}` : '';
+    newTodoOption.innerText = `+ ${inputFragment} to ${listText}${sublistText}`;
+    newTodoOption.addEventListener('click', () => {
+      // this clicks the 'add new todo' button that is the sibling of the last todo contained in the list
+      if (sublistId) {
+        document
+          .querySelector(
+            `.list[data-list-id="${listId}"] .sublist[data-sublist-id="${sublistId}"] .body.container`
+          )
+          .lastElementChild.click();
+      } else {
+        document
+          .querySelector(
+            `.list[data-list-id="${listIdOrFirstList}"] .todo.container`
+          )
+          .lastElementChild.click();
+      }
+      document.activeElement.value = inputFragment;
+      this.emptyAllUtilityElements();
+    });
+    this.utilityResultsElement.appendChild(newTodoOption);
+  }
+}
 
 ;// ./src/controller/todo-panel-control.js
 /* eslint-disable import/extensions */
@@ -2446,17 +2668,20 @@ const demoData = [
 
 
 
-class TodoPanelController {
+
+class todo_panel_control_TodoPanelController {
   constructor(userInstance) {
     this.userInstance = userInstance;
     this.todoModeller = new TodoModeller(userInstance.storedLists, this);
     this.todoModel = this.todoModeller.todoModel;
     this.listView = new ListView(this.todoModeller, this);
+    this.utilityBar = new UtilityBar(this.todoModel, this);
   }
 
-  savetoLocalStorage() {
+  saveToLocalStorage() {
     this.userInstance.storedLists = this.todoModel;
-    localStorage.setItem(this.userInstance.email, this.userInstance);
+    const stringToSave = JSON.stringify(this.userInstance);
+    localStorage.setItem(this.userInstance.email, stringToSave);
   }
 
   static getIDsFromElement(element) {
@@ -2485,7 +2710,7 @@ class TodoPanelController {
   }
 
   getTodoData(element) {
-    const ids = TodoPanelController.getIDsFromElement(element);
+    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(element);
     const listData = this.todoModel.find((list) => list.listId === ids.listId);
     if (ids.sublistId && ids.sublistId !== 'null') {
       if (ids.todoId && ids.todoId !== 'null') {
@@ -2515,7 +2740,7 @@ class TodoPanelController {
   handleInputChange(event) {
     if (!['INPUT', 'TEXTAREA'].includes(event.target.tagName)) return;
     if (!event.target.classList.contains('blank')) {
-      const ids = TodoPanelController.getIDsFromElement(event.target);
+      const ids = todo_panel_control_TodoPanelController.getIDsFromElement(event.target);
       this.todoModeller.updateFieldInModelAndStore(
         ids.listId,
         ids.sublistId,
@@ -2527,8 +2752,9 @@ class TodoPanelController {
     }
   }
 
-  appendToMiddleOfModelAndReturnBlankTodo(priorTodo) {
-    const priorIds = TodoPanelController.getIDsFromElement(priorTodo);
+  appendToMiddleOfModelAndReturnBlankTodoFrom(priorTodo) {
+    const priorIds = todo_panel_control_TodoPanelController.getIDsFromElement(priorTodo);
+
     const newTodo = new TodoData({
       listId: priorIds.listId,
       sublistId: priorIds.sublistId,
@@ -2551,12 +2777,12 @@ class TodoPanelController {
       );
       listData.todos.splice(priorTodoIndex + 1, 0, newTodo);
     }
-    this.todoModeller.saveToLocalStorage();
+    this.saveToLocalStorage();
     return newTodo;
   }
 
-  appendToStartOfListAndReturnBlankTodo(firstTodoELement) {
-    const ids = TodoPanelController.getIDsFromElement(firstTodoELement);
+  appendToStartOfModelAndReturnBlankTodoFrom(firstTodoELement) {
+    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(firstTodoELement);
     const newTodo = new TodoData({
       listId: ids.listId,
       sublistId: ids.sublistId,
@@ -2570,12 +2796,52 @@ class TodoPanelController {
     } else if (ids.listId) {
       listData.todos.unshift(newTodo);
     }
-    this.todoModeller.saveToLocalStorage();
+    this.saveToLocalStorage();
     return newTodo;
   }
 
+  appendToMiddleOfModelAndReturnBlankListFrom(priorList) {
+    const priorIds = todo_panel_control_TodoPanelController.getIDsFromElement(priorList);
+    const newList = new ListData();
+    const priorListIndex = this.todoModel.findIndex(
+      (list) => list.listId === priorIds.listId
+    );
+    this.todoModel.splice(priorListIndex + 1, 0, newList);
+    this.saveToLocalStorage();
+    return newList;
+  }
+
+  appendToMiddleOfModelAndReturnBlankSublistFrom(priorSublist) {
+    const priorIds = todo_panel_control_TodoPanelController.getIDsFromElement(priorSublist);
+
+    const newSublist = new SublistData({
+      listId: priorIds.listId,
+    });
+    // get place in todoModel
+    const listData = this.todoModel.find(
+      (list) => list.listId === priorIds.listId
+    );
+    const priorSublistIndex = listData.sublists.findIndex(
+      (sublist) => sublist.sublistId === priorIds.sublistId
+    );
+    listData.sublists.splice(priorSublistIndex + 1, 0, newSublist);
+    this.saveToLocalStorage();
+    return newSublist;
+  }
+
+  appendToStartOfModelAndReturnBlankSublistFrom(firstSublistElement) {
+    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(firstSublistElement);
+    const newSublist = new SublistData({
+      listId: ids.listId,
+    });
+    const listData = this.todoModel.find((list) => list.listId === ids.listId);
+    listData.sublists.unshift(newSublist);
+    this.saveToLocalStorage();
+    return newSublist;
+  }
+
   addAndReturnNewSubtask(event) {
-    const ids = TodoPanelController.getIDsFromElement(event.target);
+    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(event.target);
     const newSubtask = new SubtaskData({
       name: event.target.value,
     });
@@ -2594,12 +2860,12 @@ class TodoPanelController {
       );
       todoData.checklist.push(newSubtask);
     }
-    this.todoModeller.saveToLocalStorage();
+    this.saveToLocalStorage();
     return newSubtask;
   }
 
   handleSubtaskDelete(event) {
-    const ids = TodoPanelController.getIDsFromElement(event.target);
+    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(event.target);
     const listData = this.todoModel.find((list) => list.listId === ids.listId);
     let todoData;
     if (ids.sublistId !== 'null') {
@@ -2614,13 +2880,14 @@ class TodoPanelController {
       (subtask) => subtask.subtaskId === ids.subtaskId
     );
     todoData.checklist.splice(subtaskIndex, 1);
-    this.todoModeller.saveToLocalStorage();
+    this.saveToLocalStorage();
     console.log(event.target);
     event.target.closest('.subtask').remove();
   }
 }
 
 ;// ./src/index.js
+/* eslint-disable no-param-reassign */
 /* eslint-disable import/extensions */
 
 
@@ -2688,7 +2955,7 @@ class User {
           isScheduleOpen: false,
           isCompleted: false,
           schedule: [],
-          nextSession: '',
+          nextSession: null,
           checklist: [
             {
               name: 'click the "schedule" button',
@@ -2711,6 +2978,7 @@ class User {
       ],
       sublists: [
         {
+          listId: 'list-1',
           sublistId: 'sublist-1',
           name: 'Click to open sublist',
           isOpen: false,
@@ -2756,6 +3024,7 @@ class User {
           ],
         },
         {
+          listId: 'list-1',
           sublistId: 'sublist-2',
           name: 'Details',
           isOpen: false,
@@ -2796,7 +3065,7 @@ class User {
     },
     {
       listId: 'list-2',
-      name: 'The Odin Project JavaScript',
+      name: 'JavaScript in the Real World',
       isOpen: false,
       todos: [
         {
@@ -2814,18 +3083,63 @@ class User {
             {
               subtaskId: 'subtask-10',
               name: 'drop down menus',
-              type: 'subtask',
               isCompleted: false,
             },
             {
               subtaskId: 'subtask-11',
               name: 'image carousels',
-              type: 'subtask',
               isCompleted: false,
             },
           ],
           notes:
             'https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions',
+        },
+        {
+          listId: 'list-2',
+          sublistId: null,
+          todoId: 'todo-7',
+          name: 'form validation',
+          type: 'task',
+          isDetailsOpen: false,
+          isScheduleOpen: false,
+          isCompleted: false,
+          schedule: [],
+          nextSession: null,
+          checklist: [
+            {
+              subtaskId: 'subtask-12',
+              name: 'login page',
+              isCompleted: false,
+            },
+            {
+              subtaskId: 'subtask-13',
+              name: 'signup page',
+              isCompleted: false,
+            },
+          ],
+          notes: '',
+        },
+      ],
+      sublists: [],
+    },
+    {
+      listId: 'list-3',
+      name: 'JavaScript ES6',
+      isOpen: false,
+      todos: [
+        {
+          listId: 'list-3',
+          sublistId: null,
+          todoId: 'todo-8',
+          name: 'babel',
+          type: 'task',
+          isDetailsOpen: false,
+          isScheduleOpen: false,
+          isCompleted: false,
+          schedule: [],
+          nextSession: null,
+          checklist: [],
+          notes: '',
         },
       ],
       sublists: [],
@@ -2833,127 +3147,160 @@ class User {
   ];
 }
 
+// eslint-disable-next-line no-unused-vars
 const init = () => {
   // LOGIN WITH EXISTING ACCOUNT FORM
   const loginForm = document.querySelector('#login-form');
   const email = loginForm.querySelector('input[type=email]');
-  const emailError = loginForm.querySelector('.input-container').children[1];
+  const emailError = loginForm.querySelector('.login.input-container')
+    .children[1];
   const password = loginForm.querySelector('input[type=password]');
-  const passwordError = loginForm.querySelector('.input-container').children[3];
-  const submitButton = loginForm.querySelector('#submit-existing-login');
+  const passwordError = loginForm.querySelector('.login.input-container')
+    .children[3];
 
-  loginForm.addEventListener('input', () => {
-    if (email.validity.valueMissing) {
+  email.addEventListener('input', (event) => {
+    if (!email.validity.valid) {
       emailError.textContent = 'Email required';
       emailError.classList.remove('hidden');
-    } else if (password.validity.valueMissing) {
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
+    } else {
+      emailError.classList.add('hidden');
+      event.target.style.border = 'none';
+    }
+  });
+  password.addEventListener('input', (event) => {
+    if (password.validity.tooShort) {
       passwordError.textContent = 'Password required';
       passwordError.classList.remove('hidden');
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
     } else {
-      submitButton.removeAttribute('disabled');
+      passwordError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
-  loginForm.addEventListener('submit', () => {
-    const id = email.value.toLowerCase();
-    const storedData = JSON.parse(localStorage.getItem(id)) || null;
-    if (storedData.email === id && storedData.password === password.value) {
-      document.querySelector('body').innerHTML = main_page;
-      // eslint-disable-next-line no-new
-      new TodoPanelController(storedData);
-    } else if (storedData === null) {
-      email.error.textContent = 'Email not found';
-      email.error.classList.remove('hidden');
-    } else if (
-      storedData.email === id &&
-      storedData.password !== password.value
-    ) {
-      passwordError.textContent = 'Wrong password';
-      passwordError.classList.remove('hidden');
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (email.validity.valid && password.validity.valid) {
+      const id = email.value.toLowerCase();
+      const storedData = JSON.parse(localStorage.getItem(id)) || null;
+      if (storedData.email === id && storedData.password === password.value) {
+        document.querySelector('body').innerHTML = main_page;
+        // eslint-disable-next-line no-new
+        new todo_panel_control_TodoPanelController(storedData);
+      } else if (storedData === null) {
+        email.error.textContent = 'Email not found';
+        email.error.classList.remove('hidden');
+      } else if (
+        storedData.email === id &&
+        storedData.password !== password.value
+      ) {
+        passwordError.textContent = 'Wrong password';
+        event.target.style.border = '2px solid var(--red-orange-lighter)';
+        passwordError.classList.remove('hidden');
+      }
     }
   });
 
   // LOGIN WITH NEW ACCOUNT FORM
   const signupForm = document.querySelector('#signup-form');
-  const submitNewLoginButton = signupForm.querySelector('#submit-new-login');
 
   const name = signupForm.querySelector('input[type=text]');
-  const nameError = signupForm.querySelector('input-container').children[1];
-  name.addEventListener('input', () => {
-    if (name.validity.valueMissing) {
+  const nameError = signupForm.querySelector('.signup.input-container')
+    .children[1];
+  name.addEventListener('input', (event) => {
+    if (!/^[a-zA-Z]+(?: [a-zA-Z]+) *$/.test(name.value)) {
       nameError.classList.remove('hidden');
-      name.validity.valid = false;
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
     } else {
-      name.validity.valid = true;
+      nameError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
   const newEmail = signupForm.querySelector('input[type=email]');
-  const newEmailError =
-    signupForm.querySelector('.input-container').children[3];
-  newEmail.addEventListener('input', () => {
+  const newEmailError = signupForm.querySelector('.signup.input-container')
+    .children[3];
+  newEmail.addEventListener('input', (event) => {
     if (!newEmail.validity.valid) {
       newEmailError.classList.remove('hidden');
-      newEmail.validity.valid = false;
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
     } else {
-      newEmail.validity.valid = true;
+      newEmailError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
   const newPassword = signupForm.querySelector('input[type=password]');
-  const passwordShortError =
-    signupForm.querySelector('.input-container').children[5];
-  const passwordNumberError =
-    signupForm.querySelector('.input-container').children[6];
-  const passwordLetterError =
-    signupForm.querySelector('.input-container').children[7];
-  newPassword.addEventListener('input', () => {
-    if (newPassword.length < 6) {
+  const passwordShortError = signupForm.querySelector('.signup.input-container')
+    .children[5];
+  const passwordNumberError = signupForm.querySelector(
+    '.signup.input-container'
+  ).children[6];
+  const passwordLetterError = signupForm.querySelector(
+    '.signup.input-container'
+  ).children[7];
+  newPassword.addEventListener('input', (event) => {
+    if (newPassword.value.length < 6) {
       passwordShortError.classList.remove('hidden');
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
+    } else {
+      passwordShortError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
     if (!/\d/.test(newPassword.value)) {
       passwordNumberError.classList.remove('hidden');
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
+    } else {
+      passwordNumberError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
     if (!/[a-zA-Z]/.test(newPassword.value)) {
       passwordLetterError.classList.remove('hidden');
-    }
-    if (
-      newPassword.length > 5 &&
-      /\d/.test(newPassword.value) &&
-      /[a-zA-Z]/.test(newPassword.value)
-    ) {
-      newPassword.validity.valid = true;
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
+    } else {
+      passwordLetterError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
   const newPasswordConfirmation = signupForm.querySelector('.confirm');
-  const newPasswordConfirmationError =
-    signupForm.querySelector('.input-container').children[9];
-  newPasswordConfirmation.addEventListener('input', () => {
+  const newPasswordConfirmationError = signupForm.querySelector(
+    '.signup.input-container'
+  ).children[9];
+  newPasswordConfirmation.addEventListener('input', (event) => {
     if (newPasswordConfirmation.value !== newPassword.value) {
       newPasswordConfirmationError.classList.remove('hidden');
-      newPasswordConfirmation.validity.valid = false;
+      event.target.style.border = '2px solid var(--red-orange-lighter)';
     } else {
-      newPasswordConfirmation.validity.valid = true;
+      newPasswordConfirmationError.classList.add('hidden');
+      event.target.style.border = 'none';
     }
   });
 
-  if (
-    name.validity.valid &&
-    newEmail.validity.valid &&
-    newPassword.validity.valid &&
-    newPasswordConfirmation.validity.valid
-  ) {
-    submitNewLoginButton.removeAttribute('disabled');
-  }
-
-  signupForm.addEventListener('submit', () => {
-    // eslint-disable-next-line no-new
-    const controller = new TodoPanelController(
-      new User(email.value.toLowerCase(), password.value)
-    );
-    controller.saveToLocalStorage();
+  signupForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (
+      name.validity.valid &&
+      newEmail.validity.valid &&
+      newPassword.validity.valid &&
+      newPasswordConfirmation.validity.valid
+    ) {
+      document.querySelector('body').innerHTML = main_page;
+      const controller = new todo_panel_control_TodoPanelController(
+        new User(newEmail.value.toLowerCase(), newPassword.value)
+      );
+      controller.saveToLocalStorage();
+    }
   });
+};
+
+// eslint-disable-next-line no-unused-vars
+const devInit = () => {
+  const storedData = JSON.parse(localStorage.getItem('s@gmail.com'));
+  document.querySelector('body').innerHTML = mainPageContents;
+  // eslint-disable-next-line no-new
+  new TodoPanelController(storedData);
 };
 
 init();
