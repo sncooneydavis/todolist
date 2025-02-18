@@ -47,9 +47,9 @@
 	--green-blue-lightest: rgba(236, 247, 241, 1);
 
 	--blue: rgba(50,136,189,1);
-	--blue-light: ;
-	--blue-lighter: ;
-	--blue-lightest: ;
+	--blue-light: rgba(119,180,218,1); /* 30% lighter */
+	--blue-lighter: rgba(176,214,241,1); /* 60% lighter */
+	--blue-lightest: rgba(232,242,250,1); /* 90% lighter */
 
 	--purple: rgba(94,79,162,1);
 	--purple-light: ;
@@ -269,29 +269,86 @@ button img {
 #utility-toolbar {
 	display: flex;
 	position: relative;
-	height: 30px;
-	width: 90%;
+	align-items: center;
+	width: 91.5%;
 	margin-right: 8px;
+	background-color: white;
+	border: 2px solid darkslateblue;
+	color: black;
+	border-radius: 10px;
+	height: 39px;
+	
 }
 
 #utility-input {
-	border-radius: 15px;
 	padding-left: 10px;
 	width: 100%;
+	height: 39px;
+	line-height: 39px;
 	border: none;
+	outline: none;
+	font-size: 14pt;
+}
+#utility-results {
+	background-color: darkslateblue;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding: 20px 10px;
+	position: absolute;
+	z-index: 1;
+	top: 37px;
+	color: white;
+	width: 100%;
+	font-size: 11pt;
 }
 
 .utility.button{
 	z-index: 1;
 	position: absolute;
-	right: 10px;
-	top: 5px;
-	bottom: 5px;
-	
+	right: 7px;
+	top: 8px;	
 }
 
 .utility img {
 	height: 20px;
+}
+
+#utility-results div {
+	height: 30px;
+	line-height: 30px;
+}
+
+.list-option, 
+.sublist-option {
+	font-size: 10pt;
+	display: inline-block;
+	width: auto;
+	line-height: 30px;
+	height: 30px;
+	text-overflow: none;
+	flex-grow: 0;
+	padding: 0 10px;
+	background-color: white;
+	color: black;
+	border-radius: 15px;
+	white-space: nowrap;
+}
+
+.todo-option {
+	font-size: 10pt;
+	display: inline-block;
+	width: auto;
+	line-height: 30px;
+	height: 30px;
+	text-overflow: none;
+	white-space: nowrap;
+	flex-grow: 0;
+	padding: 0 10px;
+	border: solid 1px white;
+	border-radius: 15px;
+	
 }
 
 /* ============================================*/
@@ -320,7 +377,6 @@ button img {
 	background-color: aliceblue;
 	display: flex;
 	flex-direction: column;
-	gap: 3px;
 }
 
 /* ============================================*/
@@ -330,7 +386,6 @@ button img {
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
-	
 }
 
 
@@ -339,21 +394,22 @@ button img {
 	margin-right: 10px;
 	display: flex;
 	flex-direction: column;
-	gap: 3px;
 }
 
 .list .body.container, 
 .sublist .body.container {
 	position: relative;
-	padding-bottom: 5px;
+	padding-bottom: 10px;
 }
 
 .list .todo.container,
-.sublist .body.container {
+.sublist .body.container,
+.list .sublist.container {
 	display: flex;
 	flex-direction: column;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+	gap: 2px;
 }
 
 .list .heading,
@@ -682,24 +738,30 @@ button img {
 }
 /* ============================================*/
 [data-list-id="list-1"] {
+  --primary-color: var(--blue);
+  --light-color: var(--blue-light);
+  --lighter-color: var(--blue-lighter);
+  --lightest-color: var(--blue-lightest);
+}
+[data-list-id="list-2"] {
   --primary-color: var(--green-blue);
   --light-color: var(--green-blue-light);
   --lighter-color: var(--green-blue-lighter);
   --lightest-color: var(--green-blue-lightest);
 }
-[data-list-id="list-2"] {
+[data-list-id="list-3"] {
   --primary-color: var(--green);
   --light-color: var(--green-light);
   --lighter-color: var(--green-lighter);
   --lightest-color: var(--green-lightest);
 }
-[data-list-id="list-3"] {
+[data-list-id="list-4"] {
   --primary-color: var(--pale-green);
   --light-color: var(--pale-green-light);
   --lighter-color: var(--pale-green-lighter);
   --lightest-color: var(--pale-green-lightest);
 }
-[data-list-id="list-4"] {
+[data-list-id="list-5"] {
   --primary-color: var(--yellow);
   --light-color: var(--yellow-light);
   --lighter-color: var(--yellow-lighter);

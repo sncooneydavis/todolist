@@ -24,13 +24,14 @@ export default class ListView {
     sublistContainer: '.sublist.container',
     bodyContainer: '.body.container',
     openListButton: '.open-list-button',
-    tinyAdd: '.tiny-add-bar-list',
+    tinyAddTodo: '.tiny-add-bar-todo',
+    tinyAddList: '.tiny-add-bar-list',
+    tinyAddSublist: '.tiny-add-bar-sublist',
   };
 
   renderView() {
     document.querySelector('body').innerHTML = mainPageHTML;
     const container = document.getElementById('todo-panel');
-    container.innerHTML = '';
     this.todoModel.forEach((list) => {
       container.appendChild(this.renderList(list));
       // this is a hack; TDL: replace with default list
@@ -68,24 +69,64 @@ export default class ListView {
     );
     optionsListButton.addEventListener('click', ListView.optionsListClick);
 
-    // tiny add bar fxy
+    // tiny add bar (todo) fxy
     listClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener('mouseover', (event) => {
         // eslint-disable-next-line no-param-reassign
         event.target.innerHTML = '+';
       });
     listClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener('mouseout', (event) => {
         // eslint-disable-next-line no-param-reassign
         event.target.innerHTML = '';
       });
     listClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener(
         'click',
-        this.todoView.handleTinyAddBarBelowListClick.bind(this.todoView)
+        this.todoView.handleTinyAddBarInTodoContainerClick.bind(this.todoView)
+      );
+
+    // tiny add bar (sublist) fxy
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener('mouseover', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '+';
+      });
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener('mouseout', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '';
+      });
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener(
+        'click',
+        this.handleTinyAddBarInSublistContainerClick.bind(this)
+      );
+
+    // tiny add bar (list) fxy
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddList)
+      .addEventListener('mouseover', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '+';
+      });
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddList)
+      .addEventListener('mouseout', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '';
+      });
+    listClone
+      .querySelector(ListView.SELECTORS.tinyAddList)
+      .addEventListener(
+        'click',
+        this.handleTinyAddBarBelowListClick.bind(this)
       );
 
     // Populate todo container
@@ -104,7 +145,7 @@ export default class ListView {
     );
     if (list.sublists.length !== 0) {
       list.sublists.forEach((sublist) => {
-        const sublistClone = this.populateSublist(sublist);
+        const sublistClone = this.renderSublist(sublist);
         if (sublistClone) {
           sublistContainer.appendChild(sublistClone);
         }
@@ -120,15 +161,15 @@ export default class ListView {
       .closest('.sublist')
       ?.getAttribute('data-sublist-id');
     const listId = event.target.closest('.list').getAttribute('data-list-id');
-
     if (!sublistId) {
       this.todoModel.forEach((list) => {
-        list.toggleOpen();
-        ListView.toggleListOpen(list);
+        if (list.isOpen || list.listId === listId) {
+          list.toggleOpen();
+          ListView.toggleListOpen(list);
+        }
       });
     } else {
       const listData = this.todoModel.find((list) => list.listId === listId);
-      console.log('sublist ID', sublistId);
       listData.sublists.forEach((sublist) => {
         if (sublist.isOpen || sublist.sublistId === sublistId) {
           sublist.toggleOpen();
@@ -148,13 +189,15 @@ export default class ListView {
   }
 
   static toggleListOpen(list) {
+    console.log('toggle the list', list.listId);
     let listDiv;
-    if (list.listId) {
-      listDiv = document.querySelector(`div[data-list-id="${list.listId}"]`);
-    } else if (list.sublistId) {
+    if (list.sublistId) {
       listDiv = document.querySelector(
-        `div[data-sublist-id="${list.sublistId}"]`
+        `.sublist[data-sublist-id="${list.sublistId}"]`
       );
+    } else if (list.listId) {
+      listDiv = document.querySelector(`.list[data-list-id="${list.listId}"]`);
+      console.log('list div being toggled', listDiv);
     }
     if (listDiv) {
       const bodyContainer = listDiv.querySelector(
@@ -198,12 +241,13 @@ export default class ListView {
     }
   }
 
-  populateSublist(sublist) {
+  renderSublist(sublist) {
     const sublistTemplate = document.createElement('template');
     sublistTemplate.innerHTML = sublistHTML;
     const sublistClone = document.importNode(sublistTemplate.content, true);
 
     const sublistDiv = sublistClone.querySelector('.sublist');
+    sublistDiv.setAttribute('data-list-id', sublist.listId);
     sublistDiv.setAttribute('data-sublist-id', sublist.sublistId);
     const readonlySublistTitleDiv = sublistClone.querySelector(
       ListView.SELECTORS.readonlyTitle
@@ -222,24 +266,44 @@ export default class ListView {
     );
     optionsSublistButton.addEventListener('click', ListView.optionsListClick);
 
-    // tiny add bar fxy
+    // tiny add bar (todo) fxy
     sublistClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener('mouseover', (event) => {
         // eslint-disable-next-line no-param-reassign
         event.target.innerHTML = '+';
       });
     sublistClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener('mouseout', (event) => {
         // eslint-disable-next-line no-param-reassign
         event.target.innerHTML = '';
       });
     sublistClone
-      .querySelector(ListView.SELECTORS.tinyAdd)
+      .querySelector(ListView.SELECTORS.tinyAddTodo)
       .addEventListener(
         'click',
-        this.todoView.handleTinyAddBarBelowListClick.bind(this.todoView)
+        this.handleTinyAddBarBelowSublistClick.bind(this.todoView)
+      );
+
+    // tiny add bar (sublist) fxy
+    sublistClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener('mouseover', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '+';
+      });
+    sublistClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener('mouseout', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.innerHTML = '';
+      });
+    sublistClone
+      .querySelector(ListView.SELECTORS.tinyAddSublist)
+      .addEventListener(
+        'click',
+        this.handleTinyAddBarBelowSublistClick.bind(this)
       );
 
     // Populate todo container
@@ -252,5 +316,49 @@ export default class ListView {
       }
     });
     return sublistClone;
+  }
+
+  handleTinyAddBarBelowListClick(event) {
+    const priorList = event.target.previousElementSibling;
+    const listData =
+      this.todoController.appendToMiddleOfModelAndReturnBlankListFrom(
+        priorList
+      );
+    const listClone = this.renderList(listData);
+    const { parentNode } = event.target;
+    parentNode.insertBefore(listClone, event.target.nextSibling);
+    const listTitleElement = parentNode.querySelector(
+      `.list[data-list-id='${listData.listId}'] .editing-list-title`
+    );
+    listTitleElement.focus();
+  }
+
+  handleTinyAddBarInSublistContainerClick(event) {
+    const sublistData =
+      this.todoController.appendToStartOfModelAndReturnBlankSublistFrom(
+        event.target.nextElementSibling
+      );
+    const sublistClone = this.renderSublist(sublistData);
+    event.target.after(sublistClone);
+    event.target.parentNode
+      .querySelector(
+        `.sublist[data-sublist-id='${sublistData.sublistId}'] .editing-list-title`
+      )
+      .focus();
+  }
+
+  handleTinyAddBarBelowSublistClick(event) {
+    const priorSublist = event.target.previousElementSibling;
+    const sublistData =
+      this.todoController.appendToMiddleOfModelAndReturnBlankSublistFrom(
+        priorSublist
+      );
+    const sublistClone = this.renderSublist(sublistData);
+    const { parentNode } = event.target;
+    parentNode.insertBefore(sublistClone, event.target.nextSibling);
+    const sublistTitleElement = parentNode.querySelector(
+      `.sublist[data-sublist-id='${sublistData.sublistId}'] .editing-list-title`
+    );
+    sublistTitleElement.focus();
   }
 }

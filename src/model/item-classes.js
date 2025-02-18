@@ -143,7 +143,8 @@ export class SublistData {
 
   #isOpen;
 
-  constructor({ name, isOpen = false, todos = [] }) {
+  constructor({ listId = '', name = '', isOpen = false, todos = [] }) {
+    this.listId = listId;
     this.sublistId = `sublist-${SublistData.incrementCounter()}`;
     this.name = name;
     this.#isOpen = isOpen;
@@ -176,7 +177,7 @@ export class ListData {
 
   #isOpen;
 
-  constructor({ name, isOpen = false, todos = [], sublists = [] }) {
+  constructor({ name = '', isOpen = false, todos = [], sublists = [] }) {
     this.listId = `list-${ListData.incrementCounter()}`;
     this.name = name;
     this.#isOpen = isOpen;

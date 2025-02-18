@@ -34,7 +34,7 @@ export default class TodoView {
     datetimeAndDeadlineButton: '.add-deadline-button',
     scheduleCalendar: '.schedule-calendar',
     deleteButton: '.delete-button',
-    tinyAdd: '.tiny-add-bar',
+    tinyAdd: '.tiny-add-bar-task',
   };
 
   renderTodo(todo) {
@@ -149,7 +149,9 @@ export default class TodoView {
   handleTinyAddBarBelowTaskClick(event) {
     const priorTodo = event.target.previousElementSibling;
     const todoData =
-      this.todoController.appendToMiddleOfModelAndReturnBlankTodo(priorTodo);
+      this.todoController.appendToMiddleOfModelAndReturnBlankTodoFrom(
+        priorTodo
+      );
     const todoClone = this.renderTodo(todoData);
     const { parentNode } = event.target;
     parentNode.insertBefore(todoClone, event.target.nextSibling);
@@ -160,10 +162,11 @@ export default class TodoView {
     // TDL: show datetime button 'schedule task' then hide until datetime added
   }
 
-  handleTinyAddBarBelowListClick(event) {
-    const todoData = this.todoController.appendToStartOfListAndReturnBlankTodo(
-      event.target.nextElementSibling
-    );
+  handleTinyAddBarInTodoContainerClick(event) {
+    const todoData =
+      this.todoController.appendToStartOfModelAndReturnBlankTodoFrom(
+        event.target.nextElementSibling
+      );
     const todoClone = this.renderTodo(todoData);
     event.target.after(todoClone);
     event.target.parentNode
@@ -183,9 +186,9 @@ export default class TodoView {
     const dataElementToDelete = this.todoController.getTodoData(
       event.currentTarget
     );
-    this.todoModeller.deleteFromModelAndStore(dataElementToDelete);
+    this.todoModeller.deleteTodoFromModelAndStore(dataElementToDelete);
     const todoDiv = event.target.closest('.todo');
-    if (todoDiv.nextElementSibling.classList.contains('tiny-add-bar')) {
+    if (todoDiv.nextElementSibling.classList.contains('tiny-add-bar-task')) {
       todoDiv.nextElementSibling.remove();
     }
     todoDiv.remove();

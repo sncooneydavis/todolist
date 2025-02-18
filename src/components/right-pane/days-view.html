@@ -1,0 +1,50 @@
+<template id="list-view-right-panel-day-wide">
+    <!-- TODO: infinite scroll? -->
+    <div class="day container">
+        <section class="top">
+            <!-- default: today -->
+            <button id="select-day-container-name-" type="button">
+                <input id="day-container-name-" name="day-container-name-" class="day-name" type="text" value="" readonly />
+            </button>
+            <div class="dropdown hidden">
+                <!-- on click of #day-container-name- APPEND EDITING-CALENDAR from edit-components-templates -->
+                <!-- once new day is selected, populate in #day-container-name- and add .hidden-->
+            </div>
+        </section>
+        <section class="middle">
+            <!-- APPEND HOURS_LABEL FROM DAY_TEMPLATES -->
+            <!-- APPEND NOW_LABEL FROM DAY_TEMPLATES -->
+            <!-- css grid: 60 rows per hour -->
+            <!-- number of hours shown from settings -->
+            
+            <!-- for each deadline, APPEND DUE-LINE TEMPLATE -->
+            <!-- for each event with scheduled time, APPEND EVENT_BOX FROM DAY_TEMPLATES NEXT TO HOUR-->
+            <!-- for each scheduled task time, APPEND TASK_BOX FROM DAY_TEMPLATES NEXT TO HOUR -->
+            <!-- for each time-log session, APPEND LOG_BOX FROM DAY_TEMPLATES NEXT TO HOUR-->
+        </section>
+        <!--  -->
+        <section class="bottom">
+            <!-- for each event with no scheduled time, APPEND EVENT_LINE FROM DAY_TEMPLATES -->
+            <!-- for each scheduled-date with no time, APPEND TASK-LINE TEMPLATE FROM DAY_TEMPLATE-->
+            <!-- for each non-scheduled measurement in day object, APPEND MEASUREMENT_BUTTON FROM DAY_TEMPLATES -->
+            <!-- for each non-scheduled habit in day object, APPEND HABIT_BUTTON FROM DAY_TEMPLATES -->
+        </section>
+    </div>
+</template>
+
+<!-- TODO: DAY-INFINITE, WEEK, MONTH, and YEAR  -->
+<template id="list-view-right-panel-day-infinite">
+
+</template>
+<template id="list-view-right-panel-week">
+
+</template>
+
+<template id="list-view-right-panel-month">
+
+</template>
+
+<template id="list-view-right-panel-year">
+
+</template>
+

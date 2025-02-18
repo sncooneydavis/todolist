@@ -3,7 +3,13 @@
 
 import ListView from '../view/list-view.js';
 import TodoModeller from '../model/todo-model.js';
-import { TodoData, SubtaskData } from '../model/item-classes.js';
+import {
+  ListData,
+  SublistData,
+  TodoData,
+  SubtaskData,
+} from '../model/item-classes.js';
+import UtilityBar from '../utilities/utility-bar.js';
 
 export default class TodoPanelController {
   constructor(userInstance) {
@@ -11,6 +17,7 @@ export default class TodoPanelController {
     this.todoModeller = new TodoModeller(userInstance.storedLists, this);
     this.todoModel = this.todoModeller.todoModel;
     this.listView = new ListView(this.todoModeller, this);
+    this.utilityBar = new UtilityBar(this.todoModel, this);
   }
 
   saveToLocalStorage() {
@@ -87,8 +94,9 @@ export default class TodoPanelController {
     }
   }
 
-  appendToMiddleOfModelAndReturnBlankTodo(priorTodo) {
+  appendToMiddleOfModelAndReturnBlankTodoFrom(priorTodo) {
     const priorIds = TodoPanelController.getIDsFromElement(priorTodo);
+
     const newTodo = new TodoData({
       listId: priorIds.listId,
       sublistId: priorIds.sublistId,
@@ -111,11 +119,11 @@ export default class TodoPanelController {
       );
       listData.todos.splice(priorTodoIndex + 1, 0, newTodo);
     }
-    this.todoModeller.saveToLocalStorage();
+    this.saveToLocalStorage();
     return newTodo;
   }
 
-  appendToStartOfListAndReturnBlankTodo(firstTodoELement) {
+  appendToStartOfModelAndReturnBlankTodoFrom(firstTodoELement) {
     const ids = TodoPanelController.getIDsFromElement(firstTodoELement);
     const newTodo = new TodoData({
       listId: ids.listId,
@@ -130,8 +138,48 @@ export default class TodoPanelController {
     } else if (ids.listId) {
       listData.todos.unshift(newTodo);
     }
-    this.todoModeller.saveToLocalStorage();
+    this.saveToLocalStorage();
     return newTodo;
+  }
+
+  appendToMiddleOfModelAndReturnBlankListFrom(priorList) {
+    const priorIds = TodoPanelController.getIDsFromElement(priorList);
+    const newList = new ListData();
+    const priorListIndex = this.todoModel.findIndex(
+      (list) => list.listId === priorIds.listId
+    );
+    this.todoModel.splice(priorListIndex + 1, 0, newList);
+    this.saveToLocalStorage();
+    return newList;
+  }
+
+  appendToMiddleOfModelAndReturnBlankSublistFrom(priorSublist) {
+    const priorIds = TodoPanelController.getIDsFromElement(priorSublist);
+
+    const newSublist = new SublistData({
+      listId: priorIds.listId,
+    });
+    // get place in todoModel
+    const listData = this.todoModel.find(
+      (list) => list.listId === priorIds.listId
+    );
+    const priorSublistIndex = listData.sublists.findIndex(
+      (sublist) => sublist.sublistId === priorIds.sublistId
+    );
+    listData.sublists.splice(priorSublistIndex + 1, 0, newSublist);
+    this.saveToLocalStorage();
+    return newSublist;
+  }
+
+  appendToStartOfModelAndReturnBlankSublistFrom(firstSublistElement) {
+    const ids = TodoPanelController.getIDsFromElement(firstSublistElement);
+    const newSublist = new SublistData({
+      listId: ids.listId,
+    });
+    const listData = this.todoModel.find((list) => list.listId === ids.listId);
+    listData.sublists.unshift(newSublist);
+    this.saveToLocalStorage();
+    return newSublist;
   }
 
   addAndReturnNewSubtask(event) {
@@ -154,7 +202,7 @@ export default class TodoPanelController {
       );
       todoData.checklist.push(newSubtask);
     }
-    this.todoModeller.saveToLocalStorage();
+    this.saveToLocalStorage();
     return newSubtask;
   }
 
@@ -174,7 +222,7 @@ export default class TodoPanelController {
       (subtask) => subtask.subtaskId === ids.subtaskId
     );
     todoData.checklist.splice(subtaskIndex, 1);
-    this.todoModeller.saveToLocalStorage();
+    this.saveToLocalStorage();
     console.log(event.target);
     event.target.closest('.subtask').remove();
   }

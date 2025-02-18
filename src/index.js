@@ -66,7 +66,7 @@ class User {
           isScheduleOpen: false,
           isCompleted: false,
           schedule: [],
-          nextSession: '',
+          nextSession: null,
           checklist: [
             {
               name: 'click the "schedule" button',
@@ -89,6 +89,7 @@ class User {
       ],
       sublists: [
         {
+          listId: 'list-1',
           sublistId: 'sublist-1',
           name: 'Click to open sublist',
           isOpen: false,
@@ -134,6 +135,7 @@ class User {
           ],
         },
         {
+          listId: 'list-1',
           sublistId: 'sublist-2',
           name: 'Details',
           isOpen: false,
@@ -174,7 +176,7 @@ class User {
     },
     {
       listId: 'list-2',
-      name: 'The Odin Project JavaScript',
+      name: 'JavaScript in the Real World',
       isOpen: false,
       todos: [
         {
@@ -192,18 +194,63 @@ class User {
             {
               subtaskId: 'subtask-10',
               name: 'drop down menus',
-              type: 'subtask',
               isCompleted: false,
             },
             {
               subtaskId: 'subtask-11',
               name: 'image carousels',
-              type: 'subtask',
               isCompleted: false,
             },
           ],
           notes:
             'https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions',
+        },
+        {
+          listId: 'list-2',
+          sublistId: null,
+          todoId: 'todo-7',
+          name: 'form validation',
+          type: 'task',
+          isDetailsOpen: false,
+          isScheduleOpen: false,
+          isCompleted: false,
+          schedule: [],
+          nextSession: null,
+          checklist: [
+            {
+              subtaskId: 'subtask-12',
+              name: 'login page',
+              isCompleted: false,
+            },
+            {
+              subtaskId: 'subtask-13',
+              name: 'signup page',
+              isCompleted: false,
+            },
+          ],
+          notes: '',
+        },
+      ],
+      sublists: [],
+    },
+    {
+      listId: 'list-3',
+      name: 'JavaScript ES6',
+      isOpen: false,
+      todos: [
+        {
+          listId: 'list-3',
+          sublistId: null,
+          todoId: 'todo-8',
+          name: 'babel',
+          type: 'task',
+          isDetailsOpen: false,
+          isScheduleOpen: false,
+          isCompleted: false,
+          schedule: [],
+          nextSession: null,
+          checklist: [],
+          notes: '',
         },
       ],
       sublists: [],
@@ -211,6 +258,7 @@ class User {
   ];
 }
 
+// eslint-disable-next-line no-unused-vars
 const init = () => {
   // LOGIN WITH EXISTING ACCOUNT FORM
   const loginForm = document.querySelector('#login-form');
@@ -349,17 +397,24 @@ const init = () => {
       newPassword.validity.valid &&
       newPasswordConfirmation.validity.valid
     ) {
-      // eslint-disable-next-line no-new
+      document.querySelector('body').innerHTML = mainPageContents;
       const controller = new TodoPanelController(
         new User(newEmail.value.toLowerCase(), newPassword.value)
       );
       controller.saveToLocalStorage();
-      signupForm.submit();
     }
   });
 };
 
-init();
+// eslint-disable-next-line no-unused-vars
+const devInit = () => {
+  const storedData = JSON.parse(localStorage.getItem('s@gmail.com'));
+  document.querySelector('body').innerHTML = mainPageContents;
+  // eslint-disable-next-line no-new
+  new TodoPanelController(storedData);
+};
+
+devInit();
 
 // function updateClock() {
 //   const now = new Date();
