@@ -62,7 +62,6 @@ export default class TodoModeller {
     this.controller.saveToLocalStorage();
   }
 
-  // not being used???
   deleteTodoFromModelAndStore(dataElement) {
     const list = this.todoModel.find(
       (listData) => listData.listId === dataElement.listId

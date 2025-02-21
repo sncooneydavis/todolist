@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
 
-import ListView from '../view/list-view.js';
+import ListView from '../view/todo-view/list-view.js';
 import TodoModeller from '../model/todo-model.js';
 import {
   ListData,
@@ -10,6 +10,7 @@ import {
   SubtaskData,
 } from '../model/item-classes.js';
 import UtilityBar from '../utilities/utility-bar.js';
+import ProspectiveView from '../view/prospective-view.js';
 
 export default class TodoPanelController {
   constructor(userInstance) {
@@ -18,6 +19,7 @@ export default class TodoPanelController {
     this.todoModel = this.todoModeller.todoModel;
     this.listView = new ListView(this.todoModeller, this);
     this.utilityBar = new UtilityBar(this.todoModel, this);
+    this.ProspectiveView = new ProspectiveView(this.todoModel);
   }
 
   saveToLocalStorage() {

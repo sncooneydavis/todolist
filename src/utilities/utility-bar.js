@@ -11,7 +11,15 @@ export default class UtilityBar {
   }
 
   addUtilityBarInputHandler() {
+    this.utilityInputElement.addEventListener(
+      'click',
+      this.iconAnimation.bind(this)
+    );
     this.utilityInputElement.addEventListener('input', (event) => {
+      document.addEventListener(
+        'click',
+        this.handleClickOutsideToolbar.bind(this)
+      );
       this.utilityResultsElement.classList.remove('hidden');
       this.utilityResultsElement.innerHTML = '';
 
@@ -79,6 +87,27 @@ export default class UtilityBar {
       }
       // LATER: if list symbol comes after text input
     });
+  }
+
+  iconAnimation() {
+    const icons = this.utilityToolbarElement.querySelectorAll('img');
+    console.log(icons);
+    setTimeout(() => {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < icons.length; i++) {
+        setTimeout(() => {
+          icons.forEach((icon) => icon.classList.add('hidden'));
+          icons[i].classList.remove('hidden');
+        }, i * 1000);
+      }
+    }, 0);
+  }
+
+  handleClickOutsideToolbar(event) {
+    if (!this.utilityToolbarElement.contains(event.target)) {
+      this.emptyAllUtilityElements();
+      document.removeEventListener('click', this.handleClickOutsideToolbar);
+    }
   }
 
   populateResultsFrom(listId, sublistId, inputFragment) {

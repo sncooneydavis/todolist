@@ -196,11 +196,12 @@ button img {
 	height: 95%;
 	width: 95%;
 	border-radius: 15px;
+	overflow: hidden;
 }
 
 #left-pane {
 	display: flex;
-	width: 368px;
+	width: 350px;
 	z-index: 0;
 	border-radius: 15px;
 	background-color: aliceblue;
@@ -213,8 +214,7 @@ button img {
 	width: 350px;
 	z-index: 0;
 	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 20px 30px 20px 30px;
 }
 
 /* ============================================*/
@@ -222,8 +222,8 @@ button img {
 	width: 40px;
 	height: 100%;
 	position: absolute;
-	z-index: 1;
-	left: 347px;
+	z-index: 4;
+	left: 330px;
 }
 .solid-line {
 	height: 100%;
@@ -270,8 +270,7 @@ button img {
 	display: flex;
 	position: relative;
 	align-items: center;
-	width: 91.5%;
-	margin-right: 8px;
+	width: 100%;
 	background-color: white;
 	border: 2px solid darkslateblue;
 	color: black;
@@ -370,13 +369,19 @@ button img {
 /* ============================================*/
 
 #todo-panel {
-	width: 90%;
-	margin-right: 11px;
+	width: 100%;
 	margin-top: 10px;
 	border-radius: 15px;
 	background-color: aliceblue;
 	display: flex;
 	flex-direction: column;
+	overflow-y: auto;
+	border-radius: 0;
+	scrollbar-width: none;
+}
+
+#todo-panel::-webkit-scrollbar {
+	display: none;
 }
 
 /* ============================================*/
@@ -399,7 +404,7 @@ button img {
 .list .body.container, 
 .sublist .body.container {
 	position: relative;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 }
 
 .list .todo.container,
@@ -409,7 +414,6 @@ button img {
 	flex-direction: column;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	gap: 2px;
 }
 
 .list .heading,
@@ -730,10 +734,12 @@ button img {
 	height: 18px;
 }
 /* ============================================*/
-.tiny-add-bar,
+.tiny-add-bar-todo,
+.tiny-add-bar-task,
+.tiny-add-bar-sublist,
 .tiny-add-bar-list {
 	width: 100%;
-	min-height: 4px;
+	min-height: 5px;
 	color: var(--lightest-color);
 }
 /* ============================================*/
@@ -833,8 +839,77 @@ button img {
 #right-pane {
 	border-radius: 15px;
 	background-color: aliceblue;
-	flex: 1;
+	display: flex;
+	padding: 20px 40px 20px 25px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: 100%;
 
+}
+
+.hours-label.container {
+	font-size: 10pt;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding-right: 3px;
+}
+
+.hours-label.container .empty {
+	height: 100px;
+	flex-shrink: 0;
+}
+
+.hours-label.container .time {
+	text-align: right;
+	flex-grow: 1;
+	height: auto;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.day-in-days-calendar {
+	display: flex;
+	background-color: white;
+	border-left: 2px solid darkslateblue;
+	border-top: 2px solid darkslateblue;
+	border-bottom: 2px solid darkslateblue;
+	border-left: 2px solid darkslateblue;
+	border-radius: 10px;
+	
+}
+
+.day-in-days-calendar .day-name {
+	background-color: darkslateblue;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	height: 40px;
+	display: flex;
+}
+
+.day.container input{
+	border: none;
+	background-color: inherit;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	
+}
+.day-in-days-calendar .day-name input {
+	color: white;
+	text-align: center;
+}
+
+.top input{
+	font-size: 11pt;
+	padding: 0px 5px;
+}
+
+.day.container .top button,
+.top input {
+	width: 100%;	
+}
+
+.day.container .top button {
+	background-color: var(--lighter-color);
 }
 
 /* ============================================*/

@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
 import TodoView from './todo-view.js';
-import listHTML from '../components/left-pane/items-views/1.todo-view/list-template.html';
-import sublistHTML from '../components/left-pane/items-views/1.todo-view/sublist-template.html';
-import mainPageHTML from '../components/main-page.html';
+import listHTML from '../../components/left-pane/items-views/1.todo-view/list-template.html';
+import sublistHTML from '../../components/left-pane/items-views/1.todo-view/sublist-template.html';
+import mainPageHTML from '../../components/main-page.html';
 
 export default class ListView {
   constructor(modeller, controller) {
@@ -11,6 +11,7 @@ export default class ListView {
     this.todoModeller = modeller;
     this.todoModel = modeller.todoModel;
     this.todoView = new TodoView(modeller, controller);
+    this.currentListElement = undefined;
 
     this.renderView();
   }
@@ -37,6 +38,14 @@ export default class ListView {
       // this is a hack; TDL: replace with default list
       if (list.listId === 'list-1') {
         list.toggleOpen();
+        this.currentListElement = document.querySelector(
+          '.list[data-list-id="list-1"]'
+        );
+        document.addEventListener(
+          'click',
+          this.handleClickOffList.bind(this),
+          true
+        );
         ListView.toggleListOpen(list);
       }
     });
@@ -47,11 +56,10 @@ export default class ListView {
   }
 
   renderList(list) {
-    const listTemplate = document.createElement('template');
-    listTemplate.innerHTML = listHTML;
-    const listClone = document.importNode(listTemplate.content, true);
+    const listClone = document.createRange().createContextualFragment(listHTML);
+    const listElement = listClone.querySelector('.list');
+    listElement.setAttribute('data-list-id', list.listId);
 
-    listClone.querySelector('.list').setAttribute('data-list-id', list.listId);
     const readonlyListTitleDiv = listClone.querySelector(
       ListView.SELECTORS.readonlyTitle
     );
@@ -168,6 +176,12 @@ export default class ListView {
           ListView.toggleListOpen(list);
         }
       });
+      this.currentListElement = event.target.closest('.list');
+      document.addEventListener(
+        'click',
+        this.handleClickOffList.bind(this),
+        true
+      );
     } else {
       const listData = this.todoModel.find((list) => list.listId === listId);
       listData.sublists.forEach((sublist) => {
@@ -176,6 +190,23 @@ export default class ListView {
           ListView.toggleListOpen(sublist);
         }
       });
+    }
+  }
+
+  handleClickOffList(event) {
+    if (!this.currentListElement.contains(event.target)) {
+      this.currentListElement
+        .querySelectorAll('.todo-details-on')
+        .forEach((button) => {
+          if (button.classList.contains('open')) {
+            button.click();
+          }
+        });
+      document.removeEventListener(
+        'click',
+        this.handleClickOffList.bind(this),
+        true
+      );
     }
   }
 
@@ -189,7 +220,6 @@ export default class ListView {
   }
 
   static toggleListOpen(list) {
-    console.log('toggle the list', list.listId);
     let listDiv;
     if (list.sublistId) {
       listDiv = document.querySelector(
@@ -197,7 +227,6 @@ export default class ListView {
       );
     } else if (list.listId) {
       listDiv = document.querySelector(`.list[data-list-id="${list.listId}"]`);
-      console.log('list div being toggled', listDiv);
     }
     if (listDiv) {
       const bodyContainer = listDiv.querySelector(

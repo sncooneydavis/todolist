@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
-import todoHTML from '../components/left-pane/items-views/1.todo-view/2.task-template.html';
-import subtaskHTML from '../components/left-pane/items-views/1.todo-view/subtask-template.html';
-import createCalendarClone from '../utilities/date-picker.js';
+import todoHTML from '../../components/left-pane/items-views/1.todo-view/2.task-template.html';
+import subtaskHTML from '../../components/left-pane/items-views/1.todo-view/subtask-template.html';
+import createCalendarClone from '../../utilities/date-picker.js';
 
 export default class TodoView {
   constructor(modeller, controller) {
@@ -40,9 +40,9 @@ export default class TodoView {
   renderTodo(todo) {
     if (todo.isCompleted === false) {
       // TDL: put this in static initialization block
-      const todoTemplate = document.createElement('template');
-      todoTemplate.innerHTML = todoHTML;
-      const todoClone = document.importNode(todoTemplate.content, true);
+      const todoClone = document
+        .createRange()
+        .createContextualFragment(todoHTML);
       todoClone.querySelector('.todo-title').setAttribute('value', todo.name);
       const todoDiv = todoClone.querySelector('.todo');
       todoDiv.setAttribute('data-list-id', todo.listId);
@@ -84,13 +84,14 @@ export default class TodoView {
         .querySelector(TodoView.SELECTORS.tinyAdd)
         .addEventListener('mouseover', (event) => {
           // eslint-disable-next-line no-param-reassign
-          event.target.innerHTML = '+';
+          event.currentTarget.innerHTML = '+';
+          console.log('good');
         });
       todoClone
         .querySelector(TodoView.SELECTORS.tinyAdd)
         .addEventListener('mouseout', (event) => {
           // eslint-disable-next-line no-param-reassign
-          event.target.innerHTML = '';
+          event.currentTarget.innerHTML = '';
         });
       todoClone
         .querySelector(TodoView.SELECTORS.tinyAdd)
@@ -252,6 +253,9 @@ export default class TodoView {
     }
     editingDropdownElement.classList.toggle('hidden');
     TodoView.toggleDropdownArrows(arrowsElement);
+    if (arrowsElement.classList.contains('open')) {
+      TodoView.centerOpenedTaskInCalendar(event.target);
+    }
   }
 
   static handleDatetimeButtonClick(event) {
@@ -302,6 +306,7 @@ export default class TodoView {
     arrowsElement
       .querySelector(':scope > :nth-child(2)')
       .classList.toggle('hidden');
+    arrowsElement.classList.toggle('open');
   }
 
   // when buttons in edit-dropdown clicked
@@ -320,6 +325,22 @@ export default class TodoView {
       .querySelector(TodoView.SELECTORS.addDetailsButton)
       .classList.toggle('hidden');
   }
+
+  static centerOpenedTaskInCalendar(target) {
+    const parentElement = document.querySelector('#right-pane');
+    const todoId = target.closest('.todo').getAttribute('data-todo-id');
+    const taskBarElement = parentElement.querySelector(
+      `[data-todo-id="${todoId}"]`
+    );
+    console.log('todoId', todoId);
+    console.log('parent', parentElement);
+    console.log('child', taskBarElement);
+
+    parentElement.scrollLeft =
+      taskBarElement.offsetLeft - parentElement.offsetLeft;
+  }
+
+  // SUBTASKS
 
   handleSubtaskAddOnEnter(event) {
     if (event.key === 'Enter') {
@@ -344,9 +365,9 @@ export default class TodoView {
   }
 
   addSubtaskToDOMfromData(subtask, extantSubtasksContainer) {
-    const subtaskTemplate = document.createElement('template');
-    subtaskTemplate.innerHTML = subtaskHTML;
-    const subtaskClone = document.importNode(subtaskTemplate.content, true);
+    const subtaskClone = document
+      .createRange()
+      .createContextualFragment(subtaskHTML);
     subtaskClone.firstElementChild.setAttribute(
       'data-subtask-id',
       subtask.subtaskId

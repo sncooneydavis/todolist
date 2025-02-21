@@ -28,15 +28,15 @@ class User {
           schedule: [
             {
               sessionId: 'session-1',
-              startDate: '2025-02-11',
+              startDate: '2025-02-23',
               startTime: null,
-              endDate: '2025-02-11',
+              endDate: '2025-02-23',
               endTime: null,
               isLogged: false,
               isPast: false,
             },
           ],
-          nextSession: '2025-02-11',
+          nextSession: '2025-02-23',
           checklist: [
             {
               subtaskId: 'subtask-1',
@@ -66,7 +66,7 @@ class User {
           isScheduleOpen: false,
           isCompleted: false,
           schedule: [],
-          nextSession: null,
+          nextSession: '2025-02-26',
           checklist: [
             {
               name: 'click the "schedule" button',
@@ -106,15 +106,15 @@ class User {
               schedule: [
                 {
                   sessionId: 'session-2',
-                  startDate: '2025-02-11',
+                  startDate: '2025-02-22',
                   startTime: null,
-                  endDate: '2025-02-11',
+                  endDate: '2025-02-22',
                   endTime: null,
                   isLogged: false,
                   isPast: false,
                 },
               ],
-              nextSession: '2025-02-11',
+              nextSession: '2025-02-22',
               checklist: [],
               notes: '',
             },
@@ -128,7 +128,7 @@ class User {
               isScheduleOpen: false,
               isCompleted: false,
               schedule: [],
-              nextSession: null,
+              nextSession: '2025-02-25',
               checklist: [],
               notes: '',
             },
@@ -150,7 +150,7 @@ class User {
               isScheduleOpen: false,
               isCompleted: false,
               schedule: [],
-              nextSession: null,
+              nextSession: '2025-02-22',
               checklist: [
                 {
                   name: 'can add subtasks',
@@ -189,7 +189,7 @@ class User {
           isScheduleOpen: false,
           isCompleted: false,
           schedule: [],
-          nextSession: null,
+          nextSession: '2025-02-22',
           checklist: [
             {
               subtaskId: 'subtask-10',
@@ -248,7 +248,7 @@ class User {
           isScheduleOpen: false,
           isCompleted: false,
           schedule: [],
-          nextSession: null,
+          nextSession: '2025-02-21',
           checklist: [],
           notes: '',
         },

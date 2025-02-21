@@ -415,6 +415,13 @@ module.exports = __webpack_require__.p + "assets/images/date.svg";
 
 /***/ }),
 
+/***/ 776:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/reocurring.svg";
+
+/***/ }),
+
 /***/ 547:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -703,7 +710,7 @@ var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(
 var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(928), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(81), __webpack_require__.b);
 // Module
-var code = `<div class="main container"> <div id="left-pane"> <div class="left container"> <div id="utility-toolbar" class="single-line"> <div id="utility-input" contenteditable="true"></div> <div id="utility-results" class="hidden"></div> <button class="utility button inactive"> <img class="hidden" src="${___HTML_LOADER_IMPORT_0___}"/> <img class="hidden" src="${___HTML_LOADER_IMPORT_1___}"/> <img class="" src="${___HTML_LOADER_IMPORT_2___}"/> </button> </div> <div id="left-view-toolbar"> <button id="home-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_3___}"/> </button> <button id="todo-view-button" type="button"> <img class="bigicon" src="${___HTML_LOADER_IMPORT_4___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="habit-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_6___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="measurement-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_7___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> </div> <div id="todo-panel"> </div> <div id="timer-panel" class="hidden"> <button id="main-timer-button" class="dragbar-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_8___}"/> <input class="countup hidden" value="00:00" type="time" step="1" readonly="readonly"/> </button> <button id="main-timer-item-button" class="dragbar-button" class="hidden"> <input id="main-timer-item-name" class="" value="task and time here" type="text" maxlength="15" readonly="readonly"/> </button> </div> </div> <div class="dragbar right"> <div class="solid-line"></div> <div class="z-top top"> <button id="calendar-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon" src="${___HTML_LOADER_IMPORT_9___}"/> </button> <button id="data-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_10___}"/> </button> </div> <div class="z-top bottom"> <button id="settings-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_11___}"/> </button> </div> </div> </div> <div id="right-pane"> </div> </div>`;
+var code = `<div class="main container"> <div id="left-pane"> <div class="left container"> <div id="utility-toolbar" class="single-line"> <div id="utility-input" contenteditable="true"></div> <div id="utility-results" class="hidden"></div> <button class="utility button inactive"> <img class="hidden" src="${___HTML_LOADER_IMPORT_0___}"/> <img class="hidden" src="${___HTML_LOADER_IMPORT_1___}"/> <img class="" src="${___HTML_LOADER_IMPORT_2___}"/> </button> </div> <div id="left-view-toolbar"> <button id="home-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_3___}"/> </button> <button id="todo-view-button" type="button"> <img class="bigicon" src="${___HTML_LOADER_IMPORT_4___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="habit-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_6___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="measurement-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_7___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> </div> <div id="todo-panel"> </div> <div id="timer-panel" class="hidden"> <button id="main-timer-button" class="dragbar-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_8___}"/> <input class="countup hidden" value="00:00" type="time" step="1" readonly="readonly"/> </button> <button id="main-timer-item-button" class="dragbar-button" class="hidden"> <input id="main-timer-item-name" class="" value="task and time here" type="text" maxlength="15" readonly="readonly"/> </button> </div> </div> <div class="dragbar right"> <div class="solid-line"></div> <div class="z-top top"> <button id="calendar-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon" src="${___HTML_LOADER_IMPORT_9___}"/> </button> <button id="data-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_10___}"/> </button> </div> <div class="z-top bottom"> <button id="settings-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_11___}"/> </button> </div> </div> </div> <div id="right-pane"> <div class="hours-label container"> <div class="empty"></div> <div id="4am" class="time hidden">4a</div> <div id="5am" class="time hidden">5a</div> <div id="6am" class="time hidden">6a</div> <div id="7am" class="time">7a</div> <div id="8am" class="time">8a</div> <div id="9am" class="time">9a</div> <div id="10am" class="time">10a</div> <div id="11am" class="time">11a</div> <div id="12pm" class="time">12p</div> <div id="1pm" class="time">1p</div> <div id="2pm" class="time">2p</div> <div id="3pm" class="time">3p</div> <div id="4pm" class="time">4p</div> <div id="5pm" class="time">5p</div> <div id="6pm" class="time">6p</div> <div id="7pm" class="time">7p</div> <div id="8pm" class="time">8p</div> <div id="9pm" class="time">9p</div> <div id="10pm" class="time">10p</div> <div id="11pm" class="time">11p</div> <div id="12am" class="time">12a</div> <div id="1am" class="time hidden">1a</div> <div id="2am" class="time hidden">2a</div> <div id="3am" class="time hidden">3a</div> </div> </div> </div>`;
 // Exports
 /* harmony default export */ const main_page = (code);
 ;// ./src/components/left-pane/items-views/1.todo-view/2.task-template.html
@@ -1255,7 +1262,7 @@ function createCalendarClone(date) {
   return calendarClone;
 }
 
-;// ./src/view/todo-view.js
+;// ./src/view/todo-view/todo-view.js
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
 
@@ -1298,9 +1305,9 @@ class TodoView {
   renderTodo(todo) {
     if (todo.isCompleted === false) {
       // TDL: put this in static initialization block
-      const todoTemplate = document.createElement('template');
-      todoTemplate.innerHTML = _2_task_template;
-      const todoClone = document.importNode(todoTemplate.content, true);
+      const todoClone = document
+        .createRange()
+        .createContextualFragment(_2_task_template);
       todoClone.querySelector('.todo-title').setAttribute('value', todo.name);
       const todoDiv = todoClone.querySelector('.todo');
       todoDiv.setAttribute('data-list-id', todo.listId);
@@ -1342,13 +1349,14 @@ class TodoView {
         .querySelector(TodoView.SELECTORS.tinyAdd)
         .addEventListener('mouseover', (event) => {
           // eslint-disable-next-line no-param-reassign
-          event.target.innerHTML = '+';
+          event.currentTarget.innerHTML = '+';
+          console.log('good');
         });
       todoClone
         .querySelector(TodoView.SELECTORS.tinyAdd)
         .addEventListener('mouseout', (event) => {
           // eslint-disable-next-line no-param-reassign
-          event.target.innerHTML = '';
+          event.currentTarget.innerHTML = '';
         });
       todoClone
         .querySelector(TodoView.SELECTORS.tinyAdd)
@@ -1510,6 +1518,9 @@ class TodoView {
     }
     editingDropdownElement.classList.toggle('hidden');
     TodoView.toggleDropdownArrows(arrowsElement);
+    if (arrowsElement.classList.contains('open')) {
+      TodoView.centerOpenedTaskInCalendar(event.target);
+    }
   }
 
   static handleDatetimeButtonClick(event) {
@@ -1560,6 +1571,7 @@ class TodoView {
     arrowsElement
       .querySelector(':scope > :nth-child(2)')
       .classList.toggle('hidden');
+    arrowsElement.classList.toggle('open');
   }
 
   // when buttons in edit-dropdown clicked
@@ -1578,6 +1590,22 @@ class TodoView {
       .querySelector(TodoView.SELECTORS.addDetailsButton)
       .classList.toggle('hidden');
   }
+
+  static centerOpenedTaskInCalendar(target) {
+    const parentElement = document.querySelector('#right-pane');
+    const todoId = target.closest('.todo').getAttribute('data-todo-id');
+    const taskBarElement = parentElement.querySelector(
+      `[data-todo-id="${todoId}"]`
+    );
+    console.log('todoId', todoId);
+    console.log('parent', parentElement);
+    console.log('child', taskBarElement);
+
+    parentElement.scrollLeft =
+      taskBarElement.offsetLeft - parentElement.offsetLeft;
+  }
+
+  // SUBTASKS
 
   handleSubtaskAddOnEnter(event) {
     if (event.key === 'Enter') {
@@ -1602,9 +1630,9 @@ class TodoView {
   }
 
   addSubtaskToDOMfromData(subtask, extantSubtasksContainer) {
-    const subtaskTemplate = document.createElement('template');
-    subtaskTemplate.innerHTML = subtask_template;
-    const subtaskClone = document.importNode(subtaskTemplate.content, true);
+    const subtaskClone = document
+      .createRange()
+      .createContextualFragment(subtask_template);
     subtaskClone.firstElementChild.setAttribute(
       'data-subtask-id',
       subtask.subtaskId
@@ -1658,7 +1686,7 @@ var list_template_code = ` <div class="left popover hidden"> <button class="coll
 var sublist_template_code = ` <div data-list-id="" data-sublist-id="" class="sublist"> <div class="heading single-line"> <button class="open-list-button" type="button"> <input class="readonly title" type="text" value="LIST_TITLE" readonly="readonly"/> </button> <input data-field="name" class="editing-list-title hidden" type="text" value="LIST_TITLE"/> <button class="options-list-button hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="open-options-icon"> <desc>Reward Stars 2 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M9.855083333333333 1.2604166666666665c-0.02291666666666667 5.757583333333333 2.776583333333333 9.023666666666665 9.166666666666666 9.166666666666666 -5.92625 -0.02291666666666667 -8.866 3.1542499999999998 -9.166666666666666 9.166666666666666 -0.057749999999999996 -5.6714166666666666 -2.5923516666666666 -9.174916666666666 -9.16668775 -9.166666666666666 5.881336083333333 -0.08249999999999999 9.143771083333332 -2.9214166666666666 9.16668775 -9.166666666666666Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.427666666666667 1.2604166666666665v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M15.594333333333333 3.09375h3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M19.479166666666664 17.072916666666664v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.645833333333332 18.90625h3.6666666666666665" stroke-width="2"> </path> </svg> </button> </div> <div class="body container hidden"> <div class="options popover hidden"> <button class="print-sublist-button"> Print Sublist </button> <button class="archive-list-button"> Archive Sublist </button> </div> <button class="tiny-add-bar-todo" type="button"></button></div> </div>  <button class="tiny-add-bar-sublist" type="button"> </button>`;
 // Exports
 /* harmony default export */ const sublist_template = (sublist_template_code);
-;// ./src/view/list-view.js
+;// ./src/view/todo-view/list-view.js
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
 
@@ -1672,6 +1700,7 @@ class ListView {
     this.todoModeller = modeller;
     this.todoModel = modeller.todoModel;
     this.todoView = new TodoView(modeller, controller);
+    this.currentListElement = undefined;
 
     this.renderView();
   }
@@ -1698,6 +1727,14 @@ class ListView {
       // this is a hack; TDL: replace with default list
       if (list.listId === 'list-1') {
         list.toggleOpen();
+        this.currentListElement = document.querySelector(
+          '.list[data-list-id="list-1"]'
+        );
+        document.addEventListener(
+          'click',
+          this.handleClickOffList.bind(this),
+          true
+        );
         ListView.toggleListOpen(list);
       }
     });
@@ -1708,11 +1745,10 @@ class ListView {
   }
 
   renderList(list) {
-    const listTemplate = document.createElement('template');
-    listTemplate.innerHTML = list_template;
-    const listClone = document.importNode(listTemplate.content, true);
+    const listClone = document.createRange().createContextualFragment(list_template);
+    const listElement = listClone.querySelector('.list');
+    listElement.setAttribute('data-list-id', list.listId);
 
-    listClone.querySelector('.list').setAttribute('data-list-id', list.listId);
     const readonlyListTitleDiv = listClone.querySelector(
       ListView.SELECTORS.readonlyTitle
     );
@@ -1829,6 +1865,12 @@ class ListView {
           ListView.toggleListOpen(list);
         }
       });
+      this.currentListElement = event.target.closest('.list');
+      document.addEventListener(
+        'click',
+        this.handleClickOffList.bind(this),
+        true
+      );
     } else {
       const listData = this.todoModel.find((list) => list.listId === listId);
       listData.sublists.forEach((sublist) => {
@@ -1837,6 +1879,23 @@ class ListView {
           ListView.toggleListOpen(sublist);
         }
       });
+    }
+  }
+
+  handleClickOffList(event) {
+    if (!this.currentListElement.contains(event.target)) {
+      this.currentListElement
+        .querySelectorAll('.todo-details-on')
+        .forEach((button) => {
+          if (button.classList.contains('open')) {
+            button.click();
+          }
+        });
+      document.removeEventListener(
+        'click',
+        this.handleClickOffList.bind(this),
+        true
+      );
     }
   }
 
@@ -1850,7 +1909,6 @@ class ListView {
   }
 
   static toggleListOpen(list) {
-    console.log('toggle the list', list.listId);
     let listDiv;
     if (list.sublistId) {
       listDiv = document.querySelector(
@@ -1858,7 +1916,6 @@ class ListView {
       );
     } else if (list.listId) {
       listDiv = document.querySelector(`.list[data-list-id="${list.listId}"]`);
-      console.log('list div being toggled', listDiv);
     }
     if (listDiv) {
       const bodyContainer = listDiv.querySelector(
@@ -2294,7 +2351,6 @@ class TodoModeller {
     this.controller.saveToLocalStorage();
   }
 
-  // not being used???
   deleteTodoFromModelAndStore(dataElement) {
     const list = this.todoModel.find(
       (listData) => listData.listId === dataElement.listId
@@ -2351,7 +2407,15 @@ class UtilityBar {
   }
 
   addUtilityBarInputHandler() {
+    this.utilityInputElement.addEventListener(
+      'click',
+      this.iconAnimation.bind(this)
+    );
     this.utilityInputElement.addEventListener('input', (event) => {
+      document.addEventListener(
+        'click',
+        this.handleClickOutsideToolbar.bind(this)
+      );
       this.utilityResultsElement.classList.remove('hidden');
       this.utilityResultsElement.innerHTML = '';
 
@@ -2419,6 +2483,27 @@ class UtilityBar {
       }
       // LATER: if list symbol comes after text input
     });
+  }
+
+  iconAnimation() {
+    const icons = this.utilityToolbarElement.querySelectorAll('img');
+    console.log(icons);
+    setTimeout(() => {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < icons.length; i++) {
+        setTimeout(() => {
+          icons.forEach((icon) => icon.classList.add('hidden'));
+          icons[i].classList.remove('hidden');
+        }, i * 1000);
+      }
+    }, 0);
+  }
+
+  handleClickOutsideToolbar(event) {
+    if (!this.utilityToolbarElement.contains(event.target)) {
+      this.emptyAllUtilityElements();
+      document.removeEventListener('click', this.handleClickOutsideToolbar);
+    }
   }
 
   populateResultsFrom(listId, sublistId, inputFragment) {
@@ -2572,6 +2657,7 @@ class UtilityBar {
         this.utilityInputElement.textContent = '';
         this.utilityToolbarElement.prepend(targetOption);
         this.emptyResultsElementsAndHide();
+        this.utilityInputElement.focus();
       }
       if (targetOption.hasAttribute('data-sublist-id')) {
         const sublistId = targetOption.getAttribute('data-sublist-id');
@@ -2581,8 +2667,12 @@ class UtilityBar {
           )
           .click();
         this.utilityInputElement.textContent = '';
-        this.utilityToolbarElement.innerHTML = targetOption;
+        this.utilityToolbarElement.removeChild(
+          this.utilityToolbarElement.firstChild
+        );
+        this.utilityToolbarElement.prepend(targetOption);
         this.emptyResultsElementsAndHide();
+        this.utilityInputElement.focus();
       }
       if (targetOption.hasAttribute('data-todo-id')) {
         document
@@ -2660,9 +2750,143 @@ class UtilityBar {
   }
 }
 
+;// ./src/components/right-pane/days-calendar.html
+// Module
+var days_calendar_code = `<div class="day-in-days-calendar" data-day=""> <div class="day container"> <section class="day-name"> <button class="day-name-button" type="button"> <input class="readonly-date" type="text" value="" readonly="readonly"/> </button> </section> <section class="top"> </section> <section class="middle"> </section> <section class="bottom"> </section> </div> </div> `;
+// Exports
+/* harmony default export */ const days_calendar = (days_calendar_code);
+;// ./src/components/right-pane/todo-view-elements/todo-line.html
+// Imports
+var todo_line_HTML_LOADER_IMPORT_0_ = new URL(/* asset import */ __webpack_require__(776), __webpack_require__.b);
+// Module
+var todo_line_code = `<div class="single-line" data-todo-id=""> <input class="cal-checkbox hidden" type="checkbox"/> <button class="title-button" type="button"> <input class="readonly-title" type="text" readonly="readonly"/> <img class="recurring indicator cal hidden" src="${todo_line_HTML_LOADER_IMPORT_0_}"/> </button> </div>`;
+// Exports
+/* harmony default export */ const todo_line = (todo_line_code);
+;// ./src/view/prospective-view.js
+/* eslint-disable no-console */
+
+// import taskBlockHTML from '../components/right-pane/todo-view-elements/task-block.html';
+
+
+class ProspectiveView {
+  constructor(todoModel) {
+    this.todoModel = todoModel;
+    this.renderInitialDaysCalendar();
+  }
+
+  getTodoLineElementsInRange(currentDate, futureDate) {
+    function findTodos(list) {
+      return [
+        ...list.todos
+          .map((todo) => {
+            let todoDate = todo.nextSession ? new Date(todo.nextSession) : null;
+            if (
+              todoDate &&
+              todoDate >= new Date(currentDate) &&
+              todoDate <= new Date(futureDate)
+            ) {
+              // eslint-disable-next-line prefer-destructuring
+              todoDate = todoDate.toISOString().split('T')[0];
+              const todoLineClone = document
+                .createRange()
+                .createContextualFragment(todo_line);
+              const todoLineElement = todoLineClone.firstElementChild;
+              todoLineElement.setAttribute('data-todo-id', todo.todoId);
+              todoLineElement.setAttribute('data-list-id', todo.listId);
+              if (todo.sublistId) {
+                todoLineElement.setAttribute('data-sublist-id', todo.sublistId);
+              }
+              todoLineElement.querySelector('.readonly-title').value =
+                todo.name;
+              if (todo.isCompleted) {
+                todoLineElement.querySelector('.cal-checkbox').checked = true;
+              }
+              todoLineElement.addEventListener(
+                'click',
+                ProspectiveView.handleTodoLineClick
+              );
+              return { date: todoDate, clone: todoLineClone };
+            }
+            return null;
+          })
+          .filter(Boolean),
+        ...(list.sublists?.flatMap(findTodos) ?? []),
+      ];
+    }
+    return this.todoModel.flatMap(findTodos);
+  }
+
+  static handleTodoLineClick(event) {
+    const todoId = event.currentTarget.getAttribute('data-todo-id');
+    const sublistId = event.currentTarget.getAttribute('data-sublist-id');
+    const listId = event.currentTarget.getAttribute('data-list-id');
+
+    const listElement = document.querySelector(
+      `#left-pane [data-list-id="${listId}"]`
+    );
+    if (
+      listElement.querySelector('.body.container').classList.contains('hidden')
+    ) {
+      listElement.querySelector('.readonly.title').click();
+    }
+    if (sublistId) {
+      const sublistElement = document.querySelector(
+        `#left-pane [data-sublist-id="${sublistId}"]`
+      );
+      if (
+        sublistElement
+          .querySelector('.body.container')
+          .classList.contains('hidden')
+      ) {
+        sublistElement.querySelector('.readonly.title').click();
+      }
+    }
+    console.log(
+      'hello',
+      document.querySelector(
+        `#left-pane [data-todo-id="${todoId}"] .todo-details-on`
+      )
+    );
+    document
+      .querySelector(`#left-pane [data-todo-id="${todoId}"] .todo-details-on`)
+      .click();
+  }
+
+  renderInitialDaysCalendar() {
+    const currentDate = new Date();
+    const formattedCurrentDate = currentDate.toISOString().split('T')[0];
+    const futureDate = new Date(currentDate);
+    futureDate.setDate(futureDate.getDate() + 14);
+
+    const todosWithinRange = this.getTodoLineElementsInRange(
+      formattedCurrentDate,
+      futureDate
+    );
+    while (currentDate <= futureDate) {
+      const dayClone = document
+        .createRange()
+        .createContextualFragment(days_calendar);
+      const formattedDate = currentDate.toISOString().split('T')[0];
+      dayClone.firstElementChild.setAttribute('data-date', formattedDate);
+      dayClone
+        .querySelector('.readonly-date')
+        .setAttribute('value', formattedDate);
+      const todosToAddToDay = todosWithinRange.filter(
+        (todo) => todo.date === formattedDate
+      );
+      todosToAddToDay.forEach((todo) => {
+        dayClone.querySelector('.top').appendChild(todo.clone);
+      });
+      document.querySelector('#right-pane').appendChild(dayClone);
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+  }
+}
+
 ;// ./src/controller/todo-panel-control.js
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
+
 
 
 
@@ -2676,6 +2900,7 @@ class todo_panel_control_TodoPanelController {
     this.todoModel = this.todoModeller.todoModel;
     this.listView = new ListView(this.todoModeller, this);
     this.utilityBar = new UtilityBar(this.todoModel, this);
+    this.ProspectiveView = new ProspectiveView(this.todoModel);
   }
 
   saveToLocalStorage() {
@@ -2917,15 +3142,15 @@ class User {
           schedule: [
             {
               sessionId: 'session-1',
-              startDate: '2025-02-11',
+              startDate: '2025-02-23',
               startTime: null,
-              endDate: '2025-02-11',
+              endDate: '2025-02-23',
               endTime: null,
               isLogged: false,
               isPast: false,
             },
           ],
-          nextSession: '2025-02-11',
+          nextSession: '2025-02-23',
           checklist: [
             {
               subtaskId: 'subtask-1',
@@ -2955,7 +3180,7 @@ class User {
           isScheduleOpen: false,
           isCompleted: false,
           schedule: [],
-          nextSession: null,
+          nextSession: '2025-02-26',
           checklist: [
             {
               name: 'click the "schedule" button',
@@ -2995,15 +3220,15 @@ class User {
               schedule: [
                 {
                   sessionId: 'session-2',
-                  startDate: '2025-02-11',
+                  startDate: '2025-02-22',
                   startTime: null,
-                  endDate: '2025-02-11',
+                  endDate: '2025-02-22',
                   endTime: null,
                   isLogged: false,
                   isPast: false,
                 },
               ],
-              nextSession: '2025-02-11',
+              nextSession: '2025-02-22',
               checklist: [],
               notes: '',
             },
@@ -3017,7 +3242,7 @@ class User {
               isScheduleOpen: false,
               isCompleted: false,
               schedule: [],
-              nextSession: null,
+              nextSession: '2025-02-25',
               checklist: [],
               notes: '',
             },
@@ -3039,7 +3264,7 @@ class User {
               isScheduleOpen: false,
               isCompleted: false,
               schedule: [],
-              nextSession: null,
+              nextSession: '2025-02-22',
               checklist: [
                 {
                   name: 'can add subtasks',
@@ -3078,7 +3303,7 @@ class User {
           isScheduleOpen: false,
           isCompleted: false,
           schedule: [],
-          nextSession: null,
+          nextSession: '2025-02-22',
           checklist: [
             {
               subtaskId: 'subtask-10',
@@ -3137,7 +3362,7 @@ class User {
           isScheduleOpen: false,
           isCompleted: false,
           schedule: [],
-          nextSession: null,
+          nextSession: '2025-02-21',
           checklist: [],
           notes: '',
         },
@@ -3185,9 +3410,9 @@ const init = () => {
       const id = email.value.toLowerCase();
       const storedData = JSON.parse(localStorage.getItem(id)) || null;
       if (storedData.email === id && storedData.password === password.value) {
-        document.querySelector('body').innerHTML = main_page;
+        document.querySelector('body').innerHTML = mainPageContents;
         // eslint-disable-next-line no-new
-        new todo_panel_control_TodoPanelController(storedData);
+        new TodoPanelController(storedData);
       } else if (storedData === null) {
         email.error.textContent = 'Email not found';
         email.error.classList.remove('hidden');
@@ -3286,8 +3511,8 @@ const init = () => {
       newPassword.validity.valid &&
       newPasswordConfirmation.validity.valid
     ) {
-      document.querySelector('body').innerHTML = main_page;
-      const controller = new todo_panel_control_TodoPanelController(
+      document.querySelector('body').innerHTML = mainPageContents;
+      const controller = new TodoPanelController(
         new User(newEmail.value.toLowerCase(), newPassword.value)
       );
       controller.saveToLocalStorage();
@@ -3297,13 +3522,14 @@ const init = () => {
 
 // eslint-disable-next-line no-unused-vars
 const devInit = () => {
-  const storedData = JSON.parse(localStorage.getItem('s@gmail.com'));
-  document.querySelector('body').innerHTML = mainPageContents;
-  // eslint-disable-next-line no-new
-  new TodoPanelController(storedData);
+  document.querySelector('body').innerHTML = main_page;
+  const controller = new todo_panel_control_TodoPanelController(
+    new User('default user', 'password1')
+  );
+  controller.saveToLocalStorage();
 };
 
-init();
+devInit();
 
 // function updateClock() {
 //   const now = new Date();
