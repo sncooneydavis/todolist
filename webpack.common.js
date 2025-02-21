@@ -9,13 +9,13 @@ const __dirname = path.dirname(__filename);
 
 export default {
   entry: { app: './src/index.js' },
-	output: {
+  output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-		clean: true,
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
+    clean: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
 			template: "./src/template.html",
 			filename: "index.html",
 		}),
