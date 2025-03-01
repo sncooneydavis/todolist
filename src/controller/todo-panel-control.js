@@ -11,9 +11,12 @@ import {
 } from '../model/item-classes.js';
 import UtilityBar from '../utilities/utility-bar.js';
 import ProspectiveView from '../view/prospective-view.js';
+import mainPageContents from '../components/main-page.html';
 
 export default class TodoPanelController {
   constructor(userInstance) {
+    document.querySelector('body').innerHTML = mainPageContents;
+
     this.userInstance = userInstance;
     this.todoModeller = new TodoModeller(userInstance.storedLists, this);
     this.todoModel = this.todoModeller.todoModel;

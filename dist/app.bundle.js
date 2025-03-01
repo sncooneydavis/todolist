@@ -411,319 +411,28 @@ module.exports = __webpack_require__.p + "assets/images/down.png";
 
 /***/ }),
 
-/***/ 732:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ 706:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "assets/images/view-completed.svg";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
 
-/***/ }),
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ TodoPanelController)
+});
 
-/***/ 776:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "assets/images/reocurring.svg";
-
-/***/ }),
-
-/***/ 782:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "assets/images/all-options.svg";
-
-/***/ }),
-
-/***/ 825:
-/***/ ((module) => {
-
-
-
-/* istanbul ignore next  */
-function apply(styleElement, options, obj) {
-  var css = "";
-  if (obj.supports) {
-    css += "@supports (".concat(obj.supports, ") {");
-  }
-  if (obj.media) {
-    css += "@media ".concat(obj.media, " {");
-  }
-  var needLayer = typeof obj.layer !== "undefined";
-  if (needLayer) {
-    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
-  }
-  css += obj.css;
-  if (needLayer) {
-    css += "}";
-  }
-  if (obj.media) {
-    css += "}";
-  }
-  if (obj.supports) {
-    css += "}";
-  }
-  var sourceMap = obj.sourceMap;
-  if (sourceMap && typeof btoa !== "undefined") {
-    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  }
-
-  // For old IE
-  /* istanbul ignore if  */
-  options.styleTagTransform(css, styleElement, options.options);
-}
-function removeStyleElement(styleElement) {
-  // istanbul ignore if
-  if (styleElement.parentNode === null) {
-    return false;
-  }
-  styleElement.parentNode.removeChild(styleElement);
-}
-
-/* istanbul ignore next  */
-function domAPI(options) {
-  if (typeof document === "undefined") {
-    return {
-      update: function update() {},
-      remove: function remove() {}
-    };
-  }
-  var styleElement = options.insertStyleElement(options);
-  return {
-    update: function update(obj) {
-      apply(styleElement, options, obj);
-    },
-    remove: function remove() {
-      removeStyleElement(styleElement);
-    }
-  };
-}
-module.exports = domAPI;
-
-/***/ }),
-
-/***/ 847:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "assets/images/up.svg";
-
-/***/ }),
-
-/***/ 928:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "assets/images/drag-view-data.svg";
-
-/***/ }),
-
-/***/ 940:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "assets/images/habit.svg";
-
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
-/******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
-/******/ 				scriptUrl = document.currentScript.src;
-/******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) {
-/******/ 					var i = scripts.length - 1;
-/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
-/******/ 				}
-/******/ 			}
-/******/ 		}
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			524: 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		// no on chunks loaded
-/******/ 		
-/******/ 		// no jsonp function
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/nonce */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nc = undefined;
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(72);
-var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/styleDomAPI.js
-var styleDomAPI = __webpack_require__(825);
-var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/insertBySelector.js
-var insertBySelector = __webpack_require__(659);
-var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
-var setAttributesWithoutAttributes = __webpack_require__(56);
-var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/insertStyleElement.js
-var insertStyleElement = __webpack_require__(540);
-var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/styleTagTransform.js
-var styleTagTransform = __webpack_require__(113);
-var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./src/styles.css
-var styles = __webpack_require__(474);
-;// ./src/styles.css
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (styleTagTransform_default());
-options.setAttributes = (setAttributesWithoutAttributes_default());
-options.insert = insertBySelector_default().bind(null, "head");
-options.domAPI = (styleDomAPI_default());
-options.insertStyleElement = (insertStyleElement_default());
-
-var update = injectStylesIntoStyleTag_default()(styles/* default */.A, options);
-
-
-
-
-       /* harmony default export */ const src_styles = (styles/* default */.A && styles/* default */.A.locals ? styles/* default */.A.locals : undefined);
-
-;// ./src/components/main-page.html
-// Imports
-var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(216), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(42), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(355), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(415), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(732), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(782), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(940), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(528), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(547), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(162), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(928), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(81), __webpack_require__.b);
-// Module
-var code = `<div class="main container"> <div id="left-pane"> <div class="left container"> <div id="utility-toolbar" class="single-line"> <div id="utility-input" contenteditable="true"></div> <div id="utility-results" class="hidden"></div> <button class="utility button inactive"> <img class="hidden" src="${___HTML_LOADER_IMPORT_0___}"/> <img class="hidden" src="${___HTML_LOADER_IMPORT_1___}"/> <img class="" src="${___HTML_LOADER_IMPORT_2___}"/> </button> </div> <div id="left-view-toolbar"> <button id="home-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_3___}"/> </button> <button id="todo-view-button" type="button"> <img class="bigicon" src="${___HTML_LOADER_IMPORT_4___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="habit-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_6___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="measurement-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_7___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> </div> <div id="todo-panel"> </div> <div id="timer-panel" class="hidden"> <button id="main-timer-button" class="dragbar-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_8___}"/> <input class="countup hidden" value="00:00" type="time" step="1" readonly="readonly"/> </button> <button id="main-timer-item-button" class="dragbar-button" class="hidden"> <input id="main-timer-item-name" class="" value="task and time here" type="text" maxlength="15" readonly="readonly"/> </button> </div> </div> <div class="dragbar right"> <div class="solid-line"></div> <div class="z-top top"> <button id="calendar-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon" src="${___HTML_LOADER_IMPORT_9___}"/> </button> <button id="data-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_10___}"/> </button> </div> <div class="z-top bottom"> <button id="settings-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_11___}"/> </button> </div> </div> </div> <div id="right-pane"> <div class="hours-label container"> <div class="empty"></div> <div id="4am" class="time hidden">4a</div> <div id="5am" class="time hidden">5a</div> <div id="6am" class="time hidden">6a</div> <div id="7am" class="time">7a</div> <div id="8am" class="time">8a</div> <div id="9am" class="time">9a</div> <div id="10am" class="time">10a</div> <div id="11am" class="time">11a</div> <div id="12pm" class="time">12p</div> <div id="1pm" class="time">1p</div> <div id="2pm" class="time">2p</div> <div id="3pm" class="time">3p</div> <div id="4pm" class="time">4p</div> <div id="5pm" class="time">5p</div> <div id="6pm" class="time">6p</div> <div id="7pm" class="time">7p</div> <div id="8pm" class="time">8p</div> <div id="9pm" class="time">9p</div> <div id="10pm" class="time">10p</div> <div id="11pm" class="time">11p</div> <div id="12am" class="time">12a</div> <div id="1am" class="time hidden">1a</div> <div id="2am" class="time hidden">2a</div> <div id="3am" class="time hidden">3a</div> </div> </div> </div>`;
-// Exports
-/* harmony default export */ const main_page = (code);
 ;// ./src/components/left-pane/items-views/1.todo-view/2.task-template.html
 // Imports
-var _2_task_template_HTML_LOADER_IMPORT_0_ = new URL(/* asset import */ __webpack_require__(405), __webpack_require__.b);
-var _2_task_template_HTML_LOADER_IMPORT_1_ = new URL(/* asset import */ __webpack_require__(282), __webpack_require__.b);
-var _2_task_template_HTML_LOADER_IMPORT_2_ = new URL(/* asset import */ __webpack_require__(152), __webpack_require__.b);
-var _2_task_template_HTML_LOADER_IMPORT_3_ = new URL(/* asset import */ __webpack_require__(699), __webpack_require__.b);
-var _2_task_template_HTML_LOADER_IMPORT_4_ = new URL(/* asset import */ __webpack_require__(544), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(405), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(282), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(152), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(699), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(544), __webpack_require__.b);
 // Module
-var _2_task_template_code = `<div data-list-id="" data-sublist-id="" data-todo-id="" data-todo-type="" class="todo"> <div class="todo-bar"> <input data-field="isCompleted" class="task-checkbox popover hidden" type="checkbox"/> <div class="left"> <input data-field="name" class="todo-title top" type="text" placeholder="add task name"/> <div class="bottom single-line"> <button class="nearest-datetime-button single-line" type="button"> <input data-field="nextSession" class="readonly datetime indicator" type="text" value="" readonly="readonly"/> </button> <button class="cycle-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> </button> <button class="reminder-indicator-button hidden" type="button"> <img class="indicator" src="${_2_task_template_HTML_LOADER_IMPORT_1_}"/> </button> </div> </div> <button class="todo-details-on right" type="button"> <img class="off" src="${_2_task_template_HTML_LOADER_IMPORT_2_}"/> <img class="on hidden" src="${_2_task_template_HTML_LOADER_IMPORT_3_}"/> </button> </div> <div class="todo-edit-dropdown hidden"> <div class="todo-details-dropdown hidden"> <div class="checklist container"> <div class="blank subtask single-line"> <input class="subtask-checkbox" type="checkbox" disabled="disabled"/> <input class="subtask-title blank" type="text" value="" placeholder="click enter to add"/> </div> <div class="extant-subtasks"></div> </div> <textarea data-field="notes" class="notes container" placeholder="Notes"></textarea> <div class="attachment container hidden"> </div> </div> <div class="todo-schedule-dropdown hidden"> <div class="schedule-type-selection single-line"> <button class="datetime-only-button" type="button"> datetime </button> <button class="add-repeat-button" type="button"> cycle </button> <button class="add-deadline-button" type="button"> deadline </button> </div> <div class="schedule-calendar"> </div> <div class="deadline-description hidden"> </div> <div class="scheduled-datetimes-dropdown hidden"> </div> <div class="logged-datetimes-dropdown hidden"> </div> <div class="open-recurring single-line hidden"> <button class="open-recurring-button single-line" type="button"> <img class="icon inactive" src="${_2_task_template_HTML_LOADER_IMPORT_0_}"/> <span class="inactive description"> set recurrence </span> <div class="hidden single-line description"> <span class="hidden"> repeats </span> <input class="recurring-description" type="text" value="" readonly="readonly"/> </div> </button> <button class="clear-recurring-button hidden"> <img class="icon inactive" src="${_2_task_template_HTML_LOADER_IMPORT_4_}"/> </button> </div> <div class="open-reminder single-line hidden"> </div> </div> <div class="bottom-section single-line"> <button class="add-datetime-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-datetime-icon"> <desc>App Window Clock Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M19.949416666666668 7.565185833333333v-5.5c0 -0.3646775 -0.14483333333333334 -0.7144133333333333 -0.40269166666666667 -0.9722716666666665 -0.2578583333333333 -0.25786291666666666 -0.6076583333333333 -0.4027283333333333 -0.9723083333333332 -0.4027283333333333h-16.5c-0.3646683333333333 0 -0.7144133333333333 0.14486541666666666 -0.9722716666666665 0.4027283333333333C0.8442829999999999 1.3507725 0.6994166666666667 1.7005083333333333 0.6994166666666667 2.0651858333333335V17.190158333333333c0 0.36474166666666663 0.14486633333333335 0.7144499999999999 0.4027283333333333 0.9723083333333332 0.2578583333333333 0.2578583333333333 0.6076033333333333 0.40269166666666667 0.9722716666666665 0.40269166666666667h5.5" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M0.6994166666666667 4.8151858333333335h19.25" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M10.321666666666665 15.815158333333333c0 0.7223333333333334 0.14226666666666665 1.4375166666666666 0.41864166666666663 2.1047583333333333 0.27646666666666664 0.6673333333333333 0.6815416666666667 1.2736166666666666 1.1923083333333333 1.7843833333333334 0.510675 0.510675 1.1170499999999999 0.9158416666666667 1.7842916666666666 1.1922166666666667 0.6673333333333333 0.276375 1.3825166666666666 0.41864166666666663 2.1047583333333333 0.41864166666666663s1.4375166666666666 -0.14226666666666665 2.1047583333333333 -0.41864166666666663c0.6673333333333333 -0.276375 1.2736166666666666 -0.6815416666666667 1.7843833333333334 -1.1922166666666667 0.510675 -0.5107666666666667 0.9158416666666667 -1.1170499999999999 1.1922166666666667 -1.7843833333333334 0.276375 -0.6672416666666666 0.41864166666666663 -1.382425 0.41864166666666663 -2.1047583333333333 0 -0.7222416666666667 -0.14226666666666665 -1.437425 -0.41864166666666663 -2.1047583333333333 -0.276375 -0.6672416666666666 -0.6815416666666667 -1.2736166666666666 -1.1923083333333333 -1.7842916666666666 -0.510675 -0.5107666666666667 -1.1169583333333333 -0.9158416666666667 -1.7842916666666666 -1.1922166666666667 -0.6672416666666666 -0.27646666666666664 -1.3825166666666666 -0.4187333333333333 -2.1047583333333333 -0.4187333333333333s-1.437425 0.14226666666666665 -2.1047583333333333 0.4187333333333333c-0.6672416666666666 0.276375 -1.2736166666666666 0.6814499999999999 -1.7842916666666666 1.1922166666666667 -0.5107666666666667 0.510675 -0.9158416666666667 1.1170499999999999 -1.1923083333333333 1.7842916666666666 -0.276375 0.6673333333333333 -0.41864166666666663 1.3825166666666666 -0.41864166666666663 2.1047583333333333Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.252666666666666 15.815341666666665H15.821666666666667v-2.430083333333333" stroke-width="2"> </path> </svg> </button> <button class="add-details-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-details-icon"> <desc>Notes Checklist Flip Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M2.0625 2.0625h17.875s1.375 0 1.375 1.375v16.5s0 1.375 -1.375 1.375H2.0625s-1.375 0 -1.375 -1.375v-16.5s0 -1.375 1.375 -1.375Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M4.8125 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.1875 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 16.5h4.125" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 9.625h4.125" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 14.025 -2.8874999999999997 3.85 -2.0625 -2.0625" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 6.875 -2.8874999999999997 3.85L4.125 8.6625" stroke-width="2"> </path> </svg> </button> <div class="right"> <button class="duplicate-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="duplicate-task-icon"> <desc>Duplicate Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M16.75 4.5V1.75c0 -0.55228 -0.4477 -1 -1 -1h-14c-0.55228 0 -1 0.44771 -1 1v14c0 0.5523 0.44772 1 1 1H4.5" stroke-width="2.5"></path> <path stroke-linejoin="round" d="M7.25 8.25c0 -0.55229 0.44772 -1 1 -1h14c0.5523 0 1 0.44772 1 1v14c0 0.5523 -0.4477 1 -1 1h-14c-0.55229 0 -1 -0.4477 -1 -1v-14Z" stroke-width="2.5"></path> </svg> </button> <button class="delete-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="delete-task-icon"> <desc>Bin 1 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M1 5h22" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 1h-4.5c-0.39782 0 -0.77936 0.15804 -1.06066 0.43934C8.40804 1.72064 8.25 2.10218 8.25 2.5V5h7.5V2.5c0 -0.39782 -0.158 -0.77936 -0.4393 -1.06066C15.0294 1.15804 14.6478 1 14.25 1Z" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.86 21.62c-0.0278 0.3758 -0.197 0.7271 -0.4735 0.9832 -0.2764 0.256 -0.6397 0.3978 -1.0165 0.3968H6.63c-0.37683 0.001 -0.74006 -0.1408 -1.01653 -0.3968 -0.27647 -0.2561 -0.44565 -0.6074 -0.47347 -0.9832L3.75 5h16.5l-1.39 16.62Z" stroke-width="2"> </path> </svg> </button> </div> </div> </div> </div> <button class="tiny-add-bar-task" type="button"></button> `;
+var code = `<div data-list-id="" data-sublist-id="" data-todo-id="" data-todo-type="" class="todo"> <div class="todo-bar"> <input data-field="isCompleted" class="task-checkbox popover hidden" type="checkbox"/> <div class="left"> <input data-field="name" class="todo-title top" type="text" placeholder="add task name"/> <div class="bottom single-line"> <button class="nearest-datetime-button single-line" type="button"> <input data-field="nextSession" class="readonly datetime indicator" type="text" value="" readonly="readonly"/> </button> <button class="cycle-indicator-button hidden" type="button"> <img class="indicator" src="${___HTML_LOADER_IMPORT_0___}"/> </button> <button class="reminder-indicator-button hidden" type="button"> <img class="indicator" src="${___HTML_LOADER_IMPORT_1___}"/> </button> </div> </div> <button class="todo-details-on right" type="button"> <img class="off" src="${___HTML_LOADER_IMPORT_2___}"/> <img class="on hidden" src="${___HTML_LOADER_IMPORT_3___}"/> </button> </div> <div class="todo-edit-dropdown hidden"> <div class="todo-details-dropdown hidden"> <div class="checklist container"> <div class="blank subtask single-line"> <input class="subtask-checkbox" type="checkbox" disabled="disabled"/> <input class="subtask-title blank" type="text" value="" placeholder="click enter to add"/> </div> <div class="extant-subtasks"></div> </div> <textarea data-field="notes" class="notes container" placeholder="Notes"></textarea> <div class="attachment container hidden"> </div> </div> <div class="todo-schedule-dropdown hidden"> <div class="schedule-type-selection single-line"> <button class="datetime-only-button" type="button"> datetime </button> <button class="add-repeat-button" type="button"> cycle </button> <button class="add-deadline-button" type="button"> deadline </button> </div> <div class="schedule-calendar"> </div> <div class="deadline-description hidden"> </div> <div class="scheduled-datetimes-dropdown hidden"> </div> <div class="logged-datetimes-dropdown hidden"> </div> <div class="open-recurring single-line hidden"> <button class="open-recurring-button single-line" type="button"> <img class="icon inactive" src="${___HTML_LOADER_IMPORT_0___}"/> <span class="inactive description"> set recurrence </span> <div class="hidden single-line description"> <span class="hidden"> repeats </span> <input class="recurring-description" type="text" value="" readonly="readonly"/> </div> </button> <button class="clear-recurring-button hidden"> <img class="icon inactive" src="${___HTML_LOADER_IMPORT_4___}"/> </button> </div> <div class="open-reminder single-line hidden"> </div> </div> <div class="bottom-section single-line"> <button class="add-datetime-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-datetime-icon"> <desc>App Window Clock Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M19.949416666666668 7.565185833333333v-5.5c0 -0.3646775 -0.14483333333333334 -0.7144133333333333 -0.40269166666666667 -0.9722716666666665 -0.2578583333333333 -0.25786291666666666 -0.6076583333333333 -0.4027283333333333 -0.9723083333333332 -0.4027283333333333h-16.5c-0.3646683333333333 0 -0.7144133333333333 0.14486541666666666 -0.9722716666666665 0.4027283333333333C0.8442829999999999 1.3507725 0.6994166666666667 1.7005083333333333 0.6994166666666667 2.0651858333333335V17.190158333333333c0 0.36474166666666663 0.14486633333333335 0.7144499999999999 0.4027283333333333 0.9723083333333332 0.2578583333333333 0.2578583333333333 0.6076033333333333 0.40269166666666667 0.9722716666666665 0.40269166666666667h5.5" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M0.6994166666666667 4.8151858333333335h19.25" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M10.321666666666665 15.815158333333333c0 0.7223333333333334 0.14226666666666665 1.4375166666666666 0.41864166666666663 2.1047583333333333 0.27646666666666664 0.6673333333333333 0.6815416666666667 1.2736166666666666 1.1923083333333333 1.7843833333333334 0.510675 0.510675 1.1170499999999999 0.9158416666666667 1.7842916666666666 1.1922166666666667 0.6673333333333333 0.276375 1.3825166666666666 0.41864166666666663 2.1047583333333333 0.41864166666666663s1.4375166666666666 -0.14226666666666665 2.1047583333333333 -0.41864166666666663c0.6673333333333333 -0.276375 1.2736166666666666 -0.6815416666666667 1.7843833333333334 -1.1922166666666667 0.510675 -0.5107666666666667 0.9158416666666667 -1.1170499999999999 1.1922166666666667 -1.7843833333333334 0.276375 -0.6672416666666666 0.41864166666666663 -1.382425 0.41864166666666663 -2.1047583333333333 0 -0.7222416666666667 -0.14226666666666665 -1.437425 -0.41864166666666663 -2.1047583333333333 -0.276375 -0.6672416666666666 -0.6815416666666667 -1.2736166666666666 -1.1923083333333333 -1.7842916666666666 -0.510675 -0.5107666666666667 -1.1169583333333333 -0.9158416666666667 -1.7842916666666666 -1.1922166666666667 -0.6672416666666666 -0.27646666666666664 -1.3825166666666666 -0.4187333333333333 -2.1047583333333333 -0.4187333333333333s-1.437425 0.14226666666666665 -2.1047583333333333 0.4187333333333333c-0.6672416666666666 0.276375 -1.2736166666666666 0.6814499999999999 -1.7842916666666666 1.1922166666666667 -0.5107666666666667 0.510675 -0.9158416666666667 1.1170499999999999 -1.1923083333333333 1.7842916666666666 -0.276375 0.6673333333333333 -0.41864166666666663 1.3825166666666666 -0.41864166666666663 2.1047583333333333Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.252666666666666 15.815341666666665H15.821666666666667v-2.430083333333333" stroke-width="2"> </path> </svg> </button> <button class="add-details-button left hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="add-details-icon"> <desc>Notes Checklist Flip Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M2.0625 2.0625h17.875s1.375 0 1.375 1.375v16.5s0 1.375 -1.375 1.375H2.0625s-1.375 0 -1.375 -1.375v-16.5s0 -1.375 1.375 -1.375Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M4.8125 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.1875 0.6875v2.75" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 16.5h4.125" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M11.6875 9.625h4.125" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 14.025 -2.8874999999999997 3.85 -2.0625 -2.0625" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="m9.075 6.875 -2.8874999999999997 3.85L4.125 8.6625" stroke-width="2"> </path> </svg> </button> <div class="right"> <button class="duplicate-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="duplicate-task-icon"> <desc>Duplicate Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M16.75 4.5V1.75c0 -0.55228 -0.4477 -1 -1 -1h-14c-0.55228 0 -1 0.44771 -1 1v14c0 0.5523 0.44772 1 1 1H4.5" stroke-width="2.5"></path> <path stroke-linejoin="round" d="M7.25 8.25c0 -0.55229 0.44772 -1 1 -1h14c0.5523 0 1 0.44772 1 1v14c0 0.5523 -0.4477 1 -1 1h-14c-0.55229 0 -1 -0.4477 -1 -1v-14Z" stroke-width="2.5"></path> </svg> </button> <button class="delete-button" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="delete-task-icon"> <desc>Bin 1 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M1 5h22" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 1h-4.5c-0.39782 0 -0.77936 0.15804 -1.06066 0.43934C8.40804 1.72064 8.25 2.10218 8.25 2.5V5h7.5V2.5c0 -0.39782 -0.158 -0.77936 -0.4393 -1.06066C15.0294 1.15804 14.6478 1 14.25 1Z" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 17.75v-7.5" stroke-width="2"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M18.86 21.62c-0.0278 0.3758 -0.197 0.7271 -0.4735 0.9832 -0.2764 0.256 -0.6397 0.3978 -1.0165 0.3968H6.63c-0.37683 0.001 -0.74006 -0.1408 -1.01653 -0.3968 -0.27647 -0.2561 -0.44565 -0.6074 -0.47347 -0.9832L3.75 5h16.5l-1.39 16.62Z" stroke-width="2"> </path> </svg> </button> </div> </div> </div> </div> <button class="tiny-add-bar-task" type="button"></button> `;
 // Exports
-/* harmony default export */ const _2_task_template = (_2_task_template_code);
+/* harmony default export */ const _2_task_template = (code);
 ;// ./src/components/left-pane/items-views/1.todo-view/subtask-template.html
 // Module
 var subtask_template_code = `<div data-subtask-id="" class="subtask single-line"> <input data-field="isCompleted" class="subtask-checkbox" type="checkbox"/> <button class="clear-subtask-button hidden" type="button">X</button> <input data-field="name" class="subtask-title" type="text" value="SUBTASK_TITLE" placeholder="+ subtask"/> </div> `;
@@ -1686,6 +1395,24 @@ var list_template_code = ` <div class="left popover hidden"> <button class="coll
 var sublist_template_code = ` <div data-list-id="" data-sublist-id="" class="sublist"> <div class="heading single-line"> <button class="open-list-button" type="button"> <input class="readonly title" type="text" value="LIST_TITLE" readonly="readonly"/> </button> <input data-field="name" class="editing-list-title hidden" type="text" value="LIST_TITLE"/> <button class="options-list-button hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-1 -1 24 24" id="open-options-icon"> <desc>Reward Stars 2 Streamline Icon: https://streamlinehq.com</desc> <path stroke-linecap="round" stroke-linejoin="round" d="M9.855083333333333 1.2604166666666665c-0.02291666666666667 5.757583333333333 2.776583333333333 9.023666666666665 9.166666666666666 9.166666666666666 -5.92625 -0.02291666666666667 -8.866 3.1542499999999998 -9.166666666666666 9.166666666666666 -0.057749999999999996 -5.6714166666666666 -2.5923516666666666 -9.174916666666666 -9.16668775 -9.166666666666666 5.881336083333333 -0.08249999999999999 9.143771083333332 -2.9214166666666666 9.16668775 -9.166666666666666Z" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.427666666666667 1.2604166666666665v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M15.594333333333333 3.09375h3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M19.479166666666664 17.072916666666664v3.6666666666666665" stroke-width="2"> </path> <path stroke-linecap="round" stroke-linejoin="round" d="M17.645833333333332 18.90625h3.6666666666666665" stroke-width="2"> </path> </svg> </button> </div> <div class="body container hidden"> <div class="options popover hidden"> <button class="print-sublist-button"> Print Sublist </button> <button class="archive-list-button"> Archive Sublist </button> </div> <button class="tiny-add-bar-todo" type="button"></button></div> </div>  <button class="tiny-add-bar-sublist" type="button"> </button>`;
 // Exports
 /* harmony default export */ const sublist_template = (sublist_template_code);
+;// ./src/components/main-page.html
+// Imports
+var main_page_HTML_LOADER_IMPORT_0_ = new URL(/* asset import */ __webpack_require__(216), __webpack_require__.b);
+var main_page_HTML_LOADER_IMPORT_1_ = new URL(/* asset import */ __webpack_require__(42), __webpack_require__.b);
+var main_page_HTML_LOADER_IMPORT_2_ = new URL(/* asset import */ __webpack_require__(355), __webpack_require__.b);
+var main_page_HTML_LOADER_IMPORT_3_ = new URL(/* asset import */ __webpack_require__(415), __webpack_require__.b);
+var main_page_HTML_LOADER_IMPORT_4_ = new URL(/* asset import */ __webpack_require__(732), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(782), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(940), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(528), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(547), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(162), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(928), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(81), __webpack_require__.b);
+// Module
+var main_page_code = `<div class="main container"> <div id="left-pane"> <div class="left container"> <div id="utility-toolbar" class="single-line"> <div id="utility-input" contenteditable="true"></div> <div id="utility-results" class="hidden"></div> <button class="utility button inactive"> <img class="hidden" src="${main_page_HTML_LOADER_IMPORT_0_}"/> <img class="hidden" src="${main_page_HTML_LOADER_IMPORT_1_}"/> <img class="" src="${main_page_HTML_LOADER_IMPORT_2_}"/> </button> </div> <div id="left-view-toolbar"> <button id="home-view-button" type="button"> <img class="bigicon inactive" src="${main_page_HTML_LOADER_IMPORT_3_}"/> </button> <button id="todo-view-button" type="button"> <img class="bigicon" src="${main_page_HTML_LOADER_IMPORT_4_}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="habit-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_6___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> <button id="measurement-view-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_7___}"/> <img class="bigicon options hidden" src="${___HTML_LOADER_IMPORT_5___}"/> </button> </div> <div id="todo-panel"> </div> <div id="timer-panel" class="hidden"> <button id="main-timer-button" class="dragbar-button" type="button"> <img class="bigicon inactive" src="${___HTML_LOADER_IMPORT_8___}"/> <input class="countup hidden" value="00:00" type="time" step="1" readonly="readonly"/> </button> <button id="main-timer-item-button" class="dragbar-button" class="hidden"> <input id="main-timer-item-name" class="" value="task and time here" type="text" maxlength="15" readonly="readonly"/> </button> </div> </div> <div class="dragbar right"> <div class="solid-line"></div> <div class="z-top top"> <button id="calendar-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon" src="${___HTML_LOADER_IMPORT_9___}"/> </button> <button id="data-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_10___}"/> </button> </div> <div class="z-top bottom"> <button id="settings-view-button" class="dragbar-button" type="button"> <img class="dragbar-icon inactive" src="${___HTML_LOADER_IMPORT_11___}"/> </button> </div> </div> </div> <div id="right-pane"> <div class="hours-label container"> <div class="empty"></div> <div id="4am" class="time hidden">4a</div> <div id="5am" class="time hidden">5a</div> <div id="6am" class="time hidden">6a</div> <div id="7am" class="time">7a</div> <div id="8am" class="time">8a</div> <div id="9am" class="time">9a</div> <div id="10am" class="time">10a</div> <div id="11am" class="time">11a</div> <div id="12pm" class="time">12p</div> <div id="1pm" class="time">1p</div> <div id="2pm" class="time">2p</div> <div id="3pm" class="time">3p</div> <div id="4pm" class="time">4p</div> <div id="5pm" class="time">5p</div> <div id="6pm" class="time">6p</div> <div id="7pm" class="time">7p</div> <div id="8pm" class="time">8p</div> <div id="9pm" class="time">9p</div> <div id="10pm" class="time">10p</div> <div id="11pm" class="time">11p</div> <div id="12am" class="time">12a</div> <div id="1am" class="time hidden">1a</div> <div id="2am" class="time hidden">2a</div> <div id="3am" class="time hidden">3a</div> </div> </div> </div>`;
+// Exports
+/* harmony default export */ const main_page = (main_page_code);
 ;// ./src/view/todo-view/list-view.js
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
@@ -2893,8 +2620,11 @@ class ProspectiveView {
 
 
 
-class todo_panel_control_TodoPanelController {
+
+class TodoPanelController {
   constructor(userInstance) {
+    document.querySelector('body').innerHTML = main_page;
+
     this.userInstance = userInstance;
     this.todoModeller = new TodoModeller(userInstance.storedLists, this);
     this.todoModel = this.todoModeller.todoModel;
@@ -2935,7 +2665,7 @@ class todo_panel_control_TodoPanelController {
   }
 
   getTodoData(element) {
-    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(element);
+    const ids = TodoPanelController.getIDsFromElement(element);
     const listData = this.todoModel.find((list) => list.listId === ids.listId);
     if (ids.sublistId && ids.sublistId !== 'null') {
       if (ids.todoId && ids.todoId !== 'null') {
@@ -2965,7 +2695,7 @@ class todo_panel_control_TodoPanelController {
   handleInputChange(event) {
     if (!['INPUT', 'TEXTAREA'].includes(event.target.tagName)) return;
     if (!event.target.classList.contains('blank')) {
-      const ids = todo_panel_control_TodoPanelController.getIDsFromElement(event.target);
+      const ids = TodoPanelController.getIDsFromElement(event.target);
       this.todoModeller.updateFieldInModelAndStore(
         ids.listId,
         ids.sublistId,
@@ -2978,7 +2708,7 @@ class todo_panel_control_TodoPanelController {
   }
 
   appendToMiddleOfModelAndReturnBlankTodoFrom(priorTodo) {
-    const priorIds = todo_panel_control_TodoPanelController.getIDsFromElement(priorTodo);
+    const priorIds = TodoPanelController.getIDsFromElement(priorTodo);
 
     const newTodo = new TodoData({
       listId: priorIds.listId,
@@ -3007,7 +2737,7 @@ class todo_panel_control_TodoPanelController {
   }
 
   appendToStartOfModelAndReturnBlankTodoFrom(firstTodoELement) {
-    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(firstTodoELement);
+    const ids = TodoPanelController.getIDsFromElement(firstTodoELement);
     const newTodo = new TodoData({
       listId: ids.listId,
       sublistId: ids.sublistId,
@@ -3026,7 +2756,7 @@ class todo_panel_control_TodoPanelController {
   }
 
   appendToMiddleOfModelAndReturnBlankListFrom(priorList) {
-    const priorIds = todo_panel_control_TodoPanelController.getIDsFromElement(priorList);
+    const priorIds = TodoPanelController.getIDsFromElement(priorList);
     const newList = new ListData();
     const priorListIndex = this.todoModel.findIndex(
       (list) => list.listId === priorIds.listId
@@ -3037,7 +2767,7 @@ class todo_panel_control_TodoPanelController {
   }
 
   appendToMiddleOfModelAndReturnBlankSublistFrom(priorSublist) {
-    const priorIds = todo_panel_control_TodoPanelController.getIDsFromElement(priorSublist);
+    const priorIds = TodoPanelController.getIDsFromElement(priorSublist);
 
     const newSublist = new SublistData({
       listId: priorIds.listId,
@@ -3055,7 +2785,7 @@ class todo_panel_control_TodoPanelController {
   }
 
   appendToStartOfModelAndReturnBlankSublistFrom(firstSublistElement) {
-    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(firstSublistElement);
+    const ids = TodoPanelController.getIDsFromElement(firstSublistElement);
     const newSublist = new SublistData({
       listId: ids.listId,
     });
@@ -3066,7 +2796,7 @@ class todo_panel_control_TodoPanelController {
   }
 
   addAndReturnNewSubtask(event) {
-    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(event.target);
+    const ids = TodoPanelController.getIDsFromElement(event.target);
     const newSubtask = new SubtaskData({
       name: event.target.value,
     });
@@ -3090,7 +2820,7 @@ class todo_panel_control_TodoPanelController {
   }
 
   handleSubtaskDelete(event) {
-    const ids = todo_panel_control_TodoPanelController.getIDsFromElement(event.target);
+    const ids = TodoPanelController.getIDsFromElement(event.target);
     const listData = this.todoModel.find((list) => list.listId === ids.listId);
     let todoData;
     if (ids.sublistId !== 'null') {
@@ -3111,13 +2841,30 @@ class todo_panel_control_TodoPanelController {
   }
 }
 
-;// ./src/index.js
-/* eslint-disable no-param-reassign */
-/* eslint-disable import/extensions */
 
+/***/ }),
 
+/***/ 732:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+module.exports = __webpack_require__.p + "assets/images/view-completed.svg";
 
+/***/ }),
+
+/***/ 776:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/reocurring.svg";
+
+/***/ }),
+
+/***/ 779:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ User)
+/* harmony export */ });
 class User {
   constructor(email, password) {
     this.email = email;
@@ -3372,6 +3119,338 @@ class User {
   ];
 }
 
+
+/***/ }),
+
+/***/ 782:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/all-options.svg";
+
+/***/ }),
+
+/***/ 825:
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function apply(styleElement, options, obj) {
+  var css = "";
+  if (obj.supports) {
+    css += "@supports (".concat(obj.supports, ") {");
+  }
+  if (obj.media) {
+    css += "@media ".concat(obj.media, " {");
+  }
+  var needLayer = typeof obj.layer !== "undefined";
+  if (needLayer) {
+    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
+  }
+  css += obj.css;
+  if (needLayer) {
+    css += "}";
+  }
+  if (obj.media) {
+    css += "}";
+  }
+  if (obj.supports) {
+    css += "}";
+  }
+  var sourceMap = obj.sourceMap;
+  if (sourceMap && typeof btoa !== "undefined") {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  }
+
+  // For old IE
+  /* istanbul ignore if  */
+  options.styleTagTransform(css, styleElement, options.options);
+}
+function removeStyleElement(styleElement) {
+  // istanbul ignore if
+  if (styleElement.parentNode === null) {
+    return false;
+  }
+  styleElement.parentNode.removeChild(styleElement);
+}
+
+/* istanbul ignore next  */
+function domAPI(options) {
+  if (typeof document === "undefined") {
+    return {
+      update: function update() {},
+      remove: function remove() {}
+    };
+  }
+  var styleElement = options.insertStyleElement(options);
+  return {
+    update: function update(obj) {
+      apply(styleElement, options, obj);
+    },
+    remove: function remove() {
+      removeStyleElement(styleElement);
+    }
+  };
+}
+module.exports = domAPI;
+
+/***/ }),
+
+/***/ 847:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/up.svg";
+
+/***/ }),
+
+/***/ 928:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/drag-view-data.svg";
+
+/***/ }),
+
+/***/ 940:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/habit.svg";
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			524: 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(72);
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/styleDomAPI.js
+var styleDomAPI = __webpack_require__(825);
+var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(659);
+var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(56);
+var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/insertStyleElement.js
+var insertStyleElement = __webpack_require__(540);
+var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(113);
+var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./src/styles.css
+var styles = __webpack_require__(474);
+;// ./src/styles.css
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (styleTagTransform_default());
+options.setAttributes = (setAttributesWithoutAttributes_default());
+options.insert = insertBySelector_default().bind(null, "head");
+options.domAPI = (styleDomAPI_default());
+options.insertStyleElement = (insertStyleElement_default());
+
+var update = injectStylesIntoStyleTag_default()(styles/* default */.A, options);
+
+
+
+
+       /* harmony default export */ const src_styles = (styles/* default */.A && styles/* default */.A.locals ? styles/* default */.A.locals : undefined);
+
+// EXTERNAL MODULE: ./src/controller/todo-panel-control.js + 20 modules
+var todo_panel_control = __webpack_require__(706);
+// EXTERNAL MODULE: ./src/model/users.js
+var users = __webpack_require__(779);
+;// ./src/utilities/googleAuth.js
+// ✅ Declare handleCredentialResponse first to ensure it's globally available
+// eslint-disable-next-line func-names
+window.handleCredentialResponse = function (response) {
+  // ✅ Import modules only inside the function to ensure they load correctly
+  // eslint-disable-next-line import/extensions
+  Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 706)).then(
+    ({ default: TodoPanelController }) => {
+      // eslint-disable-next-line import/extensions
+      Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 779)).then(({ default: User }) => {
+        // Helper function to decode JWT
+        function parseJwt(token) {
+          const base64Url = token.split('.')[1];
+          const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+          return JSON.parse(atob(base64));
+        }
+
+        // Process Google Sign-In response
+        const payload = parseJwt(response.credential);
+        // eslint-disable-next-line no-console
+        console.log('Google Sign-In payload:', payload); // Debugging log
+        const id = payload.email.toLowerCase();
+        const storedData = JSON.parse(localStorage.getItem(id)) || null;
+
+        if (!storedData) {
+          const controller = new TodoPanelController(new User(id, undefined));
+          controller.saveToLocalStorage();
+        } else if (storedData.email === id) {
+          // eslint-disable-next-line no-new
+          new TodoPanelController(storedData);
+        }
+      });
+    }
+  );
+};
+
+;// ./src/index.js
+/* eslint-disable no-param-reassign */
+/* eslint-disable import/extensions */
+
+
+
+
+
 // eslint-disable-next-line no-unused-vars
 const init = () => {
   // LOGIN WITH EXISTING ACCOUNT FORM
@@ -3410,9 +3489,8 @@ const init = () => {
       const id = email.value.toLowerCase();
       const storedData = JSON.parse(localStorage.getItem(id)) || null;
       if (storedData.email === id && storedData.password === password.value) {
-        document.querySelector('body').innerHTML = mainPageContents;
         // eslint-disable-next-line no-new
-        new TodoPanelController(storedData);
+        new todo_panel_control["default"](storedData);
       } else if (storedData === null) {
         email.error.textContent = 'Email not found';
         email.error.classList.remove('hidden');
@@ -3511,9 +3589,8 @@ const init = () => {
       newPassword.validity.valid &&
       newPasswordConfirmation.validity.valid
     ) {
-      document.querySelector('body').innerHTML = mainPageContents;
-      const controller = new TodoPanelController(
-        new User(newEmail.value.toLowerCase(), newPassword.value)
+      const controller = new todo_panel_control["default"](
+        new users["default"](newEmail.value.toLowerCase(), newPassword.value)
       );
       controller.saveToLocalStorage();
     }
@@ -3522,14 +3599,13 @@ const init = () => {
 
 // eslint-disable-next-line no-unused-vars
 const devInit = () => {
-  document.querySelector('body').innerHTML = main_page;
-  const controller = new todo_panel_control_TodoPanelController(
+  const controller = new TodoPanelController(
     new User('default user', 'password1')
   );
   controller.saveToLocalStorage();
 };
 
-devInit();
+init();
 
 // function updateClock() {
 //   const now = new Date();

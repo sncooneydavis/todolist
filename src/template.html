@@ -3,6 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Cross-Origin-Opener-Policy" content="unsafe-none">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="unsafe-none">
+		<script type="module" src= './utilities/googleAuth.js'></script>
+		<script src="https://accounts.google.com/gsi/client" async defer></script>
+		
+
 		<!-- preload images here -->
 		<!-- <link rel="preload" as="image" href="./assets/images/pink-fruit.jpg"> -->
 		<!-- preload fonts here -->
@@ -17,10 +23,21 @@
 					<div class="login input-container">
 							<input type="email" placeholder="Email" required>
 							<span class="error hidden"></span>
-							<input type="password" placeholder="Password" minlength="6 s" required>
+							<input type="password" placeholder="Password" minlength="6" required>
 							<span class="error hidden"></span>
 					</div>
 					<button id="submit-existing-login">Go</button>
+					<div class="google-signin-button">
+						<div id="g_id_onload"
+							data-client_id="983101287197-vjpcjvs41lsj4b88hbl8vsmbmaaqmsim.apps.googleusercontent.com"
+							data-callback="handleCredentialResponse"
+							data-auto_prompt="false">
+						</div>
+						<div class="g_id_signin"
+							data-type="standard"
+							data-size="large">
+						</div>
+					</div>
 					<p class="toggle-link" onclick="showSignUp()">Create new account</p>
 				</form>
 			<form id="signup-form" style="display: none;" novalidate>
